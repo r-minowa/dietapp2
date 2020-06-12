@@ -1,0 +1,30 @@
+PODS:
+  - CalculateCalendarLogic (0.3.0)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
+  - FSCalendar (2.8.1)
+  - MBCircularProgressBar (0.3.5)
+
+DEPENDENCIES:
+  - CalculateCalendarLogic
+  - Charts
+  - FSCalendar
+  - MBCircularProgressBar
+
+SPEC REPOS:
+  trunk:
+    - CalculateCalendarLogic
+    - Charts
+    - FSCalendar
+    - MBCircularProgressBar
+
+SPEC CHECKSUMS:
+  CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+
+PODFILE CHECKSUM: 8ef9e9088d05bba57c4df7869d048e3fbccd48f9
+
+COCOAPODS: 1.9.1

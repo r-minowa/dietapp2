@@ -1,0 +1,4 @@
+github "danielgindi/Charts" "v3.5.0"
+github "malcommac/SwiftDate" "6.1.0"
+github "realm/realm-cocoa" "v4.4.1"
+github "rechsteiner/Parchment" "v2.4.0"

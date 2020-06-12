@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XST-R7-0Ng">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="G4q-17-Eif">
+            <objects>
+                <viewController id="F9w-c6-Tn6" customClass="HomeViewController" customModule="dietapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F2D-OM-RXO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-Gr-NPN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0oI-Gr-NPN" firstAttribute="top" secondItem="y7c-c7-k84" secondAttribute="top" id="2Ab-AH-hAN"/>
+                            <constraint firstItem="0oI-Gr-NPN" firstAttribute="leading" secondItem="y7c-c7-k84" secondAttribute="leading" id="fvv-3J-lni"/>
+                            <constraint firstItem="y7c-c7-k84" firstAttribute="trailing" secondItem="0oI-Gr-NPN" secondAttribute="trailing" id="o6M-wp-O5K"/>
+                            <constraint firstItem="y7c-c7-k84" firstAttribute="bottom" secondItem="0oI-Gr-NPN" secondAttribute="bottom" id="x6e-OW-PlV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y7c-c7-k84"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="VJu-e1-3fo"/>
+                    <navigationItem key="navigationItem" id="D2N-nc-9Yg"/>
+                    <connections>
+                        <outlet property="childView" destination="0oI-Gr-NPN" id="C7i-2R-qow"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BP6-5e-mRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3794.202898550725" y="1202.6785714285713"/>
+        </scene>
+        <!--Activity-->
+        <scene sceneID="gVt-v6-nZp">
+            <objects>
+                <viewController id="9eR-fl-6dU" customClass="ActivityViewController" customModule="dietapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mVV-kP-N0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoG-DG-2Tk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GoG-DG-2Tk" firstAttribute="top" secondItem="TZQ-z0-3aG" secondAttribute="top" id="4Fl-pC-jT5"/>
+                            <constraint firstItem="TZQ-z0-3aG" firstAttribute="trailing" secondItem="GoG-DG-2Tk" secondAttribute="trailing" id="ExJ-5M-OYg"/>
+                            <constraint firstItem="GoG-DG-2Tk" firstAttribute="leading" secondItem="TZQ-z0-3aG" secondAttribute="leading" id="cFo-fh-wj5"/>
+                            <constraint firstItem="TZQ-z0-3aG" firstAttribute="bottom" secondItem="GoG-DG-2Tk" secondAttribute="bottom" id="ldu-dC-6mW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TZQ-z0-3aG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Activity" image="activity" id="lCx-n7-EiH"/>
+                    <connections>
+                        <outlet property="childView" destination="GoG-DG-2Tk" id="Y6z-gJ-2sF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLZ-vQ-Tfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2838" y="1203"/>
+        </scene>
+        <!--Body-->
+        <scene sceneID="64g-Ed-kMC">
+            <objects>
+                <viewController id="aCG-Dv-4tB" customClass="BodyViewController" customModule="dietapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D0D-87-Wik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1i-Te-cBZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="z1i-Te-cBZ" firstAttribute="top" secondItem="DdB-aO-azE" secondAttribute="top" id="YHF-bF-ALF"/>
+                            <constraint firstItem="DdB-aO-azE" firstAttribute="trailing" secondItem="z1i-Te-cBZ" secondAttribute="trailing" id="s3E-gd-Egt"/>
+                            <constraint firstItem="DdB-aO-azE" firstAttribute="bottom" secondItem="z1i-Te-cBZ" secondAttribute="bottom" id="xxt-Mx-EUR"/>
+                            <constraint firstItem="z1i-Te-cBZ" firstAttribute="leading" secondItem="DdB-aO-azE" secondAttribute="leading" id="zZI-9c-1AF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DdB-aO-azE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Body" image="body" id="cZB-Du-uUc"/>
+                    <connections>
+                        <outlet property="childView" destination="z1i-Te-cBZ" id="WOk-c9-iw8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wf5-Xe-NEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1871" y="1203"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="l2j-yU-G3o">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XST-R7-0Ng" customClass="TabBarController" customModule="dietapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I2V-2u-tu6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="F9w-c6-Tn6" kind="relationship" relationship="viewControllers" id="h6R-BR-FI3"/>
+                        <segue destination="9eR-fl-6dU" kind="relationship" relationship="viewControllers" id="TIM-wF-dea"/>
+                        <segue destination="aCG-Dv-4tB" kind="relationship" relationship="viewControllers" id="i9d-6z-b5v"/>
+                        <segue destination="2TF-4G-1J7" kind="relationship" relationship="viewControllers" id="kda-15-QwR"/>
+                        <segue destination="Tqv-xo-yxh" kind="relationship" relationship="viewControllers" id="bSv-SZ-QnH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaT-eH-IkQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1871" y="188"/>
+        </scene>
+        <!--Point-->
+        <scene sceneID="IPu-5l-Qvb">
+            <objects>
+                <viewController id="2TF-4G-1J7" customClass="PointViewController" customModule="dietapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2J-WW-JH8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pdL-y0-TAs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Point" image="point" id="cNA-lI-S36"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQP-cW-YDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="1203"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="tEn-cc-tn5">
+            <objects>
+                <viewController id="Tqv-xo-yxh" customClass="SettingViewController" customModule="dietapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9a0-MJ-vYd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3HN-4W-lhB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="tJv-ov-3LA" userLabel="Setting"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xiq-xa-7ww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="1203"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="activity" width="24" height="24"/>
+        <image name="body" width="24" height="24"/>
+        <image name="home" width="32" height="32"/>
+        <image name="point" width="24" height="24"/>
+        <image name="setting" width="24" height="24"/>
+    </resources>
+</document>

@@ -1,0 +1,934 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F0D11BE248DF9E400BDDA0F /* ChallengeContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11BD248DF9E400BDDA0F /* ChallengeContentPresenter.swift */; };
+		8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11BF248DF9FB00BDDA0F /* ChallengeContentProtocol.swift */; };
+		8F0D11C8248F265C00BDDA0F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11C6248F265C00BDDA0F /* ActivityViewController.swift */; };
+		8F0D11CE248F29C000BDDA0F /* ActivityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11CC248F29C000BDDA0F /* ActivityListViewController.swift */; };
+		8F0D11CF248F29C000BDDA0F /* ActivityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0D11CD248F29C000BDDA0F /* ActivityListViewController.xib */; };
+		8F0D11D2248F2A7D00BDDA0F /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11D0248F2A7D00BDDA0F /* ActivityTableViewCell.swift */; };
+		8F0D11D3248F2A7D00BDDA0F /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0D11D1248F2A7D00BDDA0F /* ActivityTableViewCell.xib */; };
+		8F0D11D5248F303500BDDA0F /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11D4248F303500BDDA0F /* ActivityObject.swift */; };
+		8F0D11D8248F352A00BDDA0F /* ActivityRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11D6248F352A00BDDA0F /* ActivityRecordViewController.swift */; };
+		8F0D11D9248F352A00BDDA0F /* ActivityRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0D11D7248F352A00BDDA0F /* ActivityRecordViewController.xib */; };
+		8F0D11DE248F50A600BDDA0F /* ActivityRecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11DD248F50A600BDDA0F /* ActivityRecordPresenter.swift */; };
+		8F0D11E0248F50B900BDDA0F /* ActivityRecordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11DF248F50B900BDDA0F /* ActivityRecordProtocol.swift */; };
+		8F0D11E2248F635000BDDA0F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11E1248F635000BDDA0F /* String.swift */; };
+		8F0D11E8248F714100BDDA0F /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11E6248F714100BDDA0F /* ActivityDetailsViewController.swift */; };
+		8F0D11E9248F714100BDDA0F /* ActivityDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0D11E7248F714100BDDA0F /* ActivityDetailsViewController.xib */; };
+		8F0D11EC248F71A900BDDA0F /* ActivityDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11EB248F71A900BDDA0F /* ActivityDetailsPresenter.swift */; };
+		8F0D11EE248F71C500BDDA0F /* ActivityDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11ED248F71C500BDDA0F /* ActivityDetailsProtocol.swift */; };
+		8F0DAF4D2490602F006C072C /* GetRealmActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0DAF4C2490602F006C072C /* GetRealmActivity.swift */; };
+		8F0DDEF924736337009D6031 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0DDEF824736337009D6031 /* Home.storyboard */; };
+		8F0DDEFB247378A8009D6031 /* PointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0DDEFA247378A8009D6031 /* PointViewController.swift */; };
+		8F0DDEFD24737ABB009D6031 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0DDEFC24737ABB009D6031 /* BodyViewController.swift */; };
+		8F0F6BDB2472109C00F16941 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BDA2472109C00F16941 /* ContentViewController.swift */; };
+		8F0F6BDD2472119D00F16941 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BDC2472119D00F16941 /* UIView+constraints.swift */; };
+		8F0F6BDF2472120400F16941 /* UIColor+interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BDE2472120400F16941 /* UIColor+interpolation.swift */; };
+		8F0F6BE124721CC800F16941 /* CalenderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BE024721CC800F16941 /* CalenderItem.swift */; };
+		8F0FCDF72491ABD900508543 /* BodyWeightRecordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCDF62491ABD900508543 /* BodyWeightRecordProtocols.swift */; };
+		8F0FCDF92491ABEE00508543 /* BodyWeightRecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCDF82491ABEE00508543 /* BodyWeightRecordPresenter.swift */; };
+		8F0FCE012491B16700508543 /* BodyWeightRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */; };
+		8F0FCE022491B16700508543 /* BodyWeightRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */; };
+		8F0FCE042491B43400508543 /* GetRealmUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */; };
+		8F107D11248733C80056D72E /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F107D0F248733C80056D72E /* PopupViewController.swift */; };
+		8F107D12248733C80056D72E /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F107D10248733C80056D72E /* PopupViewController.xib */; };
+		8F1185AB2485E59300554EB0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */; };
+		8F13999C246D193800195D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13999B246D193800195D53 /* AppDelegate.swift */; };
+		8F13999E246D193800195D53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13999D246D193800195D53 /* SceneDelegate.swift */; };
+		8F1399A5246D193A00195D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F1399A4246D193A00195D53 /* Assets.xcassets */; };
+		8F1399A8246D193A00195D53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1399A6246D193A00195D53 /* LaunchScreen.storyboard */; };
+		8F142A20247DE6C1009E58BE /* RealmAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F142A1F247DE6C1009E58BE /* RealmAccessor.swift */; };
+		8F142A22247DE6E4009E58BE /* RealmAccessorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F142A21247DE6E4009E58BE /* RealmAccessorProtocol.swift */; };
+		8F142A33247E5484009E58BE /* PopupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F142A32247E5484009E58BE /* PopupProtocols.swift */; };
+		8F142A35247E54A6009E58BE /* PopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F142A34247E54A6009E58BE /* PopupPresenter.swift */; };
+		8F1485372480B41400C88395 /* GetRealmChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1485362480B41400C88395 /* GetRealmChallenge.swift */; };
+		8F14A50A2489EAE400D5E5C3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14A5092489EAE400D5E5C3 /* CustomButton.swift */; };
+		8F14A50D2489ECC500D5E5C3 /* TrainingMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14A50B2489ECC500D5E5C3 /* TrainingMethodViewController.swift */; };
+		8F14A50E2489ECC500D5E5C3 /* TrainingMethodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14A50C2489ECC500D5E5C3 /* TrainingMethodViewController.xib */; };
+		8F1769DF2474AE9E00DA02EC /* ChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1769DE2474AE9E00DA02EC /* ChallengeProtocols.swift */; };
+		8F1769E22474B10400DA02EC /* ChallengePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1769E12474B10400DA02EC /* ChallengePresenter.swift */; };
+		8F1769E42474C84800DA02EC /* Chellenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1769E32474C84800DA02EC /* Chellenge.swift */; };
+		8F1A92EC247C9D0E0079F468 /* UserInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A92EB247C9D0E0079F468 /* UserInfoObject.swift */; };
+		8F1A92EE247CB0240079F468 /* UserTrainingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A92ED247CB0240079F468 /* UserTrainingObject.swift */; };
+		8F1CA722247F99420059B96C /* Date+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CA721247F99420059B96C /* Date+dateFormatter.swift */; };
+		8F1CA725247FAFB50059B96C /* NoChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CA723247FAFB50059B96C /* NoChallengeViewController.swift */; };
+		8F1CA726247FAFB50059B96C /* NoChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1CA724247FAFB50059B96C /* NoChallengeViewController.xib */; };
+		8F23528F247249EB0078C2A6 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23528D247249EB0078C2A6 /* ChallengeViewController.swift */; };
+		8F235290247249EB0078C2A6 /* ChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F23528E247249EB0078C2A6 /* ChallengeViewController.xib */; };
+		8F23529324724DFC0078C2A6 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23529124724DFC0078C2A6 /* ChallengeTableViewCell.swift */; };
+		8F23529424724DFC0078C2A6 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F23529224724DFC0078C2A6 /* ChallengeTableViewCell.xib */; };
+		8F3A65262473A9EA00DF5D6E /* ChallengeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A65242473A9EA00DF5D6E /* ChallengeContentViewController.swift */; };
+		8F3A65272473A9EA00DF5D6E /* ChallengeContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A65252473A9EA00DF5D6E /* ChallengeContentViewController.xib */; };
+		8F3D0664246E7215005E03C4 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0663246E7215005E03C4 /* DateFormatters.swift */; };
+		8F3D0666246E722F005E03C4 /* CalendarPagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0665246E722F005E03C4 /* CalendarPagingCell.swift */; };
+		8F59BC172472658900F74CD3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59BC152472658900F74CD3 /* SettingViewController.swift */; };
+		8F59BC212472676F00F74CD3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */; };
+		8FB599E92490C1080039F5E8 /* BodyWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */; };
+		8FB599EA2490C1080039F5E8 /* BodyWeightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB599E82490C1080039F5E8 /* BodyWeightViewController.xib */; };
+		8FC6AF382491DFC800D3ACA9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6AF372491DFC800D3ACA9 /* TabBarController.swift */; };
+		8FC6AF3A2491F7AC00D3ACA9 /* BodyWeightProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6AF392491F7AC00D3ACA9 /* BodyWeightProtocols.swift */; };
+		8FC6AF3C2491F7BF00D3ACA9 /* BodyWeightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6AF3B2491F7BF00D3ACA9 /* BodyWeightPresenter.swift */; };
+		8FE82A9F2488EDDA009EB56B /* Parchment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3D064E246E554E005E03C4 /* Parchment.framework */; };
+		8FE82AA02488EDDA009EB56B /* Parchment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3D064E246E554E005E03C4 /* Parchment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FE82AA22488EF11009EB56B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1A92E6247C9B8A0079F468 /* Realm.framework */; };
+		8FE82AA32488EF11009EB56B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1A92E6247C9B8A0079F468 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FE82AA42488EF65009EB56B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23529524725C0F0078C2A6 /* RealmSwift.framework */; };
+		8FE82AA52488EF65009EB56B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23529524725C0F0078C2A6 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FE82AA62488EF73009EB56B /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1485332480973100C88395 /* SwiftDate.framework */; };
+		8FE82AA72488EF73009EB56B /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1485332480973100C88395 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC3DA3B7C30E604E2B061054 /* Pods_dietapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCE218ED1FFC6C5590FAAF1 /* Pods_dietapp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8FE82AA12488EDDB009EB56B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FE82AA32488EF11009EB56B /* Realm.framework in Embed Frameworks */,
+				8FE82AA02488EDDA009EB56B /* Parchment.framework in Embed Frameworks */,
+				8FE82AA72488EF73009EB56B /* SwiftDate.framework in Embed Frameworks */,
+				8FE82AA52488EF65009EB56B /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1FCE218ED1FFC6C5590FAAF1 /* Pods_dietapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dietapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		838FAE99B90E739CE1E6E90A /* Pods-dietapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dietapp.debug.xcconfig"; path = "Target Support Files/Pods-dietapp/Pods-dietapp.debug.xcconfig"; sourceTree = "<group>"; };
+		8F0D11BD248DF9E400BDDA0F /* ChallengeContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeContentPresenter.swift; sourceTree = "<group>"; };
+		8F0D11BF248DF9FB00BDDA0F /* ChallengeContentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeContentProtocol.swift; sourceTree = "<group>"; };
+		8F0D11C6248F265C00BDDA0F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		8F0D11CC248F29C000BDDA0F /* ActivityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListViewController.swift; sourceTree = "<group>"; };
+		8F0D11CD248F29C000BDDA0F /* ActivityListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityListViewController.xib; sourceTree = "<group>"; };
+		8F0D11D0248F2A7D00BDDA0F /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		8F0D11D1248F2A7D00BDDA0F /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
+		8F0D11D4248F303500BDDA0F /* ActivityObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
+		8F0D11D6248F352A00BDDA0F /* ActivityRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecordViewController.swift; sourceTree = "<group>"; };
+		8F0D11D7248F352A00BDDA0F /* ActivityRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityRecordViewController.xib; sourceTree = "<group>"; };
+		8F0D11DA248F4A1500BDDA0F /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
+		8F0D11DD248F50A600BDDA0F /* ActivityRecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecordPresenter.swift; sourceTree = "<group>"; };
+		8F0D11DF248F50B900BDDA0F /* ActivityRecordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecordProtocol.swift; sourceTree = "<group>"; };
+		8F0D11E1248F635000BDDA0F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		8F0D11E6248F714100BDDA0F /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
+		8F0D11E7248F714100BDDA0F /* ActivityDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityDetailsViewController.xib; sourceTree = "<group>"; };
+		8F0D11EB248F71A900BDDA0F /* ActivityDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsPresenter.swift; sourceTree = "<group>"; };
+		8F0D11ED248F71C500BDDA0F /* ActivityDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsProtocol.swift; sourceTree = "<group>"; };
+		8F0DAF4624905E3C006C072C /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		8F0DAF4924905E51006C072C /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
+		8F0DAF4C2490602F006C072C /* GetRealmActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmActivity.swift; sourceTree = "<group>"; };
+		8F0DDEF824736337009D6031 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		8F0DDEFA247378A8009D6031 /* PointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewController.swift; sourceTree = "<group>"; };
+		8F0DDEFC24737ABB009D6031 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
+		8F0F6BDA2472109C00F16941 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		8F0F6BDC2472119D00F16941 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		8F0F6BDE2472120400F16941 /* UIColor+interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+interpolation.swift"; sourceTree = "<group>"; };
+		8F0F6BE024721CC800F16941 /* CalenderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderItem.swift; sourceTree = "<group>"; };
+		8F0FCDF62491ABD900508543 /* BodyWeightRecordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightRecordProtocols.swift; sourceTree = "<group>"; };
+		8F0FCDF82491ABEE00508543 /* BodyWeightRecordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightRecordPresenter.swift; sourceTree = "<group>"; };
+		8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightRecordViewController.swift; sourceTree = "<group>"; };
+		8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyWeightRecordViewController.xib; sourceTree = "<group>"; };
+		8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmUserInfo.swift; sourceTree = "<group>"; };
+		8F107D0F248733C80056D72E /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		8F107D10248733C80056D72E /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		8F139998246D193800195D53 /* dietapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dietapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F13999B246D193800195D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F13999D246D193800195D53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8F1399A4246D193A00195D53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F1399A7246D193A00195D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F1399A9246D193A00195D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F142A1F247DE6C1009E58BE /* RealmAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAccessor.swift; sourceTree = "<group>"; };
+		8F142A21247DE6E4009E58BE /* RealmAccessorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAccessorProtocol.swift; sourceTree = "<group>"; };
+		8F142A32247E5484009E58BE /* PopupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProtocols.swift; sourceTree = "<group>"; };
+		8F142A34247E54A6009E58BE /* PopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPresenter.swift; sourceTree = "<group>"; };
+		8F145D212488E5CF00E0EF7F /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBCircularProgressBar.framework; path = Carthage/Build/iOS/MBCircularProgressBar.framework; sourceTree = "<group>"; };
+		8F1485332480973100C88395 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		8F1485362480B41400C88395 /* GetRealmChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmChallenge.swift; sourceTree = "<group>"; };
+		8F14A5092489EAE400D5E5C3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		8F14A50B2489ECC500D5E5C3 /* TrainingMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingMethodViewController.swift; sourceTree = "<group>"; };
+		8F14A50C2489ECC500D5E5C3 /* TrainingMethodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingMethodViewController.xib; sourceTree = "<group>"; };
+		8F1769DE2474AE9E00DA02EC /* ChallengeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeProtocols.swift; sourceTree = "<group>"; };
+		8F1769E12474B10400DA02EC /* ChallengePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePresenter.swift; sourceTree = "<group>"; };
+		8F1769E32474C84800DA02EC /* Chellenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chellenge.swift; sourceTree = "<group>"; };
+		8F1A92E6247C9B8A0079F468 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		8F1A92EB247C9D0E0079F468 /* UserInfoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoObject.swift; sourceTree = "<group>"; };
+		8F1A92ED247CB0240079F468 /* UserTrainingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrainingObject.swift; sourceTree = "<group>"; };
+		8F1CA71F247F58DA0059B96C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8F1CA721247F99420059B96C /* Date+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+dateFormatter.swift"; sourceTree = "<group>"; };
+		8F1CA723247FAFB50059B96C /* NoChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoChallengeViewController.swift; sourceTree = "<group>"; };
+		8F1CA724247FAFB50059B96C /* NoChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoChallengeViewController.xib; sourceTree = "<group>"; };
+		8F235286247230190078C2A6 /* RAMAnimatedTabBarController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RAMAnimatedTabBarController.framework; path = Carthage/Build/iOS/RAMAnimatedTabBarController.framework; sourceTree = "<group>"; };
+		8F23528D247249EB0078C2A6 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		8F23528E247249EB0078C2A6 /* ChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeViewController.xib; sourceTree = "<group>"; };
+		8F23529124724DFC0078C2A6 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		8F23529224724DFC0078C2A6 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
+		8F23529524725C0F0078C2A6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		8F3A65242473A9EA00DF5D6E /* ChallengeContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeContentViewController.swift; sourceTree = "<group>"; };
+		8F3A65252473A9EA00DF5D6E /* ChallengeContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeContentViewController.xib; sourceTree = "<group>"; };
+		8F3D064D246E554E005E03C4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		8F3D064E246E554E005E03C4 /* Parchment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parchment.framework; path = Carthage/Build/iOS/Parchment.framework; sourceTree = "<group>"; };
+		8F3D0663246E7215005E03C4 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		8F3D0665246E722F005E03C4 /* CalendarPagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPagingCell.swift; sourceTree = "<group>"; };
+		8F59BC152472658900F74CD3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightViewController.swift; sourceTree = "<group>"; };
+		8FB599E82490C1080039F5E8 /* BodyWeightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyWeightViewController.xib; sourceTree = "<group>"; };
+		8FC6AF372491DFC800D3ACA9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8FC6AF392491F7AC00D3ACA9 /* BodyWeightProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightProtocols.swift; sourceTree = "<group>"; };
+		8FC6AF3B2491F7BF00D3ACA9 /* BodyWeightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightPresenter.swift; sourceTree = "<group>"; };
+		C1CF36F900C7D8A1A3DAD5A2 /* Pods-dietapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dietapp.release.xcconfig"; path = "Target Support Files/Pods-dietapp/Pods-dietapp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F139995246D193800195D53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE82AA22488EF11009EB56B /* Realm.framework in Frameworks */,
+				8FE82A9F2488EDDA009EB56B /* Parchment.framework in Frameworks */,
+				8FE82AA62488EF73009EB56B /* SwiftDate.framework in Frameworks */,
+				8FE82AA42488EF65009EB56B /* RealmSwift.framework in Frameworks */,
+				CC3DA3B7C30E604E2B061054 /* Pods_dietapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F0A263E24776210009A8EED /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11C1248DFDE600BDDA0F /* ChallengeContent */,
+				8F14A50B2489ECC500D5E5C3 /* TrainingMethodViewController.swift */,
+				8F14A50C2489ECC500D5E5C3 /* TrainingMethodViewController.xib */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		8F0D11C1248DFDE600BDDA0F /* ChallengeContent */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11BF248DF9FB00BDDA0F /* ChallengeContentProtocol.swift */,
+				8F3A65242473A9EA00DF5D6E /* ChallengeContentViewController.swift */,
+				8F0D11BD248DF9E400BDDA0F /* ChallengeContentPresenter.swift */,
+				8F3A65252473A9EA00DF5D6E /* ChallengeContentViewController.xib */,
+			);
+			path = ChallengeContent;
+			sourceTree = "<group>";
+		};
+		8F0D11C2248F25A500BDDA0F /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				8F0DDEFC24737ABB009D6031 /* BodyViewController.swift */,
+				8FC6AF3D24920EF500D3ACA9 /* BodyWeight */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		8F0D11C3248F25B200BDDA0F /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				8F0DDEFA247378A8009D6031 /* PointViewController.swift */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		8F0D11C4248F25BC00BDDA0F /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11C6248F265C00BDDA0F /* ActivityViewController.swift */,
+				8F0D11E5248F70DB00BDDA0F /* ActivityList */,
+				8F0D11E4248F70BD00BDDA0F /* ActivityCell */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		8F0D11C5248F25DE00BDDA0F /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8F59BC152472658900F74CD3 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		8F0D11E3248F656200BDDA0F /* ActivityRecord */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11DF248F50B900BDDA0F /* ActivityRecordProtocol.swift */,
+				8F0D11D6248F352A00BDDA0F /* ActivityRecordViewController.swift */,
+				8F0D11DD248F50A600BDDA0F /* ActivityRecordPresenter.swift */,
+				8F0D11D7248F352A00BDDA0F /* ActivityRecordViewController.xib */,
+			);
+			path = ActivityRecord;
+			sourceTree = "<group>";
+		};
+		8F0D11E4248F70BD00BDDA0F /* ActivityCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11D0248F2A7D00BDDA0F /* ActivityTableViewCell.swift */,
+				8F0D11D1248F2A7D00BDDA0F /* ActivityTableViewCell.xib */,
+			);
+			path = ActivityCell;
+			sourceTree = "<group>";
+		};
+		8F0D11E5248F70DB00BDDA0F /* ActivityList */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11CC248F29C000BDDA0F /* ActivityListViewController.swift */,
+				8F0D11CD248F29C000BDDA0F /* ActivityListViewController.xib */,
+				8F0D11EA248F716000BDDA0F /* ActivityDetails */,
+			);
+			path = ActivityList;
+			sourceTree = "<group>";
+		};
+		8F0D11EA248F716000BDDA0F /* ActivityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D11ED248F71C500BDDA0F /* ActivityDetailsProtocol.swift */,
+				8F0D11E6248F714100BDDA0F /* ActivityDetailsViewController.swift */,
+				8F0D11EB248F71A900BDDA0F /* ActivityDetailsPresenter.swift */,
+				8F0D11E7248F714100BDDA0F /* ActivityDetailsViewController.xib */,
+				8F0D11E3248F656200BDDA0F /* ActivityRecord */,
+			);
+			path = ActivityDetails;
+			sourceTree = "<group>";
+		};
+		8F0DDF0024737C4E009D6031 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				8F1769DE2474AE9E00DA02EC /* ChallengeProtocols.swift */,
+				8F23528D247249EB0078C2A6 /* ChallengeViewController.swift */,
+				8F1769E12474B10400DA02EC /* ChallengePresenter.swift */,
+				8F23528E247249EB0078C2A6 /* ChallengeViewController.xib */,
+				8F1769E02474B03B00DA02EC /* Cell */,
+				8F0A263E24776210009A8EED /* Content */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		8F0F6BE224721E7600F16941 /* CalenderTab */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F6BDE2472120400F16941 /* UIColor+interpolation.swift */,
+				8F0F6BE024721CC800F16941 /* CalenderItem.swift */,
+				8F0F6BDC2472119D00F16941 /* UIView+constraints.swift */,
+				8F3D0665246E722F005E03C4 /* CalendarPagingCell.swift */,
+				8F0F6BDA2472109C00F16941 /* ContentViewController.swift */,
+				8F3D0663246E7215005E03C4 /* DateFormatters.swift */,
+			);
+			path = CalenderTab;
+			sourceTree = "<group>";
+		};
+		8F0FCDFA2491AF8100508543 /* BodyWeightRecord */ = {
+			isa = PBXGroup;
+			children = (
+				8F0FCDF62491ABD900508543 /* BodyWeightRecordProtocols.swift */,
+				8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */,
+				8F0FCDF82491ABEE00508543 /* BodyWeightRecordPresenter.swift */,
+				8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */,
+			);
+			path = BodyWeightRecord;
+			sourceTree = "<group>";
+		};
+		8F107D1324873F4A0056D72E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8F1399A4246D193A00195D53 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8F13998F246D193800195D53 = {
+			isa = PBXGroup;
+			children = (
+				8F13999A246D193800195D53 /* dietapp */,
+				8F139999246D193800195D53 /* Products */,
+				8F3D064C246E554E005E03C4 /* Frameworks */,
+				F7E15EC5C13844C0E2093FBA /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8F139999246D193800195D53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F139998246D193800195D53 /* dietapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F13999A246D193800195D53 /* dietapp */ = {
+			isa = PBXGroup;
+			children = (
+				8F13999B246D193800195D53 /* AppDelegate.swift */,
+				8F13999D246D193800195D53 /* SceneDelegate.swift */,
+				8F0DDEF824736337009D6031 /* Home.storyboard */,
+				8FC6AF372491DFC800D3ACA9 /* TabBarController.swift */,
+				8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */,
+				8F1CA720247F98FF0059B96C /* Util */,
+				8F142A24247DE75F009E58BE /* Model */,
+				8F142A23247DE713009E58BE /* Module */,
+				8F0F6BE224721E7600F16941 /* CalenderTab */,
+				8F107D1324873F4A0056D72E /* Resource */,
+				8F1399A6246D193A00195D53 /* LaunchScreen.storyboard */,
+				8F1399A9246D193A00195D53 /* Info.plist */,
+			);
+			path = dietapp;
+			sourceTree = "<group>";
+		};
+		8F142A1B247DE645009E58BE /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				8F142A1C247DE651009E58BE /* Object */,
+				8F142A21247DE6E4009E58BE /* RealmAccessorProtocol.swift */,
+				8F142A1F247DE6C1009E58BE /* RealmAccessor.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		8F142A1C247DE651009E58BE /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				8F1A92EB247C9D0E0079F468 /* UserInfoObject.swift */,
+				8F1A92ED247CB0240079F468 /* UserTrainingObject.swift */,
+				8F0D11D4248F303500BDDA0F /* ActivityObject.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		8F142A23247DE713009E58BE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				8F1769DD2474ADAB00DA02EC /* Home */,
+				8F0D11C4248F25BC00BDDA0F /* Activity */,
+				8F0D11C2248F25A500BDDA0F /* Body */,
+				8F0D11C3248F25B200BDDA0F /* Point */,
+				8F0D11C5248F25DE00BDDA0F /* Setting */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		8F142A24247DE75F009E58BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F142A1B247DE645009E58BE /* DB */,
+				8F142A25247DE7AB009E58BE /* Entity */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F142A25247DE7AB009E58BE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8F1769E32474C84800DA02EC /* Chellenge.swift */,
+				8F1485362480B41400C88395 /* GetRealmChallenge.swift */,
+				8F0DAF4C2490602F006C072C /* GetRealmActivity.swift */,
+				8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8F142A36247E618B009E58BE /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				8F142A32247E5484009E58BE /* PopupProtocols.swift */,
+				8F107D0F248733C80056D72E /* PopupViewController.swift */,
+				8F107D10248733C80056D72E /* PopupViewController.xib */,
+				8F142A34247E54A6009E58BE /* PopupPresenter.swift */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		8F1769DD2474ADAB00DA02EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */,
+				8F1CA723247FAFB50059B96C /* NoChallengeViewController.swift */,
+				8F1CA724247FAFB50059B96C /* NoChallengeViewController.xib */,
+				8F0DDF0024737C4E009D6031 /* Challenge */,
+				8F142A36247E618B009E58BE /* Popup */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8F1769E02474B03B00DA02EC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8F23529124724DFC0078C2A6 /* ChallengeTableViewCell.swift */,
+				8F23529224724DFC0078C2A6 /* ChallengeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8F1CA720247F98FF0059B96C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8F1CA721247F99420059B96C /* Date+dateFormatter.swift */,
+				8F0D11E1248F635000BDDA0F /* String.swift */,
+				8F14A5092489EAE400D5E5C3 /* CustomButton.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		8F3D064C246E554E005E03C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F0DAF4924905E51006C072C /* FSCalendar.framework */,
+				8F0DAF4624905E3C006C072C /* Charts.framework */,
+				8F0D11DA248F4A1500BDDA0F /* TextFieldEffects.framework */,
+				8F145D212488E5CF00E0EF7F /* MBCircularProgressBar.framework */,
+				8F1485332480973100C88395 /* SwiftDate.framework */,
+				8F1A92E6247C9B8A0079F468 /* Realm.framework */,
+				8F23529524725C0F0078C2A6 /* RealmSwift.framework */,
+				8F235286247230190078C2A6 /* RAMAnimatedTabBarController.framework */,
+				8F3D064D246E554E005E03C4 /* Alamofire.framework */,
+				8F3D064E246E554E005E03C4 /* Parchment.framework */,
+				1FCE218ED1FFC6C5590FAAF1 /* Pods_dietapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FC6AF3D24920EF500D3ACA9 /* BodyWeight */ = {
+			isa = PBXGroup;
+			children = (
+				8FC6AF392491F7AC00D3ACA9 /* BodyWeightProtocols.swift */,
+				8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */,
+				8FC6AF3B2491F7BF00D3ACA9 /* BodyWeightPresenter.swift */,
+				8FB599E82490C1080039F5E8 /* BodyWeightViewController.xib */,
+				8F0FCDFA2491AF8100508543 /* BodyWeightRecord */,
+			);
+			path = BodyWeight;
+			sourceTree = "<group>";
+		};
+		F7E15EC5C13844C0E2093FBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				838FAE99B90E739CE1E6E90A /* Pods-dietapp.debug.xcconfig */,
+				C1CF36F900C7D8A1A3DAD5A2 /* Pods-dietapp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F139997246D193800195D53 /* dietapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F1399AC246D193A00195D53 /* Build configuration list for PBXNativeTarget "dietapp" */;
+			buildPhases = (
+				F8A650E121F27D8CA9BBC7C1 /* [CP] Check Pods Manifest.lock */,
+				8F139994246D193800195D53 /* Sources */,
+				8F139995246D193800195D53 /* Frameworks */,
+				8F139996246D193800195D53 /* Resources */,
+				8F3D0654246E556D005E03C4 /* ShellScript */,
+				8FE82AA12488EDDB009EB56B /* Embed Frameworks */,
+				D89FFD4A358B503161152CD5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dietapp;
+			productName = dietapp;
+			productReference = 8F139998246D193800195D53 /* dietapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F139990246D193800195D53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = ryuki.minowa;
+				TargetAttributes = {
+					8F139997246D193800195D53 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 8F139993246D193800195D53 /* Build configuration list for PBXProject "dietapp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+			);
+			mainGroup = 8F13998F246D193800195D53;
+			productRefGroup = 8F139999246D193800195D53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F139997246D193800195D53 /* dietapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F139996246D193800195D53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0D11D9248F352A00BDDA0F /* ActivityRecordViewController.xib in Resources */,
+				8F0DDEF924736337009D6031 /* Home.storyboard in Resources */,
+				8F1399A8246D193A00195D53 /* LaunchScreen.storyboard in Resources */,
+				8F0FCE022491B16700508543 /* BodyWeightRecordViewController.xib in Resources */,
+				8F3A65272473A9EA00DF5D6E /* ChallengeContentViewController.xib in Resources */,
+				8F107D12248733C80056D72E /* PopupViewController.xib in Resources */,
+				8F1399A5246D193A00195D53 /* Assets.xcassets in Resources */,
+				8F1CA726247FAFB50059B96C /* NoChallengeViewController.xib in Resources */,
+				8F14A50E2489ECC500D5E5C3 /* TrainingMethodViewController.xib in Resources */,
+				8FB599EA2490C1080039F5E8 /* BodyWeightViewController.xib in Resources */,
+				8F23529424724DFC0078C2A6 /* ChallengeTableViewCell.xib in Resources */,
+				8F0D11D3248F2A7D00BDDA0F /* ActivityTableViewCell.xib in Resources */,
+				8F0D11E9248F714100BDDA0F /* ActivityDetailsViewController.xib in Resources */,
+				8F235290247249EB0078C2A6 /* ChallengeViewController.xib in Resources */,
+				8F0D11CF248F29C000BDDA0F /* ActivityListViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F3D0654246E556D005E03C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Parchment.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		D89FFD4A358B503161152CD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dietapp/Pods-dietapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dietapp/Pods-dietapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dietapp/Pods-dietapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8A650E121F27D8CA9BBC7C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dietapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F139994246D193800195D53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F142A33247E5484009E58BE /* PopupProtocols.swift in Sources */,
+				8FC6AF382491DFC800D3ACA9 /* TabBarController.swift in Sources */,
+				8FC6AF3A2491F7AC00D3ACA9 /* BodyWeightProtocols.swift in Sources */,
+				8F1CA725247FAFB50059B96C /* NoChallengeViewController.swift in Sources */,
+				8F0D11E2248F635000BDDA0F /* String.swift in Sources */,
+				8F142A20247DE6C1009E58BE /* RealmAccessor.swift in Sources */,
+				8F0D11E8248F714100BDDA0F /* ActivityDetailsViewController.swift in Sources */,
+				8F1CA722247F99420059B96C /* Date+dateFormatter.swift in Sources */,
+				8F142A22247DE6E4009E58BE /* RealmAccessorProtocol.swift in Sources */,
+				8F0DDEFB247378A8009D6031 /* PointViewController.swift in Sources */,
+				8FC6AF3C2491F7BF00D3ACA9 /* BodyWeightPresenter.swift in Sources */,
+				8F0D11D5248F303500BDDA0F /* ActivityObject.swift in Sources */,
+				8F0D11EE248F71C500BDDA0F /* ActivityDetailsProtocol.swift in Sources */,
+				8F0FCDF72491ABD900508543 /* BodyWeightRecordProtocols.swift in Sources */,
+				8F1485372480B41400C88395 /* GetRealmChallenge.swift in Sources */,
+				8F3D0664246E7215005E03C4 /* DateFormatters.swift in Sources */,
+				8F1A92EE247CB0240079F468 /* UserTrainingObject.swift in Sources */,
+				8F0D11EC248F71A900BDDA0F /* ActivityDetailsPresenter.swift in Sources */,
+				8FB599E92490C1080039F5E8 /* BodyWeightViewController.swift in Sources */,
+				8F1769DF2474AE9E00DA02EC /* ChallengeProtocols.swift in Sources */,
+				8F13999C246D193800195D53 /* AppDelegate.swift in Sources */,
+				8F13999E246D193800195D53 /* SceneDelegate.swift in Sources */,
+				8F59BC172472658900F74CD3 /* SettingViewController.swift in Sources */,
+				8F0D11D8248F352A00BDDA0F /* ActivityRecordViewController.swift in Sources */,
+				8F0D11DE248F50A600BDDA0F /* ActivityRecordPresenter.swift in Sources */,
+				8F0F6BDF2472120400F16941 /* UIColor+interpolation.swift in Sources */,
+				8F0D11BE248DF9E400BDDA0F /* ChallengeContentPresenter.swift in Sources */,
+				8F59BC212472676F00F74CD3 /* HomeViewController.swift in Sources */,
+				8F0DAF4D2490602F006C072C /* GetRealmActivity.swift in Sources */,
+				8F107D11248733C80056D72E /* PopupViewController.swift in Sources */,
+				8F1A92EC247C9D0E0079F468 /* UserInfoObject.swift in Sources */,
+				8F0D11E0248F50B900BDDA0F /* ActivityRecordProtocol.swift in Sources */,
+				8F14A50A2489EAE400D5E5C3 /* CustomButton.swift in Sources */,
+				8F3D0666246E722F005E03C4 /* CalendarPagingCell.swift in Sources */,
+				8F23528F247249EB0078C2A6 /* ChallengeViewController.swift in Sources */,
+				8F0D11C8248F265C00BDDA0F /* ActivityViewController.swift in Sources */,
+				8F0F6BDB2472109C00F16941 /* ContentViewController.swift in Sources */,
+				8F23529324724DFC0078C2A6 /* ChallengeTableViewCell.swift in Sources */,
+				8F0FCE012491B16700508543 /* BodyWeightRecordViewController.swift in Sources */,
+				8F0D11CE248F29C000BDDA0F /* ActivityListViewController.swift in Sources */,
+				8F142A35247E54A6009E58BE /* PopupPresenter.swift in Sources */,
+				8F0FCE042491B43400508543 /* GetRealmUserInfo.swift in Sources */,
+				8F0D11D2248F2A7D00BDDA0F /* ActivityTableViewCell.swift in Sources */,
+				8F1769E22474B10400DA02EC /* ChallengePresenter.swift in Sources */,
+				8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */,
+				8F0FCDF92491ABEE00508543 /* BodyWeightRecordPresenter.swift in Sources */,
+				8F0F6BE124721CC800F16941 /* CalenderItem.swift in Sources */,
+				8F3A65262473A9EA00DF5D6E /* ChallengeContentViewController.swift in Sources */,
+				8F1185AB2485E59300554EB0 /* UserDefaultManager.swift in Sources */,
+				8F0DDEFD24737ABB009D6031 /* BodyViewController.swift in Sources */,
+				8F14A50D2489ECC500D5E5C3 /* TrainingMethodViewController.swift in Sources */,
+				8F0F6BDD2472119D00F16941 /* UIView+constraints.swift in Sources */,
+				8F1769E42474C84800DA02EC /* Chellenge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8F1399A6246D193A00195D53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F1399A7246D193A00195D53 /* Base */,
+				8F1CA71F247F58DA0059B96C /* ja */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F1399AA246D193A00195D53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F1399AB246D193A00195D53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F1399AD246D193A00195D53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838FAE99B90E739CE1E6E90A /* Pods-dietapp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Youseke Kazama (LPTFL5L6KG)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XLM7K96PXP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = dietapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.ryuki.minowa.dietapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Team_DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8F1399AE246D193A00195D53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1CF36F900C7D8A1A3DAD5A2 /* Pods-dietapp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Youseke Kazama (LPTFL5L6KG)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XLM7K96PXP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = dietapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.ryuki.minowa.dietapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Team_DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F139993246D193800195D53 /* Build configuration list for PBXProject "dietapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F1399AA246D193A00195D53 /* Debug */,
+				8F1399AB246D193A00195D53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F1399AC246D193A00195D53 /* Build configuration list for PBXNativeTarget "dietapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F1399AD246D193A00195D53 /* Debug */,
+				8F1399AE246D193A00195D53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F139990246D193800195D53 /* Project object */;
+}
