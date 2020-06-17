@@ -10,8 +10,11 @@ import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var trainingNameLabel: UILabel!
+     let colorManager = ColorManager().colorSet
     
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var trainingNameLabel: UILabel!
     
     // MARK: -
     
@@ -25,7 +28,10 @@ class ActivityTableViewCell: UITableViewCell {
     
     // MARK: - PrivateMethod
     
-    func cellString(_ name: String) {
+    func setCell(_ name: String) {
+        self.backgroundColor = self.colorManager.background
+        self.trainingNameLabel.backgroundColor = .clear
+        self.trainingNameLabel.tintColor  = self.colorManager.bodyText
         self.trainingNameLabel.text = "   \(name)"
     }
     

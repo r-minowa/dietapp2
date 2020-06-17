@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivityRecordViewController" customModule="dietapp" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="dZU-r0-k4q" id="SH3-9q-D39"/>
+                <outlet property="backButton" destination="dZU-r0-k4q" id="M4y-tp-PNd"/>
                 <outlet property="countTextField" destination="Her-jO-WsV" id="uel-4s-X4s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,25 +20,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="回数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Her-jO-WsV">
-                    <rect key="frame" x="67" y="261" width="246" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-r0-k4q" customClass="CustomButton" customModule="dietapp" customModuleProvider="target">
-                    <rect key="frame" x="167" y="155" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="戻る"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-r0-k4q">
+                    <rect key="frame" x="362" y="64" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="0cw-Tw-E68"/>
+                        <constraint firstAttribute="height" constant="24" id="7Yc-iv-Te5"/>
+                    </constraints>
+                    <state key="normal" image="xmark" catalog="system"/>
                     <connections>
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="3up-Z4-Qqu"/>
                     </connections>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="回数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Her-jO-WsV">
+                    <rect key="frame" x="40" y="164" width="334" height="40"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Qi6-p2-jhF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Her-jO-WsV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="A8u-uh-fL7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dZU-r0-k4q" secondAttribute="trailing" constant="28" id="At7-Fo-jLI"/>
+                <constraint firstItem="Her-jO-WsV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="B0i-hT-XNc"/>
+                <constraint firstItem="dZU-r0-k4q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="J1x-PV-G5S"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Her-jO-WsV" secondAttribute="trailing" constant="40" id="Z7A-dx-bD7"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </view>
     </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

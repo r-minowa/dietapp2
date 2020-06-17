@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BodyWeightRecordViewController" customModule="dietapp" customModuleProvider="target">
             <connections>
                 <outlet property="WeightTextField" destination="U9L-XE-i9u" id="La5-TT-229"/>
+                <outlet property="backButton" destination="2Eg-D2-2Hb" id="2nt-C5-7Mi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,25 +20,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9L-XE-i9u">
-                    <rect key="frame" x="159" y="309" width="97" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9L-XE-i9u">
+                    <rect key="frame" x="40" y="164" width="334" height="40"/>
                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="fTI-EC-H1s"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Eg-D2-2Hb">
-                    <rect key="frame" x="184" y="165" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Eg-D2-2Hb">
+                    <rect key="frame" x="362" y="64" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="6MH-0F-FiA"/>
+                        <constraint firstAttribute="width" constant="24" id="h5l-cz-Md1"/>
+                    </constraints>
+                    <state key="normal" image="xmark" catalog="system"/>
                     <connections>
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="nUH-be-flH"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U9L-XE-i9u" secondAttribute="trailing" constant="40" id="0qT-jR-psE"/>
+                <constraint firstItem="U9L-XE-i9u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="HRu-fk-Dmd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Eg-D2-2Hb" secondAttribute="trailing" constant="28" id="LG9-VJ-kdh"/>
+                <constraint firstItem="2Eg-D2-2Hb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="NyD-C8-fbR"/>
+                <constraint firstItem="U9L-XE-i9u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="uOO-cr-hNo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="135"/>
         </view>
     </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

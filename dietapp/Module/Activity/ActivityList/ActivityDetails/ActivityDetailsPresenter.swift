@@ -81,7 +81,7 @@ extension ActivityDetailsPresenter: ActivityDetailsPresenterProtocol {
     }
     
     func getMinCount() -> Int {
-        var min: Int = 1000
+        var min: Int = 10000000000
         for i in 0..<self.activityArray.count {
             guard let count = self.activityArray[i].count else { return 0 }
             if min > count {
@@ -101,5 +101,16 @@ extension ActivityDetailsPresenter: ActivityDetailsPresenterProtocol {
         }
         
         return ave
+    }
+    func getPreviousData() -> Int {
+        var previousData: Int = 0
+        
+        if activityArray != [] {
+            if let previousData_ = self.activityArray[self.activityArray.count - 1].count {
+                previousData = previousData_
+            }
+        }
+        
+        return previousData
     }
 }

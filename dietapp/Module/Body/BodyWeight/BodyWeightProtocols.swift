@@ -11,7 +11,7 @@ import Foundation
 protocol BodyWeightViewProtocol: AnyObject {
     var presenter: BodyWeightPresenterProtocol? { get }
     
-    func transeWeightRecordView(_ vc: BodyWeightRecordViewController)
+    func transeWeightRecordView(_ vc: BodyWeightGraphViewController)
     
 }
 
@@ -22,4 +22,5 @@ protocol BodyWeightPresenterProtocol {
     func selectCalender(_ date: Date)
     func judgeHoliday(_ date : Date) -> Bool
     func getWeekIdx(_ date: Date) -> Int
+    func getDayWeight(_ date: Date) -> Double?
 }

@@ -10,6 +10,10 @@ import UIKit
 
 class ActivityListViewController: UIViewController {
 
+     let colorManager = ColorManager().colorSet
+    
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var trainingListLabel: UILabel!
     @IBOutlet weak var activityTableView: UITableView! {
         didSet {
@@ -17,17 +21,18 @@ class ActivityListViewController: UIViewController {
             self.activityTableView.dataSource = self
         }
     }
-    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trainingListLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 30.0)
+        self.view.backgroundColor = self.colorManager.background
+        self.activityTableView.backgroundColor = self.colorManager.background
         
-//        self.trainingListLabel.layer.cornerRadius = 20
-//        self.trainingListLabel.clipsToBounds = true
-        
+        self.trainingListLabel.tintColor = self.colorManager.titleText
+        self.trainingListLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 30.0)
+
+            
         // カスタムセルを登録する(セル名：Cell)
         let nib = UINib(nibName: "ActivityTableViewCell", bundle: nil) //xibファイルを読み込む
         activityTableView.register(nib, forCellReuseIdentifier: "ActivityCell") //xibを登録する
@@ -62,7 +67,7 @@ extension ActivityListViewController: UITableViewDelegate, UITableViewDataSource
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator // ここで「>」ボタンを設定
         cell.tintColor = UIColor(white: 0.8, alpha: 1.0)
         // cellに表示する内容を指定する
-        cell.cellString(Training.TrainingMenu.allCases[indexPath.row].rawValue)
+        cell.setCell(Training.TrainingMenu.allCases[indexPath.row].rawValue)
         return cell
     }
 }

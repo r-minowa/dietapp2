@@ -10,11 +10,16 @@ import UIKit
 
 class ChallengeTableViewCell: UITableViewCell {
         
+    let colorManager = ColorManager().colorSet
+    
     // MARK: - IBOutlet
     
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var namePartsView: UIView!
+    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var partsView: UIView!
     @IBOutlet weak var secSetView: UIView!
+    @IBOutlet weak var marginView: UIView!
+    
     
     @IBOutlet weak var trainingNameLabel: UILabel!
     @IBOutlet weak var partsLabel: UILabel!
@@ -22,21 +27,28 @@ class ChallengeTableViewCell: UITableViewCell {
     @IBOutlet weak var setLabel: UILabel!
     
     @IBOutlet weak var batuLabel: UILabel!
-    @IBOutlet weak var achievementLabel: UILabel!
+    
+    @IBOutlet weak var achievementImageView: UIImageView!
+    
     
     // MARK: -
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let image = UIImage(named: "achievement")
+        self.achievementImageView.image = image
        
         self.mainView.layer.cornerRadius = 5
         self.mainView.clipsToBounds = true
         
-        self.namePartsView.backgroundColor = UIColor(white:0.5, alpha:1.0)
-        self.secSetView.backgroundColor = UIColor(white:0.9, alpha:1.0)
-        self.achievementLabel.isHidden = true
-        self.achievementLabel.backgroundColor = UIColor(white:0.5, alpha:0.5)
+        self.nameView.backgroundColor = self.colorManager.thick
+        self.partsView.backgroundColor = self.colorManager.mid
+        self.secSetView.backgroundColor = self.colorManager.light
+        self.achievementImageView.isHidden = true
+        self.achievementImageView.backgroundColor = UIColor(white:0.5, alpha:0.5)
+        self.marginView.backgroundColor = self.colorManager.background
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -68,18 +80,6 @@ class ChallengeTableViewCell: UITableViewCell {
     }
     
     func setAchievementCell() {
-        self.achievementLabel.isHidden = false
+        self.achievementImageView.isHidden = false
     }
 }
-
-/*
- ・難易度low内容全表示（オプショナル）
- challenges[randomCount].details[0]
- ・low
- challenges[randomCount].details[0].level!
- 
- 腹筋：
- セット数×回数
- 1セットの目安は--回です。
- 
- */

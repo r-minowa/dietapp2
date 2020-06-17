@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
         if !UserDefaultManager.shared.firstStartingDayFlag {
             UserDefaultManager.shared.firstStartingDay = Date()
             UserDefaultManager.shared.firstStartingDayFlag = true
+            UserDefaultManager.shared.color = "black"
         }
     }
     

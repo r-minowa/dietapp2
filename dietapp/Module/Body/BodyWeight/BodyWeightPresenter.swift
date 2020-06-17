@@ -8,6 +8,7 @@
 
 import Foundation
 import CalculateCalendarLogic
+import SwiftDate
 
 final class BodyWeightPresenter {
     private(set) weak var view: BodyWeightViewProtocol?
@@ -20,10 +21,21 @@ final class BodyWeightPresenter {
         self.view = view
         self.realmAccessor = realmAccessor
     }
+    
+    // MARK: - PrivateMethod
+    
+    // Data -> String
+    func convertDateStr(_ date: Date) -> String {
+        return DateFormatters.customDateFormatter.string(from: date)
+    }
 }
+
+// MARK: - BodyWeightPresenterProtocol
 
 extension BodyWeightPresenter: BodyWeightPresenterProtocol {
     
+    /// 達成数を計算
+    /// - Parameter date: カレンダーの日付
     func getIntAchievementRealm(_ date: Date) -> Int {
         
         var challenge: [GetRealmChallenge] = []
@@ -49,13 +61,38 @@ extension BodyWeightPresenter: BodyWeightPresenterProtocol {
         return count
     }
     
-    /// 選択された日付を持ってRecordに遷移する
+    
+    /// 選択された日付の体重を取得
+    /// - Parameter date: カレンダーの日付
+    func getDayWeight(_ date: Date) -> Double? {
+        var dayweight: Double = 0
+        var userInfo: [GetRealmUserInfo] = []
+        
+        try! userInfo = self.realmAccessor.getUserInfo(date: date)
+        
+        if userInfo != [] {
+            if let dayweight_ = userInfo[userInfo.count - 1].weight {
+                dayweight = dayweight_
+            }
+        } else {
+            return nil
+        }
+        
+        return dayweight
+    }
+    
+    /// 選択された日付を持ってBodyWeightGraphViewControllerに遷移する
     /// - Parameter date: 選択されたカレンダーの日付
     func selectCalender(_ date: Date) {
-        let vc = BodyWeightRecordViewController()
-        vc.calenderDate = date
-        vc.modalPresentationStyle = .fullScreen
-        self.view?.transeWeightRecordView(vc)
+        let calenderDataStr = self.convertDateStr(date)
+        let todayStr = self.convertDateStr(today)
+        if calenderDataStr <= todayStr {
+            let vc = BodyWeightGraphViewController()
+            vc.calenderDate = date
+            vc.modalPresentationStyle = .fullScreen
+            self.view?.transeWeightRecordView(vc)
+        }
+        
     }
     
     // 祝日判定を行い結果を返すメソッド(True:祝日)

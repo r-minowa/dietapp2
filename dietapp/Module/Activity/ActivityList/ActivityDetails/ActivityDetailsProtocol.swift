@@ -22,5 +22,6 @@ protocol ActivityDetailsPresenterProtocol {
     func getTotalCount() -> Int
     func getMaxCount() -> Int
     func getMinCount() -> Int
-    func getAveCount() -> Int 
+    func getAveCount() -> Int
+    func getPreviousData() -> Int
 }

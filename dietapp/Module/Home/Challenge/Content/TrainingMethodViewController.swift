@@ -12,20 +12,26 @@ class TrainingMethodViewController: UIViewController {
 
     var explanation: String = ""
     
-    @IBOutlet weak var backButton: CustomButton!
+    let colorManager = ColorManager().colorSet
+    
+    // MARK: - UIOutlet
+
     @IBOutlet weak var explainPopView: UIView!
     @IBOutlet weak var explanLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - LifeStyle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        self.explainPopView.backgroundColor = UIColor(white:0.6, alpha:1.0)
+        self.explainPopView.backgroundColor = self.colorManager.mid
         self.explainPopView.layer.cornerRadius = 30
         self.explanLabel.text = self.explanation
+        
+        self.backButton.backgroundColor = self.colorManager.backButtonBackground
+        self.backButton.tintColor = self.colorManager.backButtonTint
     }
 
     // MARK: - IBAcrtion

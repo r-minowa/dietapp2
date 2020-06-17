@@ -8,29 +8,38 @@
 
 import UIKit
 import FSCalendar
+import Charts
 
 class BodyWeightViewController: UIViewController {
     
     private(set) lazy var presenter: BodyWeightPresenterProtocol? = BodyWeightPresenter(view: self, realmAccessor: RealmAccessor())
+
+    var max = 0.0
+    var min = 1000.0
     
+    let colorManager = ColorManager().colorSet
     let today = Date()
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var calenderView: FSCalendar!
+    @IBOutlet weak var calenderView: FSCalendar! {
+        didSet {
+            self.calenderView.dataSource = self
+            self.calenderView.delegate = self
+        }
+    }
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calenderView.dataSource = self
-        self.calenderView.delegate = self
+        self.calenderView.backgroundColor = self.colorManager.background
         
         calenderView.appearance.todayColor = UIColor.red
         calenderView.appearance.headerTitleColor = UIColor.red
         calenderView.appearance.weekdayTextColor = UIColor.red
-        calenderView.scope = .week
+        calenderView.scope = .month
 
     }
     
@@ -44,7 +53,7 @@ class BodyWeightViewController: UIViewController {
 // MARK: - BodyWeightViewProtocol
 
 extension BodyWeightViewController: BodyWeightViewProtocol {
-    func transeWeightRecordView(_ vc: BodyWeightRecordViewController) {
+    func transeWeightRecordView(_ vc: BodyWeightGraphViewController) {
         show(vc, sender: nil)
     }
 }
@@ -90,5 +99,15 @@ extension BodyWeightViewController: FSCalendarDelegate, FSCalendarDataSource, FS
             return count
         }
         return 0
+    }
+    
+    /// サブタイトル設定
+    /// - Parameter calendar: FSCalendar
+    /// - Parameter date: カレンダーの日付
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        if let weight = self.presenter?.getDayWeight(date) {
+            return String(weight)
+        }
+        return nil
     }
 }

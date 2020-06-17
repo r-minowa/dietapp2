@@ -21,19 +21,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YK-ly-28j" customClass="FSCalendar">
                     <rect key="frame" x="0.0" y="64" width="414" height="798"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guA-V5-i0h" customClass="LineChartView" customModule="Charts">
-                            <rect key="frame" x="0.0" y="300" width="414" height="498"/>
-                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstItem="guA-V5-i0h" firstAttribute="leading" secondItem="6YK-ly-28j" secondAttribute="leading" id="hvM-8E-4Gf"/>
-                        <constraint firstItem="guA-V5-i0h" firstAttribute="top" secondItem="6YK-ly-28j" secondAttribute="top" constant="300" id="nZO-MZ-2ra"/>
-                        <constraint firstAttribute="bottom" secondItem="guA-V5-i0h" secondAttribute="bottom" id="qS6-tS-9Ux"/>
-                        <constraint firstAttribute="trailing" secondItem="guA-V5-i0h" secondAttribute="trailing" id="x1C-5P-cNd"/>
-                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
                             <real key="value" value="0.0"/>
@@ -44,11 +32,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="6YK-ly-28j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="bZs-7T-LDE"/>
-                <constraint firstItem="6YK-ly-28j" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cEt-SP-lDb"/>
-                <constraint firstItem="6YK-ly-28j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kpp-3z-Sow"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6YK-ly-28j" secondAttribute="bottom" id="vqY-U5-8W8"/>
+                <constraint firstItem="6YK-ly-28j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6yd-Xr-qMb"/>
+                <constraint firstItem="6YK-ly-28j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="GnQ-ZE-4f0"/>
+                <constraint firstItem="6YK-ly-28j" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Z7g-2I-eCg"/>
+                <constraint firstItem="6YK-ly-28j" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="csG-Ou-b7z"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="118.84057971014494" y="152.67857142857142"/>
         </view>

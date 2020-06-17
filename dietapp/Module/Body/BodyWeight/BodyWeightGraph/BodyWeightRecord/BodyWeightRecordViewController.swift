@@ -16,6 +16,8 @@ class BodyWeightRecordViewController: UIViewController {
     
     var calenderDate = Date()
     
+    let colorManager = ColorManager().colorSet
+    
     // MARK: - IBOutlet
 
     @IBOutlet weak var WeightTextField: UITextField! {
@@ -23,12 +25,20 @@ class BodyWeightRecordViewController: UIViewController {
             self.WeightTextField.delegate = self
         }
     }
+    @IBOutlet weak var backButton: UIButton!
+    
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.backgroundColor = self.colorManager.background
+        self.WeightTextField.backgroundColor = self.colorManager.mid
+        
+        self.backButton.backgroundColor = self.colorManager.backButtonBackground
+        self.backButton.tintColor = self.colorManager.backButtonTint
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

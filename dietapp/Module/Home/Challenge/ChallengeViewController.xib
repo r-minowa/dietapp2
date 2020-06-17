@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeViewController" customModule="dietapp" customModuleProvider="target">
             <connections>
                 <outlet property="challengeTableView" destination="vDd-sy-Nn6" id="jku-nr-nI2"/>
+                <outlet property="noChallengesLavel" destination="9kc-Ms-PZe" id="76h-Je-N70"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +24,12 @@
                     <rect key="frame" x="20" y="44" width="374" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Challenges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kc-Ms-PZe">
+                    <rect key="frame" x="39.5" y="416" width="335.5" height="64.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -30,6 +37,8 @@
                 <constraint firstItem="vDd-sy-Nn6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Zaz-7T-txf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vDd-sy-Nn6" secondAttribute="bottom" id="bR7-A3-eQF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vDd-sy-Nn6" secondAttribute="trailing" constant="20" id="fjo-7P-UgQ"/>
+                <constraint firstItem="9kc-Ms-PZe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hdA-Ge-dPE"/>
+                <constraint firstItem="9kc-Ms-PZe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ln4-Ie-TWM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="78" y="-163"/>

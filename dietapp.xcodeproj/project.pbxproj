@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F084D6E2498AD6200A2C58B /* PointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F084D6C2498AD6200A2C58B /* PointCollectionViewCell.swift */; };
+		8F084D6F2498AD6200A2C58B /* PointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F084D6D2498AD6200A2C58B /* PointCollectionViewCell.xib */; };
 		8F0D11BE248DF9E400BDDA0F /* ChallengeContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11BD248DF9E400BDDA0F /* ChallengeContentPresenter.swift */; };
 		8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11BF248DF9FB00BDDA0F /* ChallengeContentProtocol.swift */; };
 		8F0D11C8248F265C00BDDA0F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D11C6248F265C00BDDA0F /* ActivityViewController.swift */; };
@@ -28,6 +30,8 @@
 		8F0DDEF924736337009D6031 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0DDEF824736337009D6031 /* Home.storyboard */; };
 		8F0DDEFB247378A8009D6031 /* PointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0DDEFA247378A8009D6031 /* PointViewController.swift */; };
 		8F0DDEFD24737ABB009D6031 /* BodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0DDEFC24737ABB009D6031 /* BodyViewController.swift */; };
+		8F0E0F282499BEB9008194BB /* PointPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E0F272499BEB9008194BB /* PointPresenter.swift */; };
+		8F0E0F2A2499BEC6008194BB /* PointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E0F292499BEC6008194BB /* PointProtocol.swift */; };
 		8F0F6BDB2472109C00F16941 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BDA2472109C00F16941 /* ContentViewController.swift */; };
 		8F0F6BDD2472119D00F16941 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BDC2472119D00F16941 /* UIView+constraints.swift */; };
 		8F0F6BDF2472120400F16941 /* UIColor+interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F6BDE2472120400F16941 /* UIColor+interpolation.swift */; };
@@ -37,8 +41,13 @@
 		8F0FCE012491B16700508543 /* BodyWeightRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */; };
 		8F0FCE022491B16700508543 /* BodyWeightRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */; };
 		8F0FCE042491B43400508543 /* GetRealmUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */; };
+		8F106EE4249855DE00502E8E /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F106EE3249855DE00502E8E /* ColorManager.swift */; };
 		8F107D11248733C80056D72E /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F107D0F248733C80056D72E /* PopupViewController.swift */; };
 		8F107D12248733C80056D72E /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F107D10248733C80056D72E /* PopupViewController.xib */; };
+		8F116FAA2497087E00B2BAD0 /* BodyWeightGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F116FA82497087E00B2BAD0 /* BodyWeightGraphViewController.swift */; };
+		8F116FAB2497087E00B2BAD0 /* BodyWeightGraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F116FA92497087E00B2BAD0 /* BodyWeightGraphViewController.xib */; };
+		8F116FAE24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F116FAD24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift */; };
+		8F116FB024970B5800B2BAD0 /* BodyWeightGraphPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F116FAF24970B5800B2BAD0 /* BodyWeightGraphPresenter.swift */; };
 		8F1185AB2485E59300554EB0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */; };
 		8F13999C246D193800195D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13999B246D193800195D53 /* AppDelegate.swift */; };
 		8F13999E246D193800195D53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13999D246D193800195D53 /* SceneDelegate.swift */; };
@@ -106,6 +115,8 @@
 /* Begin PBXFileReference section */
 		1FCE218ED1FFC6C5590FAAF1 /* Pods_dietapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dietapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		838FAE99B90E739CE1E6E90A /* Pods-dietapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dietapp.debug.xcconfig"; path = "Target Support Files/Pods-dietapp/Pods-dietapp.debug.xcconfig"; sourceTree = "<group>"; };
+		8F084D6C2498AD6200A2C58B /* PointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCollectionViewCell.swift; sourceTree = "<group>"; };
+		8F084D6D2498AD6200A2C58B /* PointCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointCollectionViewCell.xib; sourceTree = "<group>"; };
 		8F0D11BD248DF9E400BDDA0F /* ChallengeContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeContentPresenter.swift; sourceTree = "<group>"; };
 		8F0D11BF248DF9FB00BDDA0F /* ChallengeContentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeContentProtocol.swift; sourceTree = "<group>"; };
 		8F0D11C6248F265C00BDDA0F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +141,8 @@
 		8F0DDEF824736337009D6031 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8F0DDEFA247378A8009D6031 /* PointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewController.swift; sourceTree = "<group>"; };
 		8F0DDEFC24737ABB009D6031 /* BodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewController.swift; sourceTree = "<group>"; };
+		8F0E0F272499BEB9008194BB /* PointPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresenter.swift; sourceTree = "<group>"; };
+		8F0E0F292499BEC6008194BB /* PointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointProtocol.swift; sourceTree = "<group>"; };
 		8F0F6BDA2472109C00F16941 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		8F0F6BDC2472119D00F16941 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		8F0F6BDE2472120400F16941 /* UIColor+interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+interpolation.swift"; sourceTree = "<group>"; };
@@ -139,8 +152,13 @@
 		8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightRecordViewController.swift; sourceTree = "<group>"; };
 		8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyWeightRecordViewController.xib; sourceTree = "<group>"; };
 		8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmUserInfo.swift; sourceTree = "<group>"; };
+		8F106EE3249855DE00502E8E /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		8F107D0F248733C80056D72E /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		8F107D10248733C80056D72E /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		8F116FA82497087E00B2BAD0 /* BodyWeightGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightGraphViewController.swift; sourceTree = "<group>"; };
+		8F116FA92497087E00B2BAD0 /* BodyWeightGraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyWeightGraphViewController.xib; sourceTree = "<group>"; };
+		8F116FAD24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightGraphProtocol.swift; sourceTree = "<group>"; };
+		8F116FAF24970B5800B2BAD0 /* BodyWeightGraphPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightGraphPresenter.swift; sourceTree = "<group>"; };
 		8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		8F139998246D193800195D53 /* dietapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dietapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F13999B246D193800195D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,7 +257,10 @@
 		8F0D11C3248F25B200BDDA0F /* Point */ = {
 			isa = PBXGroup;
 			children = (
+				8F0E0F292499BEC6008194BB /* PointProtocol.swift */,
 				8F0DDEFA247378A8009D6031 /* PointViewController.swift */,
+				8F0E0F272499BEB9008194BB /* PointPresenter.swift */,
+				8F0E0F262499BE9F008194BB /* PointCollectionCell */,
 			);
 			path = Point;
 			sourceTree = "<group>";
@@ -317,6 +338,15 @@
 			path = Challenge;
 			sourceTree = "<group>";
 		};
+		8F0E0F262499BE9F008194BB /* PointCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F084D6C2498AD6200A2C58B /* PointCollectionViewCell.swift */,
+				8F084D6D2498AD6200A2C58B /* PointCollectionViewCell.xib */,
+			);
+			path = PointCollectionCell;
+			sourceTree = "<group>";
+		};
 		8F0F6BE224721E7600F16941 /* CalenderTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +379,18 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		8F116FAC2497088B00B2BAD0 /* BodyWeightGraph */ = {
+			isa = PBXGroup;
+			children = (
+				8F116FAD24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift */,
+				8F116FA82497087E00B2BAD0 /* BodyWeightGraphViewController.swift */,
+				8F116FAF24970B5800B2BAD0 /* BodyWeightGraphPresenter.swift */,
+				8F116FA92497087E00B2BAD0 /* BodyWeightGraphViewController.xib */,
+				8F0FCDFA2491AF8100508543 /* BodyWeightRecord */,
+			);
+			path = BodyWeightGraph;
+			sourceTree = "<group>";
+		};
 		8F13998F246D193800195D53 = {
 			isa = PBXGroup;
 			children = (
@@ -374,7 +416,6 @@
 				8F13999D246D193800195D53 /* SceneDelegate.swift */,
 				8F0DDEF824736337009D6031 /* Home.storyboard */,
 				8FC6AF372491DFC800D3ACA9 /* TabBarController.swift */,
-				8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */,
 				8F1CA720247F98FF0059B96C /* Util */,
 				8F142A24247DE75F009E58BE /* Model */,
 				8F142A23247DE713009E58BE /* Module */,
@@ -474,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				8F1CA721247F99420059B96C /* Date+dateFormatter.swift */,
+				8F106EE3249855DE00502E8E /* ColorManager.swift */,
+				8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */,
 				8F0D11E1248F635000BDDA0F /* String.swift */,
 				8F14A5092489EAE400D5E5C3 /* CustomButton.swift */,
 			);
@@ -505,7 +548,7 @@
 				8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */,
 				8FC6AF3B2491F7BF00D3ACA9 /* BodyWeightPresenter.swift */,
 				8FB599E82490C1080039F5E8 /* BodyWeightViewController.xib */,
-				8F0FCDFA2491AF8100508543 /* BodyWeightRecord */,
+				8F116FAC2497088B00B2BAD0 /* BodyWeightGraph */,
 			);
 			path = BodyWeight;
 			sourceTree = "<group>";
@@ -593,7 +636,9 @@
 				8F14A50E2489ECC500D5E5C3 /* TrainingMethodViewController.xib in Resources */,
 				8FB599EA2490C1080039F5E8 /* BodyWeightViewController.xib in Resources */,
 				8F23529424724DFC0078C2A6 /* ChallengeTableViewCell.xib in Resources */,
+				8F116FAB2497087E00B2BAD0 /* BodyWeightGraphViewController.xib in Resources */,
 				8F0D11D3248F2A7D00BDDA0F /* ActivityTableViewCell.xib in Resources */,
+				8F084D6F2498AD6200A2C58B /* PointCollectionViewCell.xib in Resources */,
 				8F0D11E9248F714100BDDA0F /* ActivityDetailsViewController.xib in Resources */,
 				8F235290247249EB0078C2A6 /* ChallengeViewController.xib in Resources */,
 				8F0D11CF248F29C000BDDA0F /* ActivityListViewController.xib in Resources */,
@@ -695,13 +740,16 @@
 				8F59BC172472658900F74CD3 /* SettingViewController.swift in Sources */,
 				8F0D11D8248F352A00BDDA0F /* ActivityRecordViewController.swift in Sources */,
 				8F0D11DE248F50A600BDDA0F /* ActivityRecordPresenter.swift in Sources */,
+				8F084D6E2498AD6200A2C58B /* PointCollectionViewCell.swift in Sources */,
 				8F0F6BDF2472120400F16941 /* UIColor+interpolation.swift in Sources */,
 				8F0D11BE248DF9E400BDDA0F /* ChallengeContentPresenter.swift in Sources */,
 				8F59BC212472676F00F74CD3 /* HomeViewController.swift in Sources */,
 				8F0DAF4D2490602F006C072C /* GetRealmActivity.swift in Sources */,
+				8F116FAA2497087E00B2BAD0 /* BodyWeightGraphViewController.swift in Sources */,
 				8F107D11248733C80056D72E /* PopupViewController.swift in Sources */,
 				8F1A92EC247C9D0E0079F468 /* UserInfoObject.swift in Sources */,
 				8F0D11E0248F50B900BDDA0F /* ActivityRecordProtocol.swift in Sources */,
+				8F0E0F2A2499BEC6008194BB /* PointProtocol.swift in Sources */,
 				8F14A50A2489EAE400D5E5C3 /* CustomButton.swift in Sources */,
 				8F3D0666246E722F005E03C4 /* CalendarPagingCell.swift in Sources */,
 				8F23528F247249EB0078C2A6 /* ChallengeViewController.swift in Sources */,
@@ -710,18 +758,22 @@
 				8F23529324724DFC0078C2A6 /* ChallengeTableViewCell.swift in Sources */,
 				8F0FCE012491B16700508543 /* BodyWeightRecordViewController.swift in Sources */,
 				8F0D11CE248F29C000BDDA0F /* ActivityListViewController.swift in Sources */,
+				8F116FB024970B5800B2BAD0 /* BodyWeightGraphPresenter.swift in Sources */,
 				8F142A35247E54A6009E58BE /* PopupPresenter.swift in Sources */,
 				8F0FCE042491B43400508543 /* GetRealmUserInfo.swift in Sources */,
 				8F0D11D2248F2A7D00BDDA0F /* ActivityTableViewCell.swift in Sources */,
 				8F1769E22474B10400DA02EC /* ChallengePresenter.swift in Sources */,
 				8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */,
 				8F0FCDF92491ABEE00508543 /* BodyWeightRecordPresenter.swift in Sources */,
+				8F0E0F282499BEB9008194BB /* PointPresenter.swift in Sources */,
 				8F0F6BE124721CC800F16941 /* CalenderItem.swift in Sources */,
+				8F116FAE24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift in Sources */,
 				8F3A65262473A9EA00DF5D6E /* ChallengeContentViewController.swift in Sources */,
 				8F1185AB2485E59300554EB0 /* UserDefaultManager.swift in Sources */,
 				8F0DDEFD24737ABB009D6031 /* BodyViewController.swift in Sources */,
 				8F14A50D2489ECC500D5E5C3 /* TrainingMethodViewController.swift in Sources */,
 				8F0F6BDD2472119D00F16941 /* UIView+constraints.swift in Sources */,
+				8F106EE4249855DE00502E8E /* ColorManager.swift in Sources */,
 				8F1769E42474C84800DA02EC /* Chellenge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

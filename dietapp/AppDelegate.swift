@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let today = Date()
     
 /*        // 時間確認用
-        let dateString = "2020/06/10 12:00"
+        let dateString = "2020/06/14 12:00"
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         let hoge = formatter.date(from: dateString)!

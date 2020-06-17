@@ -20,6 +20,7 @@ class BodyViewController: UIViewController {
         super.viewDidLoad()
         
         let vc = BodyWeightViewController()
+        vc.view.frame = CGRect(x: 0, y: 0, width: self.childView.frame.maxX, height: self.childView.frame.maxY)
         self.addChild(vc)
         self.childView.addSubview(vc.view)
         

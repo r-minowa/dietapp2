@@ -226,6 +226,17 @@ extension RealmAccessor: RealmAccessorProtocol {
         }
     }
     
+    /// 全てのUserInfoを返す
+    func getAllUserInfo() throws -> [GetRealmUserInfo] {
+        if let realm = self.getAppRealm() {
+            let userInfo = realm.objects(UserInfoObject.self)
+                                    .map { GetRealmUserInfo(object: $0) }
+            return Array(userInfo)
+        } else {
+            throw self.realmError
+        }
+    }
+    
     /// 選択された日付に応じてUserInfoを返す
     /// - Parameter date: 日付
     func getUserInfo(date: Date) throws -> [GetRealmUserInfo] {

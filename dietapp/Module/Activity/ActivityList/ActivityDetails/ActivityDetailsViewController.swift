@@ -13,8 +13,6 @@ class ActivityDetailsViewController: UIViewController {
     
     private(set) lazy var presenter: ActivityDetailsPresenterProtocol? = ActivityDetailsPresenter(view: self, realmAccessor: RealmAccessor())
     
-    // チャート
-    var chartView: LineChartView!
     // チャートデータ
     var lineDataSet: LineChartDataSet!
     
@@ -22,20 +20,49 @@ class ActivityDetailsViewController: UIViewController {
     var max: Int = 0
     var min: Int = 0
     
+    let colorManager = ColorManager().colorSet
+    
     // MARK: - IBOutlet
     
-    @IBOutlet weak var childView: UIView!
+    @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var lineChartView: LineChartView!
+    
     @IBOutlet weak var trainingNameLabel: UILabel!
-    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var aveLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var previousDataLabel: UILabel!
+    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var inputActivityButton: UIButton!
     
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        self.view.backgroundColor = self.colorManager.background
+        self.chartView.backgroundColor = self.colorManager.light
+        self.chartView.layer.cornerRadius = 20
+        self.lineChartView.backgroundColor = .clear
         
+        self.trainingNameLabel.backgroundColor = .clear
+        self.trainingNameLabel.adjustsFontSizeToFitWidth = true
+        self.trainingNameLabel.text = name
+        
+        self.previousDataLabel.adjustsFontSizeToFitWidth = true
+        
+        // Button設定
+        self.backButton.backgroundColor = self.colorManager.backButtonBackground
+        self.backButton.tintColor = self.colorManager.backButtonTint
+        self.inputActivityButton.layer.cornerRadius = 30
+        self.inputActivityButton.backgroundColor = self.colorManager.inputButtonBackground
+        self.inputActivityButton.tintColor = self.colorManager.inputButtonTint
+        
+        // Noデータ時
+        self.lineChartView.noDataText = "未チャレンジです" //Noデータ時に表示する文字
+        self.lineChartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
+        self.lineChartView.noDataTextColor = self.colorManager.titleText //Noデータ時の文字色
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,20 +76,22 @@ class ActivityDetailsViewController: UIViewController {
         }
         
         if let count = self.presenter?.getCountArray(), let date = self.presenter?.getDate() {
-            initDisplay(value: count, date: date)
+            if count != [] {
+                initDisplay(value: count, date: date)
+            }
         }
-       
+        
         // ラベル設定
-        self.trainingNameLabel.text = name
         if let totalCount = self.presenter?.getTotalCount() {
-            self.totalLabel.text = "累計回数： \(String(totalCount))回"
+            self.totalLabel.text = String(totalCount)
         }
         if let aveCount = self.presenter?.getAveCount() {
-            self.aveLabel.text = "平均回数： \(String(aveCount))回"
+            self.aveLabel.text = String(aveCount)
         }
-        if let count = self.presenter?.getNumOfTraining() {
-            self.countLabel.text = "トレーニング回数： \(String(count))回"
+        if let previousData = self.presenter?.getPreviousData() {
+            self.previousDataLabel.text = String(previousData)
         }
+        
     }
     
     // MARK: - IBAction
@@ -84,11 +113,6 @@ class ActivityDetailsViewController: UIViewController {
     /// - Parameter value: 回数
     func initDisplay(value: [Double], date: [String]) {
         
-        self.chartView = LineChartView(frame: CGRect(x: 0,
-                                                     y: (self.childView.frame.height / 2) - 200,
-                                                     width: self.childView.frame.width,
-                                                     height: 400))
-        
         // プロットデータ(y軸)を保持する配列
         var dataEntries = [ChartDataEntry]()
         
@@ -97,45 +121,32 @@ class ActivityDetailsViewController: UIViewController {
         }
         
         self.lineDataSet = LineChartDataSet(entries: dataEntries, label: "")
-        self.chartView.data = LineChartData(dataSet: self.lineDataSet)
-        
-        self.chartView.backgroundColor = .darkGray
-        // x軸の非表示
-        self.chartView.xAxis.enabled = false
-        
-        self.chartView.noDataText = "Keep Waiting" //Noデータ時に表示する文字
-        self.chartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
-        self.chartView.noDataTextColor = .red //Noデータ時の文字色
-        
-        
-        
-        // タップでプロットを選択できないようにする
-        self.chartView.highlightPerTapEnabled = true
-        self.chartView.leftAxis.axisMaximum = Double(max + 10) //y左軸最大値
-        
+        self.lineChartView.data = LineChartData(dataSet: self.lineDataSet)
+
+        // 軸設定
+        self.lineChartView.xAxis.enabled = false  // x軸の非表示
+        self.lineChartView.leftAxis.axisMaximum = Double(max + 10) //y左軸最大値
         var axisMin: Double = 0
         if (min - 10) > 0 {
            axisMin = Double(min - 10)
         }
-        self.chartView.leftAxis.axisMinimum = axisMin //y左軸最小値
-        self.chartView.leftAxis.labelCount = 5 //y軸ラベルの表示数
-        self.chartView.leftAxis.drawTopYLabelEntryEnabled = true // y軸の最大値のみ表示
-        self.chartView.leftAxis.forceLabelsEnabled = false //最小最大値ラベルを必ず表示?
-        self.chartView.rightAxis.enabled = false // Y軸右軸(値)を非表示
-        self.chartView.extraTopOffset = 20 // 上から20pxオフセット
-        self.chartView.legend.enabled = false // 左下のラベル非表示
-        self.chartView.pinchZoomEnabled = false // ピンチズームオフ
-        self.chartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
+        self.lineChartView.leftAxis.axisMinimum = axisMin //y左軸最小値
+        self.lineChartView.leftAxis.labelCount = 5 //y軸ラベルの表示数
+        self.lineChartView.leftAxis.drawTopYLabelEntryEnabled = true // y軸の最大値のみ表示
+        self.lineChartView.leftAxis.forceLabelsEnabled = false //最小最大値ラベルを必ず表示?
+        self.lineChartView.rightAxis.enabled = false // Y軸右軸(値)を非表示
+        self.lineChartView.extraTopOffset = 20 // 上から20pxオフセット
+        self.lineChartView.legend.enabled = false // 左下のラベル非表示
         
+        self.lineChartView.highlightPerTapEnabled = true  // タップでプロットを選択できないようにする
+        self.lineChartView.pinchZoomEnabled = false // ピンチズームオフ
+        self.lineChartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
         
         self.lineDataSet.colors = [UIColor.green]  // グラフの色
         self.lineDataSet.circleColors = [UIColor.red]  // プロットの色
         self.lineDataSet.circleRadius = 5.0  // プロットの大きさ
         self.lineDataSet.drawValuesEnabled = false //各プロットのラベル表示するか
         self.lineDataSet.highlightEnabled = false //各点を選択した時に表示されるx,yの線を表示するか
-        
-        // 描画
-        self.childView.addSubview(self.chartView)
     }
 }
 
@@ -144,67 +155,3 @@ class ActivityDetailsViewController: UIViewController {
 extension ActivityDetailsViewController: ActivityDetailsViewProtocol {
     
 }
-
-
-/*
- 
- // y軸のプロットデータ(検証用)
- let plotDatas = [55.0, 100.0, 80.0, 100.0, 45.0]
- 
- initDisplay(y: plotDatas)
- 
- // チャート
- var chartView: LineChartView!
- // チャートデータ
- var lineDataSet: LineChartDataSet!
- 
- func initDisplay(y: [Double]) {
- 
- self.chartView = LineChartView(frame: CGRect(x: 0,
- y: (self.childView.frame.height / 2) - 200,
- width: self.childView.frame.width,
- height: 400))
- 
- // プロットデータ(y軸)を保持する配列
- var dataEntries = [ChartDataEntry]()
- 
- for (i, val) in y.enumerated() {
- let dataEntry = ChartDataEntry(x: Double(i),
- y: val) // X軸データは、0,1,2,...
- dataEntries.append(dataEntry)
- }
- 
- lineDataSet = LineChartDataSet(entries: dataEntries, label: "")
- chartView.data = LineChartData(dataSet: lineDataSet)
- 
- // x軸のラベルをボトムに表示
- chartView.xAxis.labelPosition = .bottom
- // x軸のラベル数をデータの数に設定
- chartView.xAxis.labelCount = dataEntries.count - 1
- // タップでプロットを選択できないようにする
- chartView.highlightPerTapEnabled = false
- chartView.leftAxis.axisMaximum = 100 //y左軸最大値
- chartView.leftAxis.axisMinimum = 0 //y左軸最小値
- chartView.leftAxis.labelCount = 5 //y軸ラベルの表示数
- chartView.leftAxis.drawTopYLabelEntryEnabled = true // y軸の最大値のみ表示
- chartView.leftAxis.forceLabelsEnabled = true //最小最大値ラベルを必ず表示?
- chartView.rightAxis.enabled = false // Y軸右軸(値)を非表示
- chartView.extraTopOffset = 25 // 上から20pxオフセット
- chartView.legend.enabled = false // 左下のラベル非表示
- chartView.pinchZoomEnabled = false // ピンチズームオフ
- chartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
- // グラフアニメーション
- //           chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
- // グラフの色
- lineDataSet.colors = [UIColor.green]
- // プロットの色
- lineDataSet.circleColors = [UIColor.red]
- // プロットの大きさ
- lineDataSet.circleRadius = 5.0
- 
- // 描画
- self.childView.addSubview(self.chartView)
- 
- }
- 
- */

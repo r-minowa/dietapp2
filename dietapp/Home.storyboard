@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -131,14 +132,58 @@
                     <view key="view" contentMode="scaleToFill" id="g2J-WW-JH8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gkd-Il-X1Q">
+                                <rect key="frame" x="4" y="92" width="406" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2cU-zQ-tsF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="gTA-pg-X7c">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ATr-RC-nLh">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz2-Eg-GPG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="22d-em-RUz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pdL-y0-TAs" firstAttribute="trailing" secondItem="gkd-Il-X1Q" secondAttribute="trailing" constant="4" id="39H-WD-mj9"/>
+                            <constraint firstItem="pdL-y0-TAs" firstAttribute="trailing" secondItem="xz2-Eg-GPG" secondAttribute="trailing" id="82E-z5-NS2"/>
+                            <constraint firstItem="gkd-Il-X1Q" firstAttribute="top" secondItem="xz2-Eg-GPG" secondAttribute="bottom" constant="8" id="8bl-9T-ybf"/>
+                            <constraint firstItem="xz2-Eg-GPG" firstAttribute="top" secondItem="pdL-y0-TAs" secondAttribute="top" id="U7m-9s-3id"/>
+                            <constraint firstItem="gkd-Il-X1Q" firstAttribute="leading" secondItem="pdL-y0-TAs" secondAttribute="leading" constant="4" id="jd6-vC-pmo"/>
+                            <constraint firstItem="xz2-Eg-GPG" firstAttribute="leading" secondItem="pdL-y0-TAs" secondAttribute="leading" id="jdp-jq-n4Y"/>
+                            <constraint firstItem="pdL-y0-TAs" firstAttribute="bottom" secondItem="gkd-Il-X1Q" secondAttribute="bottom" id="lCp-Gw-ZSh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pdL-y0-TAs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Point" image="point" id="cNA-lI-S36"/>
+                    <connections>
+                        <outlet property="pointCollectionView" destination="gkd-Il-X1Q" id="7vd-go-ciL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQP-cW-YDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849" y="1203"/>
+            <point key="canvasLocation" x="-849.27536231884062" y="1202.6785714285713"/>
         </scene>
         <!--Setting-->
         <scene sceneID="tEn-cc-tn5">

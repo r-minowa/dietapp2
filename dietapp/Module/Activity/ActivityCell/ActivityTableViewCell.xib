@@ -10,35 +10,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="ActivityTableViewCell" customModule="dietapp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="355" height="84"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="14" id="KGk-i7-Jjw" customClass="ActivityTableViewCell" customModule="dietapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="355" height="84"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-to-aqx">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="2zX-Pq-nvT"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="12" width="351" height="92"/>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcM-HC-aQb">
+                        <rect key="frame" x="0.0" y="0.0" width="351" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="DKp-iX-HEE"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3G-83-UwY">
+                        <rect key="frame" x="0.0" y="104" width="351" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="SfZ-Ki-3By"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="D5c-to-aqx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aBK-AN-a6m"/>
-                    <constraint firstAttribute="trailing" secondItem="D5c-to-aqx" secondAttribute="trailing" id="fLw-xP-bnI"/>
-                    <constraint firstItem="D5c-to-aqx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h6c-V3-IE3"/>
-                    <constraint firstAttribute="bottom" secondItem="D5c-to-aqx" secondAttribute="bottom" id="xan-ch-nZC"/>
+                    <constraint firstItem="fcM-HC-aQb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0fm-eP-Xj8"/>
+                    <constraint firstAttribute="trailing" secondItem="I3G-83-UwY" secondAttribute="trailing" id="89z-6Y-dLZ"/>
+                    <constraint firstItem="D5c-to-aqx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Cmg-mv-IJk"/>
+                    <constraint firstItem="I3G-83-UwY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Fzl-s0-zFB"/>
+                    <constraint firstItem="D5c-to-aqx" firstAttribute="top" secondItem="fcM-HC-aQb" secondAttribute="bottom" id="KTn-lK-lMJ"/>
+                    <constraint firstItem="fcM-HC-aQb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NUi-AE-eFr"/>
+                    <constraint firstAttribute="bottom" secondItem="I3G-83-UwY" secondAttribute="bottom" id="Vdu-In-Th6"/>
+                    <constraint firstAttribute="trailing" secondItem="D5c-to-aqx" secondAttribute="trailing" id="fxt-Aw-jvg"/>
+                    <constraint firstItem="I3G-83-UwY" firstAttribute="top" secondItem="D5c-to-aqx" secondAttribute="bottom" id="gLo-MD-O5K"/>
+                    <constraint firstAttribute="trailing" secondItem="fcM-HC-aQb" secondAttribute="trailing" id="y2Y-s0-I4n"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="trainingNameLabel" destination="D5c-to-aqx" id="Pnb-G6-xQy"/>
             </connections>
-            <point key="canvasLocation" x="58.695652173913047" y="199.55357142857142"/>
+            <point key="canvasLocation" x="50.000000000000007" y="195.53571428571428"/>
         </tableViewCell>
     </objects>
 </document>

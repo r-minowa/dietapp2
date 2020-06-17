@@ -12,7 +12,7 @@ final class ChallengeViewController: UIViewController {
 
     private(set) lazy var presenter: ChallengePresenterProtocol? =
         ChallengePresenter(view: self, realmAccessor: RealmAccessor())
-    
+
     //　チャレンジを格納する変数
     var selectedChallenges: [Training] = []
     
@@ -20,6 +20,8 @@ final class ChallengeViewController: UIViewController {
     var calenderDate = Date()
     
     var today = Date()
+    
+    let colorManager = ColorManager().colorSet
     
     // MARK: - IBOulet
     
@@ -29,6 +31,7 @@ final class ChallengeViewController: UIViewController {
             self.challengeTableView.dataSource = self
         }
     }
+    @IBOutlet weak var noChallengesLavel: UILabel!
     
     // MARK: - LifeCycle
     
@@ -38,6 +41,10 @@ final class ChallengeViewController: UIViewController {
         // カスタムセルを登録する(セル名：Cell)
         let nib = UINib(nibName: "ChallengeTableViewCell", bundle: nil) //xibファイルを読み込む
         challengeTableView.register(nib, forCellReuseIdentifier: "ChallengeCell") //xibを登録する
+        self.noChallengesLavel.isHidden = true
+        
+        self.view.backgroundColor = self.colorManager.background
+        self.challengeTableView.backgroundColor = self.colorManager.background
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +64,8 @@ final class ChallengeViewController: UIViewController {
             self.presenter?.selectedChallenge(calenderDate)
             self.challengeTableView.reloadData()
         }
+        
+        
     }
 }
 
@@ -104,6 +113,10 @@ extension ChallengeViewController: UITableViewDelegate, UITableViewDataSource {
     /// - Parameter tableView: UITableView
     /// - Parameter section: Int
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        if self.selectedChallenges.count == 0 {
+            self.noChallengesLavel.isHidden = false
+        }
         return self.selectedChallenges.count    // チャレンジの数
     }
     

@@ -18,5 +18,6 @@ protocol RealmAccessorProtocol {
     func getActivity(name: String) throws -> [GetRealmActivity]
     func getNewUserInfoId() throws -> Int
     func saveUserInfo(id: Int, weight: Double, date: Date) throws
+    func getAllUserInfo() throws -> [GetRealmUserInfo] 
     func getUserInfo(date: Date) throws -> [GetRealmUserInfo]
 }

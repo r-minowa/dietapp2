@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 final class PopupPresenter {
     
@@ -32,6 +33,8 @@ final class PopupPresenter {
         self.realmAccessor = realmAccessor
     }
     
+    // MARK: - PrivateMethod
+    
     // ランダム抽出(3つ)
     func getRandom(cnt:Int)->Int{
             //0からランダムの取得なります。
@@ -44,7 +47,6 @@ final class PopupPresenter {
         var returnList: [Int] = []
         var result = 0
         var checkCount = 0
-        
         
         for _ in 0..<NumOfChallenges {
             returnList += [0]
@@ -139,7 +141,21 @@ extension PopupPresenter: PopupPresenterProtocol {
         
         self.selectedChallenges = self.challenge.trainings.filter{ $0.parts.contains(selectedPosition)}
              
-        for _ in 0..<7 {
+        var judgweek = Date()
+        var count = 0
+        
+        for _ in 0..<10 {
+            if !judgweek.isInWeekend {
+                judgweek = Calendar.current.date(byAdding: .day, value: 1, to: judgweek)!
+                count += 1
+                
+            } else {
+                count += 1
+                break
+            }
+        }
+        
+        for _ in 0..<count {
             let randomArray = randomSet(cInt: selectedChallenges.count)
             for i in 0..<NumOfChallenges {
                 randomName.append(selectedChallenges[randomArray[i]].name.rawValue)
@@ -148,7 +164,6 @@ extension PopupPresenter: PopupPresenterProtocol {
             self.saveUserTrainingRealm(day)
             day = Calendar.current.date(byAdding: .day, value: 1, to: day)!
             randomName.removeAll()
-            
         }
         
         self.progressFlag.removeAll()
@@ -176,6 +191,5 @@ extension PopupPresenter: PopupPresenterProtocol {
             print("DEBUG_PRINT: NewID取得エラー")
         }
     }
-    
 }
 

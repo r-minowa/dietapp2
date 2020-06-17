@@ -10,6 +10,21 @@ struct DateFormatters {
         return dateFormatter
     }()
     
+    static var customDateHourFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .medium
+        dateFormatter.dateStyle = .medium
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+        return dateFormatter
+    }()
+    
+    static var bodyLabelFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/d"
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+        return dateFormatter
+    }()
+    
     static var shortDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .none

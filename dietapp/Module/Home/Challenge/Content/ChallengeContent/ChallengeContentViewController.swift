@@ -40,11 +40,10 @@ class ChallengeContentViewController: UIViewController {
     // ロジック用カウント
     var count: Int = 0
     
-    
-    
     var id: Int = 0
     var index: Int = 0
     
+    let colorManager = ColorManager().colorSet
     
     // MARK: - IBOutlet
     
@@ -58,8 +57,8 @@ class ChallengeContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(white:0.9, alpha:1.0)
-        self.timerView.backgroundColor = UIColor.clear
+        self.view.backgroundColor = self.colorManager.background
+        self.timerView.backgroundColor = .clear
         self.timerView.progressAngle = 100
         
         // 取得したチャレンジのセット数と時間の取得

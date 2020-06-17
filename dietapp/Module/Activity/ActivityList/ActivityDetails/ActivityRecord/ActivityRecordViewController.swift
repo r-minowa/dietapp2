@@ -18,6 +18,8 @@ class ActivityRecordViewController: UIViewController {
     
     var name: String = ""
     
+    let colorManager = ColorManager().colorSet
+    
     // MARK: - IBOutlet
     
     @IBOutlet weak var countTextField: UITextField! {
@@ -25,13 +27,18 @@ class ActivityRecordViewController: UIViewController {
             self.countTextField.delegate = self
         }
     }
-    @IBOutlet weak var backButton: CustomButton!
-    
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = self.colorManager.background
+        self.countTextField.backgroundColor = self.colorManager.mid
+        
+        self.backButton.backgroundColor = self.colorManager.backButtonBackground
+        self.backButton.tintColor = self.colorManager.backButtonTint
     }
     
     // MARK: - IBAction
