@@ -18,6 +18,7 @@ class UserDefaultManager {
         case isShowPopUp = "isShowPopUp"
         case nextSaturday = "nextSaturday"
         case point = "point"
+        case unlockPoint = "unlockPoint"
         case color = "color"
     }
     
@@ -79,9 +80,21 @@ class UserDefaultManager {
         }
     }
     
+    // unlockPoint管理変数
+    var unlockPoint: Int {
+        set {
+            defaults.set(newValue, forKey: Key.unlockPoint.rawValue)
+        }
+        get {
+            return defaults.integer(forKey: Key.unlockPoint.rawValue)
+        }
+    }
+    
+    // color管理変数
     var color: String {
         set {
             defaults.set(newValue, forKey: Key.color.rawValue)
+            defaults.synchronize()
         }
         get {
             guard let hoge = defaults.string(forKey: Key.color.rawValue) else { return "a"}

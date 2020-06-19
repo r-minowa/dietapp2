@@ -9,8 +9,6 @@
 import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
-
-     let colorManager = ColorManager().colorSet
     
     // MARK: - IBOutlet
     
@@ -29,9 +27,12 @@ class ActivityTableViewCell: UITableViewCell {
     // MARK: - PrivateMethod
     
     func setCell(_ name: String) {
-        self.backgroundColor = self.colorManager.background
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.backgroundColor = colorSet.background
         self.trainingNameLabel.backgroundColor = .clear
-        self.trainingNameLabel.tintColor  = self.colorManager.bodyText
+        self.trainingNameLabel.textColor  = colorSet.bodyText
         self.trainingNameLabel.text = "   \(name)"
     }
     

@@ -168,7 +168,9 @@
                 <outlet property="partsView" destination="G4q-5N-PI3" id="McL-NO-oqS"/>
                 <outlet property="secLabel" destination="zrT-ro-fQq" id="Lsg-IN-Iwr"/>
                 <outlet property="secSetView" destination="1I0-h0-Q23" id="b5w-zZ-DEI"/>
+                <outlet property="secStrLabel" destination="WcO-zG-4sy" id="bkO-Es-TUd"/>
                 <outlet property="setLabel" destination="g6c-It-Rmd" id="EoJ-tx-5ev"/>
+                <outlet property="setStrLabel" destination="w3x-Cm-EKc" id="28Q-ha-Mhn"/>
                 <outlet property="trainingNameLabel" destination="7Um-ik-O4q" id="Wau-tb-56R"/>
             </connections>
             <point key="canvasLocation" x="182.60869565217394" y="319.75446428571428"/>

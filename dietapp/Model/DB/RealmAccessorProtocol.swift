@@ -13,11 +13,17 @@ protocol RealmAccessorProtocol {
     func getNewUserTrainingId() throws -> Int
     func getChallenge(date: Date) throws -> [GetRealmChallenge]
     func saveBoolChallenge(id: Int, index: Int) throws
+    
     func getNewActivityId() throws -> Int
     func saveActivityCount(id: Int, name: String, count: Int, date: Date) throws
     func getActivity(name: String) throws -> [GetRealmActivity]
+    
     func getNewUserInfoId() throws -> Int
     func saveUserInfo(id: Int, weight: Double, date: Date) throws
     func getAllUserInfo() throws -> [GetRealmUserInfo] 
     func getUserInfo(date: Date) throws -> [GetRealmUserInfo]
+    
+    func saveUserColorObject(id: Int) throws
+    func saveUnlockUserColorObject(id: Int, color: String) throws
+    func getUserColor() throws -> [GetRealmUserColor]
 }

@@ -17,7 +17,6 @@ class BodyWeightViewController: UIViewController {
     var max = 0.0
     var min = 1000.0
     
-    let colorManager = ColorManager().colorSet
     let today = Date()
     
     // MARK: - IBOutlet
@@ -33,13 +32,6 @@ class BodyWeightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.calenderView.backgroundColor = self.colorManager.background
-        
-        calenderView.appearance.todayColor = UIColor.red
-        calenderView.appearance.headerTitleColor = UIColor.red
-        calenderView.appearance.weekdayTextColor = UIColor.red
-        calenderView.scope = .month
 
     }
     
@@ -47,6 +39,15 @@ class BodyWeightViewController: UIViewController {
         super.viewWillAppear(animated)
         
         calenderView.reloadData()
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.calenderView.backgroundColor = colorSet.background
+        
+        calenderView.appearance.todayColor = UIColor.red
+        calenderView.appearance.headerTitleColor = UIColor.red
+        calenderView.appearance.weekdayTextColor = UIColor.red
+        calenderView.scope = .month
     }
 }
 

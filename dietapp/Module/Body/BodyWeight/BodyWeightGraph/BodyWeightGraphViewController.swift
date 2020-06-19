@@ -22,8 +22,6 @@ class BodyWeightGraphViewController: UIViewController {
     
     var calenderDate = Date()
     
-    let colorManager = ColorManager().colorSet
-    
     // MARK: - IBOutlet
     
     @IBOutlet weak var lineChartView: LineChartView!
@@ -43,40 +41,43 @@ class BodyWeightGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // View設定
-        self.view.backgroundColor = self.colorManager.background
-        self.marginView.backgroundColor = self.colorManager.light
-        self.marginView.layer.cornerRadius = 2
-        self.marginView2.backgroundColor = self.colorManager.light
-        self.marginView2.layer.cornerRadius = 2
-        self.chartView.backgroundColor = self.colorManager.light
-        self.chartView.layer.cornerRadius = 20
-        self.lineChartView.backgroundColor = .clear
-        
-        // Label設定
-        self.dayLabel.tintColor = self.colorManager.bodyText
-        self.dayLabel.adjustsFontSizeToFitWidth = true
-        self.dayWeightLabel.tintColor = self.colorManager.bodyText
-        self.dayWeightLabel.adjustsFontSizeToFitWidth = true
-        self.weekWeightAveLabel.tintColor = self.colorManager.bodyText
-        self.weekWeightAveLabel.adjustsFontSizeToFitWidth = true
-        
-        // Button設定
-        self.backButton.backgroundColor = self.colorManager.backButtonBackground
-        self.backButton.tintColor = self.colorManager.backButtonTint
-        self.inputButton.backgroundColor = self.colorManager.inputButtonBackground
-        self.inputButton.tintColor = self.colorManager.inputButtonTint
-        self.inputButton.layer.cornerRadius = 30
-        
-        // Noデータ時
-        self.lineChartView.noDataText = "体重入力がありません" //Noデータ時に表示する文字
-        self.lineChartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
-        self.lineChartView.noDataTextColor = self.colorManager.bodyText //Noデータ時の文字色
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
                 
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        // View設定
+        self.view.backgroundColor = colorSet.background
+        self.marginView.backgroundColor = colorSet.light
+        self.marginView.layer.cornerRadius = 2
+        self.marginView2.backgroundColor = colorSet.light
+        self.marginView2.layer.cornerRadius = 2
+        self.chartView.backgroundColor = colorSet.light
+        self.chartView.layer.cornerRadius = 20
+        self.lineChartView.backgroundColor = .clear
+        
+        // Label設定
+        self.dayLabel.textColor = colorSet.bodyText
+        self.dayLabel.adjustsFontSizeToFitWidth = true
+        self.dayWeightLabel.textColor = colorSet.bodyText
+        self.dayWeightLabel.adjustsFontSizeToFitWidth = true
+        self.weekWeightAveLabel.textColor = colorSet.bodyText
+        self.weekWeightAveLabel.adjustsFontSizeToFitWidth = true
+        
+        // Button設定
+        self.backButton.backgroundColor = colorSet.backButtonBackground
+        self.backButton.tintColor = colorSet.backButtonTint
+        self.inputButton.backgroundColor = colorSet.inputButtonBackground
+        self.inputButton.tintColor = colorSet.inputButtonTint
+        self.inputButton.layer.cornerRadius = 30
+        
+        // グラフ設定
+        self.lineChartView.noDataText = "体重入力がありません" //Noデータ時に表示する文字
+        self.lineChartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
+        self.lineChartView.noDataTextColor = colorSet.bodyText //Noデータ時の文字色
+        
         self.dayLabel.text = "\(DateFormatters.bodyLabelFormatter.string(from: calenderDate)) の体重"
         
         if let weight = self.presenter?.getWeekWeight(calenderDate) {
@@ -111,6 +112,8 @@ class BodyWeightGraphViewController: UIViewController {
     /// 折れ線グラフの設定
     /// - Parameter value: 回数
     func initDisplay(value: [Double]) {
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
         
         // プロットデータ(y軸)を保持する配列
         var dataEntries = [ChartDataEntry]()
@@ -158,11 +161,11 @@ class BodyWeightGraphViewController: UIViewController {
         self.lineChartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
         self.lineChartView.borderColor = .red
         
-        self.lineDataSet.colors = [self.colorManager.mid]  // グラフの色
-        self.lineDataSet.circleColors = [self.colorManager.light]  // プロットの色
         self.lineDataSet.circleRadius = 5.0  // プロットの大きさ
         self.lineDataSet.drawValuesEnabled = true //各プロットのラベル表示するか
         self.lineDataSet.highlightEnabled = false //各点を選択した時に表示されるx,yの線を表示するか
+        self.lineDataSet.colors = [colorSet.graphColor]  // グラフの色
+        self.lineDataSet.circleColors = [colorSet.graphProtColor]  // プロットの色
         
     }
 }

@@ -9,13 +9,11 @@
 import UIKit
 
 class PointCollectionViewCell: UICollectionViewCell {
-
-    var colorName: String = ""
     
     // MARK: - IBOutlet
     
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var colorNameLabel: UILabel!
+    @IBOutlet weak var lockIconImageView: UIImageView!
     
     // MARK: -
     
@@ -25,20 +23,17 @@ class PointCollectionViewCell: UICollectionViewCell {
 
     // MARK: - ProvateMethod
     
-    func setColor(_ index: Int) {
-        var count = 0
+    func setColor(_ color: UIColor, _ name: String, _ flag: Bool) {
         
-        for_color: for color in ColorManager.ThemeType.allCases {
-            self.colorName = color.rawValue
-            if count == index {
-                break for_color
-            }
-            count += 1
+        let image = UIImage(named: "lock")
+        self.lockIconImageView.image = image
+        self.lockIconImageView.isHidden = false
+
+        if flag {
+            self.lockIconImageView.isHidden = true
         }
         
-        self.mainView.backgroundColor = .lightGray
+        self.mainView.backgroundColor = color
         self.mainView.layer.cornerRadius = 30
-        self.colorNameLabel.text = colorName
-        self.colorNameLabel.adjustsFontSizeToFitWidth = true
     }
 }

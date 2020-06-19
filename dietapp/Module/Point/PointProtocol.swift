@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 protocol PointViewProtocol: AnyObject {
     var presenter: PointPresenterProtocol? { get }
+    
+    func displayAlart(_ alart: UIAlertController)
+    func trancePointExchangeColor()
 }
 
 protocol PointPresenterProtocol {
     var view: PointViewProtocol? { get }
     
+    func getNeedPoint() -> Int
     func selectColor(_ index: Int)
+    func getPointCollectionCellColor(_ index: Int) -> UIColor
+    func getPointCollectionCellString(_ index: Int) -> String
+    func alartChangeColor(_ index: Int)
+    func alartUnlockColor(_ index: Int)
+    func getLockIconFrag(_ index: Int) -> Bool
 }

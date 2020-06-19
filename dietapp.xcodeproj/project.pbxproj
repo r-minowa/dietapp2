@@ -77,6 +77,12 @@
 		8F3A65272473A9EA00DF5D6E /* ChallengeContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A65252473A9EA00DF5D6E /* ChallengeContentViewController.xib */; };
 		8F3D0664246E7215005E03C4 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0663246E7215005E03C4 /* DateFormatters.swift */; };
 		8F3D0666246E722F005E03C4 /* CalendarPagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0665246E722F005E03C4 /* CalendarPagingCell.swift */; };
+		8F4B5EC9249B3BF80067784B /* PointExchangeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B5EC7249B3BF80067784B /* PointExchangeColorViewController.swift */; };
+		8F4B5ECA249B3BF80067784B /* PointExchangeColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4B5EC8249B3BF80067784B /* PointExchangeColorViewController.xib */; };
+		8F4B5ECD249B48C50067784B /* UserColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B5ECC249B48C50067784B /* UserColorObject.swift */; };
+		8F4B5ECF249B4A810067784B /* GetRealmUserColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B5ECE249B4A810067784B /* GetRealmUserColor.swift */; };
+		8F4B5ED1249B52D10067784B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B5ED0249B52D10067784B /* HomePresenter.swift */; };
+		8F4B5ED3249B52DE0067784B /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B5ED2249B52DE0067784B /* HomeProtocol.swift */; };
 		8F59BC172472658900F74CD3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59BC152472658900F74CD3 /* SettingViewController.swift */; };
 		8F59BC212472676F00F74CD3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */; };
 		8FB599E92490C1080039F5E8 /* BodyWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */; };
@@ -198,6 +204,12 @@
 		8F3D064E246E554E005E03C4 /* Parchment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parchment.framework; path = Carthage/Build/iOS/Parchment.framework; sourceTree = "<group>"; };
 		8F3D0663246E7215005E03C4 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		8F3D0665246E722F005E03C4 /* CalendarPagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPagingCell.swift; sourceTree = "<group>"; };
+		8F4B5EC7249B3BF80067784B /* PointExchangeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeColorViewController.swift; sourceTree = "<group>"; };
+		8F4B5EC8249B3BF80067784B /* PointExchangeColorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointExchangeColorViewController.xib; sourceTree = "<group>"; };
+		8F4B5ECC249B48C50067784B /* UserColorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserColorObject.swift; sourceTree = "<group>"; };
+		8F4B5ECE249B4A810067784B /* GetRealmUserColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmUserColor.swift; sourceTree = "<group>"; };
+		8F4B5ED0249B52D10067784B /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8F4B5ED2249B52DE0067784B /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		8F59BC152472658900F74CD3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +272,7 @@
 				8F0E0F292499BEC6008194BB /* PointProtocol.swift */,
 				8F0DDEFA247378A8009D6031 /* PointViewController.swift */,
 				8F0E0F272499BEB9008194BB /* PointPresenter.swift */,
+				8F4B5ECB249B48200067784B /* PointExchangeColor */,
 				8F0E0F262499BE9F008194BB /* PointCollectionCell */,
 			);
 			path = Point;
@@ -443,6 +456,7 @@
 				8F1A92EB247C9D0E0079F468 /* UserInfoObject.swift */,
 				8F1A92ED247CB0240079F468 /* UserTrainingObject.swift */,
 				8F0D11D4248F303500BDDA0F /* ActivityObject.swift */,
+				8F4B5ECC249B48C50067784B /* UserColorObject.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -475,6 +489,7 @@
 				8F1485362480B41400C88395 /* GetRealmChallenge.swift */,
 				8F0DAF4C2490602F006C072C /* GetRealmActivity.swift */,
 				8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */,
+				8F4B5ECE249B4A810067784B /* GetRealmUserColor.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -493,7 +508,9 @@
 		8F1769DD2474ADAB00DA02EC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8F4B5ED2249B52DE0067784B /* HomeProtocol.swift */,
 				8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */,
+				8F4B5ED0249B52D10067784B /* HomePresenter.swift */,
 				8F1CA723247FAFB50059B96C /* NoChallengeViewController.swift */,
 				8F1CA724247FAFB50059B96C /* NoChallengeViewController.xib */,
 				8F0DDF0024737C4E009D6031 /* Challenge */,
@@ -539,6 +556,15 @@
 				1FCE218ED1FFC6C5590FAAF1 /* Pods_dietapp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F4B5ECB249B48200067784B /* PointExchangeColor */ = {
+			isa = PBXGroup;
+			children = (
+				8F4B5EC7249B3BF80067784B /* PointExchangeColorViewController.swift */,
+				8F4B5EC8249B3BF80067784B /* PointExchangeColorViewController.xib */,
+			);
+			path = PointExchangeColor;
 			sourceTree = "<group>";
 		};
 		8FC6AF3D24920EF500D3ACA9 /* BodyWeight */ = {
@@ -635,6 +661,7 @@
 				8F1CA726247FAFB50059B96C /* NoChallengeViewController.xib in Resources */,
 				8F14A50E2489ECC500D5E5C3 /* TrainingMethodViewController.xib in Resources */,
 				8FB599EA2490C1080039F5E8 /* BodyWeightViewController.xib in Resources */,
+				8F4B5ECA249B3BF80067784B /* PointExchangeColorViewController.xib in Resources */,
 				8F23529424724DFC0078C2A6 /* ChallengeTableViewCell.xib in Resources */,
 				8F116FAB2497087E00B2BAD0 /* BodyWeightGraphViewController.xib in Resources */,
 				8F0D11D3248F2A7D00BDDA0F /* ActivityTableViewCell.xib in Resources */,
@@ -715,6 +742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4B5ECD249B48C50067784B /* UserColorObject.swift in Sources */,
 				8F142A33247E5484009E58BE /* PopupProtocols.swift in Sources */,
 				8FC6AF382491DFC800D3ACA9 /* TabBarController.swift in Sources */,
 				8FC6AF3A2491F7AC00D3ACA9 /* BodyWeightProtocols.swift in Sources */,
@@ -723,6 +751,7 @@
 				8F142A20247DE6C1009E58BE /* RealmAccessor.swift in Sources */,
 				8F0D11E8248F714100BDDA0F /* ActivityDetailsViewController.swift in Sources */,
 				8F1CA722247F99420059B96C /* Date+dateFormatter.swift in Sources */,
+				8F4B5ED3249B52DE0067784B /* HomeProtocol.swift in Sources */,
 				8F142A22247DE6E4009E58BE /* RealmAccessorProtocol.swift in Sources */,
 				8F0DDEFB247378A8009D6031 /* PointViewController.swift in Sources */,
 				8FC6AF3C2491F7BF00D3ACA9 /* BodyWeightPresenter.swift in Sources */,
@@ -730,6 +759,7 @@
 				8F0D11EE248F71C500BDDA0F /* ActivityDetailsProtocol.swift in Sources */,
 				8F0FCDF72491ABD900508543 /* BodyWeightRecordProtocols.swift in Sources */,
 				8F1485372480B41400C88395 /* GetRealmChallenge.swift in Sources */,
+				8F4B5EC9249B3BF80067784B /* PointExchangeColorViewController.swift in Sources */,
 				8F3D0664246E7215005E03C4 /* DateFormatters.swift in Sources */,
 				8F1A92EE247CB0240079F468 /* UserTrainingObject.swift in Sources */,
 				8F0D11EC248F71A900BDDA0F /* ActivityDetailsPresenter.swift in Sources */,
@@ -760,7 +790,9 @@
 				8F0D11CE248F29C000BDDA0F /* ActivityListViewController.swift in Sources */,
 				8F116FB024970B5800B2BAD0 /* BodyWeightGraphPresenter.swift in Sources */,
 				8F142A35247E54A6009E58BE /* PopupPresenter.swift in Sources */,
+				8F4B5ED1249B52D10067784B /* HomePresenter.swift in Sources */,
 				8F0FCE042491B43400508543 /* GetRealmUserInfo.swift in Sources */,
+				8F4B5ECF249B4A810067784B /* GetRealmUserColor.swift in Sources */,
 				8F0D11D2248F2A7D00BDDA0F /* ActivityTableViewCell.swift in Sources */,
 				8F1769E22474B10400DA02EC /* ChallengePresenter.swift in Sources */,
 				8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */,

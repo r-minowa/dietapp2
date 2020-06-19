@@ -9,7 +9,7 @@
 import UIKit
 
 class BodyViewController: UIViewController {
-
+    
     // MARK: - IBOutlet
     
     @IBOutlet weak var childView: UIView!
@@ -24,5 +24,13 @@ class BodyViewController: UIViewController {
         self.addChild(vc)
         self.childView.addSubview(vc.view)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
     }
 }

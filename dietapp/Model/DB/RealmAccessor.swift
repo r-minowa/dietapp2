@@ -251,4 +251,168 @@ extension RealmAccessor: RealmAccessorProtocol {
             throw self.realmError
         }
     }
+    
+    /// 初期起動時にデフォルト以外のカラーをロック(false)
+    /// - Parameter id: id
+    func saveUserColorObject(id: Int) throws {
+        if let realm = self.getAppRealm() {
+            let userColorObject = UserColorObject(id: id,
+                                                  defalt: true,
+                                                  red: false,
+                                                  blue: false,
+                                                  yellow: false,
+                                                  green: false,
+                                                  orange: false,
+                                                  pink: false,
+                                                  violet: false
+            )
+            do {
+                try realm.write {
+                    realm.add(userColorObject, update: .modified)
+                }
+            } catch {
+                throw self.realmError
+            }
+        } else {
+            throw self.realmError
+        }
+    }
+    
+    /// 指定されたカラーに応じてロック解除(true)
+    /// - Parameter id: id
+    /// - Parameter color: カラー名
+    func saveUnlockUserColorObject(id: Int, color: String) throws {
+        if let realm = self.getAppRealm() {
+            let userColors = realm.objects(UserColorObject.self)
+            var count = 0
+            
+            var userColorObject = UserColorObject(id: id,
+                                                  defalt: userColors[id].defalt,
+                                                  red: userColors[id].red,
+                                                  blue: userColors[id].blue,
+                                                  yellow: userColors[id].yellow,
+                                                  green: userColors[id].green,
+                                                  orange: userColors[id].orange,
+                                                  pink: userColors[id].pink,
+                                                  violet: userColors[id].violet)
+            
+            for colorName in ColorManager.ThemeType.allCases {
+                if color == colorName.rawValue {
+                    switch count {
+                    case 0:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: true,
+                                                          red: userColors[id].defalt,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    case 1:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: true,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    case 2:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: true,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    case 3:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: userColors[id].blue,
+                                                          yellow: true,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    case 4:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: true,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    case 5:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: true,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    case 6:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: true,
+                                                          violet: userColors[id].violet)
+                    case 7:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: true)
+                    default:
+                        userColorObject = UserColorObject(id: id,
+                                                          defalt: userColors[id].defalt,
+                                                          red: userColors[id].red,
+                                                          blue: userColors[id].blue,
+                                                          yellow: userColors[id].yellow,
+                                                          green: userColors[id].green,
+                                                          orange: userColors[id].orange,
+                                                          pink: userColors[id].pink,
+                                                          violet: userColors[id].violet)
+                    }
+                }
+                count += 1
+            }
+            do {
+                try realm.write {
+                    realm.add(userColorObject, update: .modified)
+                }
+            } catch {
+                throw self.realmError
+            }
+        } else {
+            throw self.realmError
+        }
+    }
+    
+    /// UserColorの情報を返す
+    func getUserColor() throws -> [GetRealmUserColor] {
+        if let realm = self.getAppRealm() {
+            let userColor = realm.objects(UserColorObject.self)
+                                    .map { GetRealmUserColor(object: $0) }
+            return Array(userColor)
+        } else {
+            throw self.realmError
+        }
+    }
 }

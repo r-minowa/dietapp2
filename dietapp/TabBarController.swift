@@ -15,7 +15,14 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // バー背景色
-        UITabBar.appearance().tintColor = .green
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        // バー色
+        UITabBar.appearance().backgroundColor = colorSet.tabBackground
+        UITabBar.appearance().tintColor = colorSet.tabTint
     }
 }

@@ -9,8 +9,6 @@
 import UIKit
 
 class ChallengeTableViewCell: UITableViewCell {
-        
-    let colorManager = ColorManager().colorSet
     
     // MARK: - IBOutlet
     
@@ -24,7 +22,9 @@ class ChallengeTableViewCell: UITableViewCell {
     @IBOutlet weak var trainingNameLabel: UILabel!
     @IBOutlet weak var partsLabel: UILabel!
     @IBOutlet weak var secLabel: UILabel!
+    @IBOutlet weak var secStrLabel: UILabel!
     @IBOutlet weak var setLabel: UILabel!
+    @IBOutlet weak var setStrLabel: UILabel!
     
     @IBOutlet weak var batuLabel: UILabel!
     
@@ -35,20 +35,6 @@ class ChallengeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let image = UIImage(named: "achievement")
-        self.achievementImageView.image = image
-       
-        self.mainView.layer.cornerRadius = 5
-        self.mainView.clipsToBounds = true
-        
-        self.nameView.backgroundColor = self.colorManager.thick
-        self.partsView.backgroundColor = self.colorManager.mid
-        self.secSetView.backgroundColor = self.colorManager.light
-        self.achievementImageView.isHidden = true
-        self.achievementImageView.backgroundColor = UIColor(white:0.5, alpha:0.5)
-        self.marginView.backgroundColor = self.colorManager.background
-    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,7 +43,31 @@ class ChallengeTableViewCell: UITableViewCell {
     
     // MARK: - PrivateMethod
     
-    func setChallengeString(_ challenge: Training, _ level: Training.Level) {
+    func setChallenge(_ challenge: Training, _ level: Training.Level) {
+        
+        let image = UIImage(named: "achievement")
+        self.achievementImageView.image = image
+        
+        self.mainView.layer.cornerRadius = 5
+        self.mainView.clipsToBounds = true
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.nameView.backgroundColor = colorSet.thick
+        self.partsView.backgroundColor = colorSet.mid
+        self.secSetView.backgroundColor = colorSet.light
+        self.achievementImageView.isHidden = true
+        self.achievementImageView.backgroundColor = UIColor(white:0.5, alpha:0.5)
+        self.marginView.backgroundColor = colorSet.background
+        
+        self.trainingNameLabel.textColor = colorSet.titleText
+        self.partsLabel.textColor = colorSet.titleText
+        self.secLabel.textColor = colorSet.titleText
+        self.secStrLabel.textColor = colorSet.titleText
+        self.setLabel.textColor = colorSet.titleText
+        self.setStrLabel.textColor = colorSet.titleText
+        self.batuLabel.textColor = colorSet.titleText
+        
         let detail = challenge.details.filter{ $0.level == level }.first
         
         var parts: String = ""

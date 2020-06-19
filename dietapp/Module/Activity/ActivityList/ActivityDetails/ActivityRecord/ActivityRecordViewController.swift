@@ -18,8 +18,6 @@ class ActivityRecordViewController: UIViewController {
     
     var name: String = ""
     
-    let colorManager = ColorManager().colorSet
-    
     // MARK: - IBOutlet
     
     @IBOutlet weak var countTextField: UITextField! {
@@ -34,11 +32,18 @@ class ActivityRecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = self.colorManager.background
-        self.countTextField.backgroundColor = self.colorManager.mid
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.backButton.backgroundColor = self.colorManager.backButtonBackground
-        self.backButton.tintColor = self.colorManager.backButtonTint
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
+        self.countTextField.backgroundColor = colorSet.light
+        
+        self.backButton.backgroundColor = colorSet.backButtonBackground
+        self.backButton.tintColor = colorSet.backButtonTint
     }
     
     // MARK: - IBAction

@@ -9,8 +9,18 @@
 import UIKit
 
 class NoChallengeViewController: UIViewController {
-
+    
+    // MARK: - LiyeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
     }
 }

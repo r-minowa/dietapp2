@@ -21,8 +21,6 @@ final class ChallengeViewController: UIViewController {
     
     var today = Date()
     
-    let colorManager = ColorManager().colorSet
-    
     // MARK: - IBOulet
     
     @IBOutlet weak var challengeTableView: UITableView! {
@@ -41,10 +39,6 @@ final class ChallengeViewController: UIViewController {
         // カスタムセルを登録する(セル名：Cell)
         let nib = UINib(nibName: "ChallengeTableViewCell", bundle: nil) //xibファイルを読み込む
         challengeTableView.register(nib, forCellReuseIdentifier: "ChallengeCell") //xibを登録する
-        self.noChallengesLavel.isHidden = true
-        
-        self.view.backgroundColor = self.colorManager.background
-        self.challengeTableView.backgroundColor = self.colorManager.background
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +46,15 @@ final class ChallengeViewController: UIViewController {
         
         self.presenter?.selectedChallenge(calenderDate)
         self.presenter?.viewWillAppear()
+        
+        self.noChallengesLavel.isHidden = true
+        
+        DispatchQueue.main.async {
+            let colorSet = ColorManager.singletonColorManager.colorSet
+            self.view.backgroundColor = colorSet.background
+            self.challengeTableView.backgroundColor = colorSet.background
+        }
+        self.challengeTableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,8 +67,6 @@ final class ChallengeViewController: UIViewController {
             self.presenter?.selectedChallenge(calenderDate)
             self.challengeTableView.reloadData()
         }
-        
-        
     }
 }
 
@@ -140,7 +141,7 @@ extension ChallengeViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let challenge_ = self.presenter?.setCellChallenge(self.selectedChallenges),
             let level = self.presenter?.getLevel() {
-            cell.setChallengeString(challenge_, level)
+            cell.setChallenge(challenge_, level)
         }
         
         if let challengeBool = self.presenter?.getChallengeBool(indexPath.row) {

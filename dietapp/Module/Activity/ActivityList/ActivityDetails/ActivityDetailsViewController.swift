@@ -20,8 +20,6 @@ class ActivityDetailsViewController: UIViewController {
     var max: Int = 0
     var min: Int = 0
     
-    let colorManager = ColorManager().colorSet
-    
     // MARK: - IBOutlet
     
     @IBOutlet weak var chartView: UIView!
@@ -40,9 +38,15 @@ class ActivityDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        self.view.backgroundColor = self.colorManager.background
-        self.chartView.backgroundColor = self.colorManager.light
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
+        self.chartView.backgroundColor = colorSet.light
         self.chartView.layer.cornerRadius = 20
         self.lineChartView.backgroundColor = .clear
         
@@ -53,20 +57,18 @@ class ActivityDetailsViewController: UIViewController {
         self.previousDataLabel.adjustsFontSizeToFitWidth = true
         
         // Button設定
-        self.backButton.backgroundColor = self.colorManager.backButtonBackground
-        self.backButton.tintColor = self.colorManager.backButtonTint
+        self.backButton.backgroundColor = colorSet.backButtonBackground
+        self.backButton.tintColor = colorSet.backButtonTint
         self.inputActivityButton.layer.cornerRadius = 30
-        self.inputActivityButton.backgroundColor = self.colorManager.inputButtonBackground
-        self.inputActivityButton.tintColor = self.colorManager.inputButtonTint
+        self.inputActivityButton.backgroundColor = colorSet.inputButtonBackground
+        self.inputActivityButton.tintColor = colorSet.inputButtonTint
         
-        // Noデータ時
+        // グラフ設定
         self.lineChartView.noDataText = "未チャレンジです" //Noデータ時に表示する文字
         self.lineChartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
-        self.lineChartView.noDataTextColor = self.colorManager.titleText //Noデータ時の文字色
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        self.lineChartView.noDataTextColor = colorSet.titleText //Noデータ時の文字色
+        
+        
         
         self.presenter?.getActivityDetails(name)
         
@@ -113,6 +115,7 @@ class ActivityDetailsViewController: UIViewController {
     /// - Parameter value: 回数
     func initDisplay(value: [Double], date: [String]) {
         
+        let colorSet = ColorManager.singletonColorManager.colorSet
         // プロットデータ(y軸)を保持する配列
         var dataEntries = [ChartDataEntry]()
         
@@ -141,12 +144,12 @@ class ActivityDetailsViewController: UIViewController {
         self.lineChartView.highlightPerTapEnabled = true  // タップでプロットを選択できないようにする
         self.lineChartView.pinchZoomEnabled = false // ピンチズームオフ
         self.lineChartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
-        
-        self.lineDataSet.colors = [UIColor.green]  // グラフの色
-        self.lineDataSet.circleColors = [UIColor.red]  // プロットの色
+    
         self.lineDataSet.circleRadius = 5.0  // プロットの大きさ
         self.lineDataSet.drawValuesEnabled = false //各プロットのラベル表示するか
         self.lineDataSet.highlightEnabled = false //各点を選択した時に表示されるx,yの線を表示するか
+        self.lineDataSet.colors = [colorSet.graphColor]  // グラフの色
+        self.lineDataSet.circleColors = [colorSet.graphProtColor]  // プロットの色
     }
 }
 

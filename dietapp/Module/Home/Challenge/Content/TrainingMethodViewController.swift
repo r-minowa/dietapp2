@@ -12,8 +12,6 @@ class TrainingMethodViewController: UIViewController {
 
     var explanation: String = ""
     
-    let colorManager = ColorManager().colorSet
-    
     // MARK: - UIOutlet
 
     @IBOutlet weak var explainPopView: UIView!
@@ -26,14 +24,23 @@ class TrainingMethodViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        self.explainPopView.backgroundColor = self.colorManager.mid
+       
         self.explainPopView.layer.cornerRadius = 30
         self.explanLabel.text = self.explanation
         
-        self.backButton.backgroundColor = self.colorManager.backButtonBackground
-        self.backButton.tintColor = self.colorManager.backButtonTint
+        
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.explainPopView.backgroundColor = colorSet.light
+        self.backButton.backgroundColor = colorSet.backButtonBackground
+        self.backButton.tintColor = colorSet.backButtonTint
+    }
+    
     // MARK: - IBAcrtion
     
     @IBAction func backButton(_ sender: Any) {

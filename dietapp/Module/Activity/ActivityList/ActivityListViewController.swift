@@ -9,8 +9,6 @@
 import UIKit
 
 class ActivityListViewController: UIViewController {
-
-     let colorManager = ColorManager().colorSet
     
     // MARK: - IBOutlet
     
@@ -26,16 +24,23 @@ class ActivityListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = self.colorManager.background
-        self.activityTableView.backgroundColor = self.colorManager.background
-        
-        self.trainingListLabel.tintColor = self.colorManager.titleText
-        self.trainingListLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 30.0)
-
-            
         // カスタムセルを登録する(セル名：Cell)
         let nib = UINib(nibName: "ActivityTableViewCell", bundle: nil) //xibファイルを読み込む
         activityTableView.register(nib, forCellReuseIdentifier: "ActivityCell") //xibを登録する
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
+        self.activityTableView.backgroundColor = colorSet.background
+        
+        self.trainingListLabel.tintColor = colorSet.titleText
+        self.trainingListLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 30.0)
+        
+        self.activityTableView.reloadData()
     }
 }
 

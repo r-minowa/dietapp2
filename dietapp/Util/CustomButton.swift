@@ -11,8 +11,6 @@ import UIKit
 @IBDesignable
 class CustomButton: UIButton {
     
-    let colorManager = ColorManager().colorSet
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customDesign()
@@ -28,9 +26,11 @@ class CustomButton: UIButton {
     }
     
     private func customDesign() {
-        backgroundColor = self.colorManager.buttonBackground
-        tintColor = self.colorManager.buttonTint
-        setTitleColor(.white, for: .normal)
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        backgroundColor = colorSet.buttonBackground
+        tintColor = colorSet.buttonTint
+        setTitleColor(colorSet.buttonTint, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
         layer.cornerRadius = 15.0

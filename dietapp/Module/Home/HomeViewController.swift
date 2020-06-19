@@ -4,6 +4,9 @@ import SwiftDate
 
 class HomeViewController: UIViewController {
     
+    private(set) lazy var presenter: HomePresenterProtocol? =
+        HomePresenter(view: self, realmAccessor: RealmAccessor())
+    
     let today = Date()
         
     // MARK: - IBOutlet
@@ -18,11 +21,15 @@ class HomeViewController: UIViewController {
         // カレンダータブ設定
         setCallenderTab()
         
-        // 初回起動時のみ(初回起動時刻の保存)
+        // 初回起動時のみ(初回起動時刻の保存,カラーフラグ)
         if !UserDefaultManager.shared.firstStartingDayFlag {
             UserDefaultManager.shared.firstStartingDay = Date()
             UserDefaultManager.shared.firstStartingDayFlag = true
-            UserDefaultManager.shared.color = "black"
+            UserDefaultManager.shared.color = "defalt"
+            UserDefaultManager.shared.point = 0
+            UserDefaultManager.shared.unlockPoint = 10
+            
+            self.presenter?.firstLaunchSaveUserColor()
         }
     }
     
@@ -49,6 +56,12 @@ class HomeViewController: UIViewController {
         // 現在日時のカレンダーを表示
         pagingViewController.select(pagingItem: CalendarItem(date: Date()))
     }
+}
+
+// MARK: - HomeViewProtocol
+
+extension HomeViewController: HomeViewProtocol {
+    
 }
 
 // MARK: - PagingViewControllerInfiniteDataSource

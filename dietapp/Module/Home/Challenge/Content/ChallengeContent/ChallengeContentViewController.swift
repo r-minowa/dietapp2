@@ -43,7 +43,6 @@ class ChallengeContentViewController: UIViewController {
     var id: Int = 0
     var index: Int = 0
     
-    let colorManager = ColorManager().colorSet
     
     // MARK: - IBOutlet
     
@@ -57,9 +56,10 @@ class ChallengeContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = self.colorManager.background
-        self.timerView.backgroundColor = .clear
+        self.timerView.progressLineWidth = 20
+        self.timerView.emptyLineWidth = 20
         self.timerView.progressAngle = 100
+        self.timerView.progressRotationAngle = 50
         
         // 取得したチャレンジのセット数と時間の取得
         detail = self.challenge?.details.filter{ $0.level == self.selectedLevel }.first
@@ -71,6 +71,16 @@ class ChallengeContentViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
+        
+        self.timerView.backgroundColor = .clear
+        self.timerView.progressColor = colorSet.thick
+        self.timerView.progressStrokeColor = colorSet.thick
+        self.timerView.emptyLineColor = colorSet.light
+        self.timerView.emptyLineStrokeColor = colorSet.light
     }
     
     // MARK: - IBAction
