@@ -49,11 +49,10 @@ final class ChallengeViewController: UIViewController {
         
         self.noChallengesLavel.isHidden = true
         
-        DispatchQueue.main.async {
-            let colorSet = ColorManager.singletonColorManager.colorSet
-            self.view.backgroundColor = colorSet.background
-            self.challengeTableView.backgroundColor = colorSet.background
-        }
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        self.view.backgroundColor = colorSet.background
+        self.challengeTableView.backgroundColor = colorSet.background
+        
         self.challengeTableView.reloadData()
     }
     
@@ -104,7 +103,6 @@ extension ChallengeViewController: ChallengeViewProtocol {
         self.show(vc, sender: nil)
     }
 }
-
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
@@ -157,3 +155,11 @@ extension ChallengeViewController: UITableViewDelegate, UITableViewDataSource {
         return 168
     }
 }
+
+/*
+ DispatchQueue.main.async {
+     let colorSet = ColorManager.singletonColorManager.colorSet
+     self.view.backgroundColor = colorSet.background
+     self.challengeTableView.backgroundColor = colorSet.background
+ }
+ */

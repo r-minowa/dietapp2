@@ -50,7 +50,7 @@
                 <constraint firstItem="U9L-XE-i9u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="uOO-cr-hNo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="135"/>
+            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
         </view>
     </objects>
     <resources>

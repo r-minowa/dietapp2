@@ -9,8 +9,27 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var childView: UIView!
+    
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let vc = SettingListViewController()
+        self.addChild(vc)
+        vc.view.frame = CGRect(x: 0, y: 0, width: self.childView.frame.maxX, height: self.childView.frame.maxY)
+        self.childView.addSubview(vc.view)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.view.backgroundColor = colorSet.background
     }
 }

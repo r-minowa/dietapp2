@@ -17,8 +17,8 @@ class BodyWeightGraphViewController: UIViewController {
     // チャートデータ
     var lineDataSet: LineChartDataSet!
     
-    var max: Double = 0
-    var min: Double = 1000
+//    var max: Double = 0
+//    var min: Double = 1000
     
     var calenderDate = Date()
     
@@ -116,57 +116,68 @@ class BodyWeightGraphViewController: UIViewController {
         let colorSet = ColorManager.singletonColorManager.colorSet
         
         // プロットデータ(y軸)を保持する配列
+        var linedata:  [LineChartDataSet] = Array()
         var dataEntries = [ChartDataEntry]()
+        var targetWeight = [ChartDataEntry]()
         
+        // データの設定
         for (i, val) in value.enumerated() {
             dataEntries.append(ChartDataEntry(x: Double(i + 1), y: val))
         }
         
-        self.lineDataSet = LineChartDataSet(entries: dataEntries, label: "")
-        self.lineChartView.data = LineChartData(dataSet: self.lineDataSet)
-        
-        // 軸設定
-        self.lineChartView.xAxis.enabled = false  // x軸の非表示
-        
-        for i in 0..<value.count {
-            if self.max < value[i] {
-                self.max = value[i]
+        if value.count == 1 {
+            for i in 0...2 {
+                targetWeight.append(ChartDataEntry(x: Double(i), y: UserDefaultManager.shared.targetWeight))
+            }
+        } else {
+            for i in 1...value.count {
+                targetWeight.append(ChartDataEntry(x: Double(i), y: UserDefaultManager.shared.targetWeight))
             }
         }
         
-        self.lineChartView.leftAxis.drawLabelsEnabled = false
-        self.lineChartView.leftAxis.drawAxisLineEnabled = false
-        self.lineChartView.leftAxis.axisMaximum = Double(max + 5) //y左軸最大値
-        
-        for i in 0..<value.count {
-            if self.min > value[i] {
-                self.min = value[i]
-            }
-        }
-        
-        var axisMin: Double = 0
-        if (min - 5) > 0 {
-            axisMin = Double(min - 5)
-        }
-        self.lineChartView.leftAxis.axisMinimum = axisMin //y左軸最小値
-        self.lineChartView.leftAxis.labelCount = 5 //y軸ラベルの表示数
-        self.lineChartView.leftAxis.drawTopYLabelEntryEnabled = true // y軸の最大値のみ表示
-        self.lineChartView.leftAxis.forceLabelsEnabled = false //最小最大値ラベルを必ず表示?
-        self.lineChartView.rightAxis.enabled = false // Y軸右軸(値)を非表示
-        self.lineChartView.extraTopOffset = 20 // 上から20pxオフセット
-        self.lineChartView.legend.enabled = false // 左下のラベル非表示
-        
-        self.lineChartView.highlightPerTapEnabled = true  // タップでプロットを選択できないようにする
-        self.lineChartView.pinchZoomEnabled = false // ピンチズームオフ
-        self.lineChartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
-        self.lineChartView.borderColor = .red
-        
+        self.lineDataSet = LineChartDataSet(entries: dataEntries, label: "遷移")
         self.lineDataSet.circleRadius = 5.0  // プロットの大きさ
         self.lineDataSet.drawValuesEnabled = true //各プロットのラベル表示するか
         self.lineDataSet.highlightEnabled = false //各点を選択した時に表示されるx,yの線を表示するか
         self.lineDataSet.colors = [colorSet.graphColor]  // グラフの色
         self.lineDataSet.circleColors = [colorSet.graphProtColor]  // プロットの色
+        linedata.append(lineDataSet)
         
+        
+        self.lineDataSet = LineChartDataSet(entries: targetWeight, label: "目標(\(UserDefaultManager.shared.targetWeight)kg)")
+        self.lineDataSet.lineWidth = CGFloat(3)
+        
+        self.lineDataSet.drawCirclesEnabled = false // プロットを表示するか
+        self.lineDataSet.drawValuesEnabled = false //各プロットのラベル表示するか
+        self.lineDataSet.highlightEnabled = false //各点を選択した時に表示されるx,yの線を表示するか
+        self.lineDataSet.colors = [.red]  // グラフの色
+        linedata.append(lineDataSet)
+        
+        // chartView設定
+        // 軸設定
+        self.lineChartView.xAxis.enabled = false  // x軸の非表示
+        
+        if let max = self.presenter?.getWeightMax() {
+            self.lineChartView.leftAxis.axisMaximum = Double(max + 5) //y左軸最大値
+        }
+        self.lineChartView.leftAxis.drawLabelsEnabled = false
+        self.lineChartView.leftAxis.drawAxisLineEnabled = false
+        
+        if let axisMin = self.presenter?.getWeightMin() {
+            self.lineChartView.leftAxis.axisMinimum = axisMin //y左軸最小値
+        }
+        self.lineChartView.leftAxis.labelCount = 5 //y軸ラベルの表示数
+        self.lineChartView.leftAxis.drawTopYLabelEntryEnabled = true // y軸の最大値のみ表示
+        self.lineChartView.leftAxis.forceLabelsEnabled = false //最小最大値ラベルを必ず表示?
+        self.lineChartView.rightAxis.enabled = false // Y軸右軸(値)を非表示
+        self.lineChartView.extraTopOffset = 20 // 上から20pxオフセット
+        self.lineChartView.legend.enabled = true // 左下のラベル非表示
+        self.lineChartView.highlightPerTapEnabled = true  // タップでプロットを選択できないようにする
+        self.lineChartView.pinchZoomEnabled = false // ピンチズームオフ
+        self.lineChartView.doubleTapToZoomEnabled = false // ダブルタップズームオフ
+        self.lineChartView.borderColor = .red
+        
+        self.lineChartView.data = LineChartData(dataSets: linedata)
     }
 }
 

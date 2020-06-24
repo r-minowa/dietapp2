@@ -32,7 +32,7 @@ class PointViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        UserDefaultManager.shared.point += 50
+        UserDefaultManager.shared.point += 100
         
         let pointImage = UIImage(named: "point")
         self.pointImageView.image = pointImage
@@ -87,6 +87,10 @@ extension PointViewController: PointViewProtocol {
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: nil)
     }
+    
+    func removeCellSubView(_ cell: UICollectionViewCell) {
+        cell.subviews[cell.subviews.count - 1].removeFromSuperview()
+    }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
@@ -105,18 +109,20 @@ extension PointViewController: UICollectionViewDataSource, UICollectionViewDeleg
             let flag = self.presenter?.getLockIconFrag(indexPath.row){
             cell.setColor(color, name, flag)
         }
-        
-//        let selectedBGView = UIView(frame: cell.frame)
-//        selectedBGView.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
-//        selectedBGView.layer.cornerRadius = 30
-//        cell.selectedBackgroundView = selectedBGView
-        
         return cell
     }
 
     // セルが選択された場合
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.presenter?.alartUnlockColor(indexPath.row)
+        
+        let cell = collectionView.cellForItem(at: indexPath)!
+        let selectedBGView = UIView(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: cell.bounds.size.height))
+        selectedBGView.layer.cornerRadius = 30
+        selectedBGView.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
+        cell.addSubview(selectedBGView)
+        cell.bringSubviewToFront(selectedBGView)
+        
+        self.presenter?.alartUnlockColor(indexPath.row, cell)
     }
 
     // セルの配置
@@ -125,16 +131,4 @@ extension PointViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cellSize : CGFloat = self.view.bounds.width / 3 - horizontalSpace
         return CGSize(width: cellSize, height: cellSize)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
 }

@@ -14,6 +14,7 @@ final class PopupViewController: UIViewController {
     PopupPresenter(view: self, realmAccessor: RealmAccessor())
     
     var partsStr: [String] = []
+    var alartFlag: Bool = false
     
     
     @IBOutlet weak var decisionButton: CustomButton!
@@ -35,27 +36,28 @@ final class PopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // ポップアップの設定
-        self.view.backgroundColor = UIColor(white:0.9, alpha:1.0)
-        
-        self.levelView.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
-        self.levelView.layer.cornerRadius = 20
-        self.levelView.clipsToBounds = true
-        
-        self.partsView.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
-        self.partsView.layer.cornerRadius = 20
-        self.partsView.clipsToBounds = true
-        
-        
-        
-        self.targetView.backgroundColor = .clear
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.presenter?.viewWillAppear()
+        
+        let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        // ポップアップの設定
+        self.view.backgroundColor = colorSet.background
+        
+        self.levelView.backgroundColor = colorSet.light
+        self.levelView.layer.cornerRadius = 20
+        self.levelView.clipsToBounds = true
+        
+        self.partsView.backgroundColor = colorSet.light
+        self.partsView.layer.cornerRadius = 20
+        self.partsView.clipsToBounds = true
+        
+        self.targetView.backgroundColor = .clear
+        
+        
         guard let partsStr_ = self.presenter?.getPartsStr() else { return }
         self.partsStr = partsStr_
     }
@@ -68,17 +70,21 @@ final class PopupViewController: UIViewController {
     
     /// 決定ボタン
     @IBAction func decisionButton(_ sender: Any) {
-        self.presenter?.convertChallengeRealmType()
-        UserDefaultManager.shared.isShowPopUp = true
-        dismiss(animated: true, completion: nil)
+        self.presenter?.selectDecisionButton(alartFlag)
     }
-    
 }
 
 // MARK: - PopupViewProtocol
 
 extension PopupViewController: PopupViewProtocol {
     
+    func displayPopupAlart(_ alart: UIAlertController) {
+        present(alart, animated: true)
+    }
+    
+    func dismissPopUp() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - UIPickerView

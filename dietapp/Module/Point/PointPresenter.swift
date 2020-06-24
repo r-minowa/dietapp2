@@ -26,6 +26,33 @@ final class PointPresenter {
         UserDefaultManager.shared.point = UserDefaultManager.shared.point - UserDefaultManager.shared.unlockPoint
         UserDefaultManager.shared.unlockPoint += 10
     }
+    
+    /// 選択された色に変更するかどうかアラートを出す
+    /// - Parameter index: index
+    func alartChangeColor(_ index: Int, _ cell: UICollectionViewCell) {
+        
+        let colorName = self.getPointCollectionCellString(index)
+        
+        self.pointAlertController = UIAlertController(title: "確認",
+                                            message: "\(colorName)に変更しますか？",
+                                            preferredStyle: .alert)
+        self.pointAlertController.addAction(UIAlertAction(title: "YES",
+                                                style: .default,
+                                                handler: {(action: UIAlertAction!) -> Void in
+                                                    self.selectColor(index)
+                                                    self.view?.trancePointExchangeColor()
+                                                    self.view?.removeCellSubView(cell)
+                                                    
+        }))
+        self.pointAlertController.addAction(UIAlertAction(title: "NO",
+                                                          style: .default,
+                                                          handler: {(action: UIAlertAction!) -> Void in
+                                                            self.view?.removeCellSubView(cell)
+        }))
+
+        self.view?.displayAlart(self.pointAlertController)
+    }
+    
 }
 
 // MARK: - PointPresenterProtocol
@@ -86,34 +113,10 @@ extension PointPresenter: PointPresenterProtocol {
         
         return colorName
     }
-    
-    /// 選択された色に変更するかどうかアラートを出す
-    /// - Parameter index: index
-    func alartChangeColor(_ index: Int) {
-        
-        let colorName = self.getPointCollectionCellString(index)
-        
-        self.pointAlertController = UIAlertController(title: "確認",
-                                            message: "\(colorName)に変更しますか？",
-                                            preferredStyle: .alert)
-        self.pointAlertController.addAction(UIAlertAction(title: "YES",
-                                                style: .default,
-                                                handler: {(action: UIAlertAction!) -> Void in
-                                                    self.selectColor(index)
-                                                    self.view?.trancePointExchangeColor()
-                                                   
-        }))
-        self.pointAlertController.addAction(UIAlertAction(title: "NO",
-                                                style: .default,
-                                                handler: nil
-        ))
-        
-        self.view?.displayAlart(pointAlertController)
-    }
-    
+
     /// テーマカラーをアンロックするかアラートを出す
     /// - Parameter index: index
-    func alartUnlockColor(_ index: Int) {
+    func alartUnlockColor(_ index: Int, _ cell: UICollectionViewCell) {
         
         let colorName = self.getPointCollectionCellString(index)
         let flag = self.getLockIconFrag(index)
@@ -127,8 +130,9 @@ extension PointPresenter: PointPresenterProtocol {
                                                               preferredStyle: .alert)
                 self.pointAlertController.addAction(UIAlertAction(title: "OK",
                                                                   style: .default,
-                                                                  handler: nil
-                ))
+                                                                  handler: {(action: UIAlertAction!) -> Void in
+                                                                    self.view?.removeCellSubView(cell)
+                }))
             } else {    // ポイントが足りる場合
                 self.pointAlertController = UIAlertController(title: "確認",
                                                               message: "\(colorName)をアンロックしますか？",
@@ -140,20 +144,22 @@ extension PointPresenter: PointPresenterProtocol {
                                                                     try! self.realmAccessor.saveUnlockUserColorObject(id: 0, color: colorName)
                                                                     self.selectColor(index)
                                                                     self.view?.trancePointExchangeColor()
+                                                                    self.view?.removeCellSubView(cell)
                 }))
                 self.pointAlertController.addAction(UIAlertAction(title: "NO",
                                                                   style: .default,
-                                                                  handler: nil
-                ))
+                                                                  handler: {(action: UIAlertAction!) -> Void in
+                                                                    self.view?.removeCellSubView(cell)
+                }))
             }
             self.view?.displayAlart(pointAlertController)
         } else {    // アンロック済の時
-            self.alartChangeColor(index)
+            self.alartChangeColor(index, cell)
         }
     }
     
     func getLockIconFrag(_ index: Int) -> Bool {
-     
+        
         let colorNameString = self.getPointCollectionCellString(index)
         let iconFragArray = try! self.realmAccessor.getUserColor()
         var OptinalconFrag: Bool?

@@ -11,20 +11,20 @@ import Foundation
 struct Training {
     
     enum TrainingMenu: String, CaseIterable {
+        case pushUp = "腕立て"
+        case alternateFrontLunge = "オルタネイトフロントランジ"
+        case crunch = "クランチ"
+        case sideBridge = "サイドブリッジ"
+        case squat = "スクワット"
+        case twistCrunch = "ツイストクランチ"
+        case spine = "背筋"
+        case highReversePlank = "ハイリバースプランク"
+        case palmCurl = "パームカール"
+        case hipAbduction = "ヒップアブダクション"
+        case hipLift = "ヒップリフト"
         case abs = "腹筋"
         case plank = "プランク"
-        case highReversePlank = "ハイリバースプランク"
-        case squat = "スクワット"
-        case crunch = "クランチ"
-        case twistCrunch = "ツイストクランチ"
-        case pushUp = "腕立て"
         case legRaises = "レッグレイズ"
-        case hipLift = "ヒップリフト"
-        case spine = "背筋"
-        case hipAbduction = "ヒップアブダクション"
-        case alternateFrontLunge = "オルタネイトフロントランジ"
-        case sideBridge = "サイドブリッジ"
-        case palmCurl = "パームカール"
     }
     
    // 部位

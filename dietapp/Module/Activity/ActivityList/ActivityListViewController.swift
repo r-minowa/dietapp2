@@ -24,7 +24,7 @@ class ActivityListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // カスタムセルを登録する(セル名：Cell)
+        // カスタムセルを登録する
         let nib = UINib(nibName: "ActivityTableViewCell", bundle: nil) //xibファイルを読み込む
         activityTableView.register(nib, forCellReuseIdentifier: "ActivityCell") //xibを登録する
     }

@@ -13,6 +13,10 @@ final class BodyWeightGraphPresenter {
     private(set) weak var view: BodyWeightGraphViewProtocol?
     private let realmAccessor: RealmAccessorProtocol
     
+    private var weekWeightArray: [Double] = []
+    var max: Double = 0
+    var min: Double = 1000
+    
     let today = Date()
     
     // Initialize
@@ -72,9 +76,10 @@ extension BodyWeightGraphPresenter: BodyWeightGraphPresenterProtocol {
     
     func getWeekWeight(_ date: Date) -> [Double] {
         var beginWeekDate = date
-        var weekWeightArray: [Double] = []
         var userInfo: [GetRealmUserInfo] = []
         var dayCount: Int = 0
+        
+        self.weekWeightArray.removeAll()
         
         switch date.weekdayName(.default) {
         case "日曜日":
@@ -113,14 +118,14 @@ extension BodyWeightGraphPresenter: BodyWeightGraphPresenterProtocol {
             
             if userInfo != [] {
                 if let weight = userInfo[userInfo.count - 1].weight {
-                    weekWeightArray.append(weight)
+                    self.weekWeightArray.append(weight)
                 }
             }
             
             beginWeekDate = beginWeekDate + 1.days
         }
         
-        return weekWeightArray
+        return self.weekWeightArray
     }
     
     func getWeekWeightAve(_ date: Date) -> Double {
@@ -138,5 +143,36 @@ extension BodyWeightGraphPresenter: BodyWeightGraphPresenterProtocol {
         }
         
         return weekWeightAveDouble
+    }
+    
+    /// グラフの最大値をけ返す
+    func getWeightMax() -> Double {
+        for i in 0..<self.weekWeightArray.count {
+            if self.max < self.weekWeightArray[i] {
+                self.max = self.weekWeightArray[i]
+            }
+        }
+        
+        return self.max
+    }
+    
+    /// グラフの最小値を返す
+    func getWeightMin() -> Double {
+        for i in 0..<self.weekWeightArray.count {
+            if self.min > self.weekWeightArray[i] {
+                self.min = self.weekWeightArray[i]
+            }
+        }
+        
+        if self.min > UserDefaultManager.shared.targetWeight {
+            self.min = UserDefaultManager.shared.targetWeight
+        }
+        
+        var axisMin: Double = 0
+        if (min - 5) > 0 {
+            axisMin = Double(min - 5)
+        }
+        
+        return axisMin
     }
 }

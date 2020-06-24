@@ -32,22 +32,24 @@ class BodyWeightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        calenderView.reloadData()
-        
         let colorSet = ColorManager.singletonColorManager.colorSet
         
+        self.calenderView.reloadData()
+    
         self.calenderView.backgroundColor = colorSet.background
         
-        calenderView.appearance.todayColor = UIColor.red
-        calenderView.appearance.headerTitleColor = UIColor.red
-        calenderView.appearance.weekdayTextColor = UIColor.red
-        calenderView.scope = .month
+        self.calenderView.appearance.todayColor = colorSet.mid
+        self.calenderView.appearance.eventDefaultColor = colorSet.thick
+        self.calenderView.appearance.eventSelectionColor = colorSet.thick
+        self.calenderView.appearance.selectionColor = colorSet.thick
+        self.calenderView.appearance.headerTitleColor = UIColor.red
+        self.calenderView.appearance.weekdayTextColor = UIColor.red
+        self.calenderView.scope = .month
     }
 }
 
@@ -109,6 +111,7 @@ extension BodyWeightViewController: FSCalendarDelegate, FSCalendarDataSource, FS
         if let weight = self.presenter?.getDayWeight(date) {
             return String(weight)
         }
-        return nil
+        return ""
     }
+    
 }

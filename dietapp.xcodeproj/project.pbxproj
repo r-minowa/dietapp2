@@ -49,6 +49,8 @@
 		8F116FAE24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F116FAD24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift */; };
 		8F116FB024970B5800B2BAD0 /* BodyWeightGraphPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F116FAF24970B5800B2BAD0 /* BodyWeightGraphPresenter.swift */; };
 		8F1185AB2485E59300554EB0 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */; };
+		8F1276C4249F19AC00A2FFF7 /* TargetWeightSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1276C2249F19AC00A2FFF7 /* TargetWeightSettingViewController.swift */; };
+		8F1276C5249F19AC00A2FFF7 /* TargetWeightSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1276C3249F19AC00A2FFF7 /* TargetWeightSettingViewController.xib */; };
 		8F13999C246D193800195D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13999B246D193800195D53 /* AppDelegate.swift */; };
 		8F13999E246D193800195D53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13999D246D193800195D53 /* SceneDelegate.swift */; };
 		8F1399A5246D193A00195D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F1399A4246D193A00195D53 /* Assets.xcassets */; };
@@ -85,8 +87,21 @@
 		8F4B5ED3249B52DE0067784B /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B5ED2249B52DE0067784B /* HomeProtocol.swift */; };
 		8F59BC172472658900F74CD3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59BC152472658900F74CD3 /* SettingViewController.swift */; };
 		8F59BC212472676F00F74CD3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */; };
+		8F79A0BA249C82840099AFBE /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79A0B8249C82840099AFBE /* SettingListViewController.swift */; };
+		8F79A0BB249C82840099AFBE /* SettingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F79A0B9249C82840099AFBE /* SettingListViewController.xib */; };
+		8F79A0BE249C87910099AFBE /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79A0BC249C87910099AFBE /* SettingTableViewCell.swift */; };
+		8F79A0BF249C87910099AFBE /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F79A0BD249C87910099AFBE /* SettingTableViewCell.xib */; };
+		8F79A0C1249CB0DC0099AFBE /* SettingListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79A0C0249CB0DC0099AFBE /* SettingListPresenter.swift */; };
+		8F79A0C3249CB0FD0099AFBE /* SettingListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79A0C2249CB0FD0099AFBE /* SettingListProtocol.swift */; };
 		8FB599E92490C1080039F5E8 /* BodyWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */; };
 		8FB599EA2490C1080039F5E8 /* BodyWeightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB599E82490C1080039F5E8 /* BodyWeightViewController.xib */; };
+		8FC06EBF24A03486000CC937 /* TargetWeightSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC06EBE24A03486000CC937 /* TargetWeightSettingPresenter.swift */; };
+		8FC06EC124A0349A000CC937 /* TargetWeightSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC06EC024A0349A000CC937 /* TargetWeightSettingProtocol.swift */; };
+		8FC06EC424A07A04000CC937 /* DistanceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC06EC224A07A04000CC937 /* DistanceSettingViewController.swift */; };
+		8FC06EC524A07A04000CC937 /* DistanceSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FC06EC324A07A04000CC937 /* DistanceSettingViewController.xib */; };
+		8FC06EC824A07A98000CC937 /* DistanceSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC06EC724A07A98000CC937 /* DistanceSettingPresenter.swift */; };
+		8FC06ECA24A07AA9000CC937 /* DistanceSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC06EC924A07AA9000CC937 /* DistanceSettingProtocol.swift */; };
+		8FC06ECC24A07FB4000CC937 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC06ECB24A07FB4000CC937 /* CoreLocation.framework */; };
 		8FC6AF382491DFC800D3ACA9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6AF372491DFC800D3ACA9 /* TabBarController.swift */; };
 		8FC6AF3A2491F7AC00D3ACA9 /* BodyWeightProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6AF392491F7AC00D3ACA9 /* BodyWeightProtocols.swift */; };
 		8FC6AF3C2491F7BF00D3ACA9 /* BodyWeightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6AF3B2491F7BF00D3ACA9 /* BodyWeightPresenter.swift */; };
@@ -166,6 +181,8 @@
 		8F116FAD24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightGraphProtocol.swift; sourceTree = "<group>"; };
 		8F116FAF24970B5800B2BAD0 /* BodyWeightGraphPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightGraphPresenter.swift; sourceTree = "<group>"; };
 		8F1185AA2485E59300554EB0 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		8F1276C2249F19AC00A2FFF7 /* TargetWeightSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetWeightSettingViewController.swift; sourceTree = "<group>"; };
+		8F1276C3249F19AC00A2FFF7 /* TargetWeightSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TargetWeightSettingViewController.xib; sourceTree = "<group>"; };
 		8F139998246D193800195D53 /* dietapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dietapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F13999B246D193800195D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F13999D246D193800195D53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,8 +229,21 @@
 		8F4B5ED2249B52DE0067784B /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		8F59BC152472658900F74CD3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8F59BC1F2472676F00F74CD3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8F79A0B8249C82840099AFBE /* SettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
+		8F79A0B9249C82840099AFBE /* SettingListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingListViewController.xib; sourceTree = "<group>"; };
+		8F79A0BC249C87910099AFBE /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		8F79A0BD249C87910099AFBE /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		8F79A0C0249CB0DC0099AFBE /* SettingListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListPresenter.swift; sourceTree = "<group>"; };
+		8F79A0C2249CB0FD0099AFBE /* SettingListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListProtocol.swift; sourceTree = "<group>"; };
 		8FB599E72490C1080039F5E8 /* BodyWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightViewController.swift; sourceTree = "<group>"; };
 		8FB599E82490C1080039F5E8 /* BodyWeightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyWeightViewController.xib; sourceTree = "<group>"; };
+		8FC06EBE24A03486000CC937 /* TargetWeightSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetWeightSettingPresenter.swift; sourceTree = "<group>"; };
+		8FC06EC024A0349A000CC937 /* TargetWeightSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetWeightSettingProtocol.swift; sourceTree = "<group>"; };
+		8FC06EC224A07A04000CC937 /* DistanceSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSettingViewController.swift; sourceTree = "<group>"; };
+		8FC06EC324A07A04000CC937 /* DistanceSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceSettingViewController.xib; sourceTree = "<group>"; };
+		8FC06EC724A07A98000CC937 /* DistanceSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSettingPresenter.swift; sourceTree = "<group>"; };
+		8FC06EC924A07AA9000CC937 /* DistanceSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSettingProtocol.swift; sourceTree = "<group>"; };
+		8FC06ECB24A07FB4000CC937 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8FC6AF372491DFC800D3ACA9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8FC6AF392491F7AC00D3ACA9 /* BodyWeightProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightProtocols.swift; sourceTree = "<group>"; };
 		8FC6AF3B2491F7BF00D3ACA9 /* BodyWeightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightPresenter.swift; sourceTree = "<group>"; };
@@ -225,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC06ECC24A07FB4000CC937 /* CoreLocation.framework in Frameworks */,
 				8FE82AA22488EF11009EB56B /* Realm.framework in Frameworks */,
 				8FE82A9F2488EDDA009EB56B /* Parchment.framework in Frameworks */,
 				8FE82AA62488EF73009EB56B /* SwiftDate.framework in Frameworks */,
@@ -292,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				8F59BC152472658900F74CD3 /* SettingViewController.swift */,
+				8F79A0C4249CB11D0099AFBE /* SettingList */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -404,6 +436,17 @@
 			path = BodyWeightGraph;
 			sourceTree = "<group>";
 		};
+		8F1276C6249F19E600A2FFF7 /* TargetWeightSetting */ = {
+			isa = PBXGroup;
+			children = (
+				8FC06EC024A0349A000CC937 /* TargetWeightSettingProtocol.swift */,
+				8F1276C2249F19AC00A2FFF7 /* TargetWeightSettingViewController.swift */,
+				8FC06EBE24A03486000CC937 /* TargetWeightSettingPresenter.swift */,
+				8F1276C3249F19AC00A2FFF7 /* TargetWeightSettingViewController.xib */,
+			);
+			path = TargetWeightSetting;
+			sourceTree = "<group>";
+		};
 		8F13998F246D193800195D53 = {
 			isa = PBXGroup;
 			children = (
@@ -499,8 +542,8 @@
 			children = (
 				8F142A32247E5484009E58BE /* PopupProtocols.swift */,
 				8F107D0F248733C80056D72E /* PopupViewController.swift */,
-				8F107D10248733C80056D72E /* PopupViewController.xib */,
 				8F142A34247E54A6009E58BE /* PopupPresenter.swift */,
+				8F107D10248733C80056D72E /* PopupViewController.xib */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -543,6 +586,7 @@
 		8F3D064C246E554E005E03C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FC06ECB24A07FB4000CC937 /* CoreLocation.framework */,
 				8F0DAF4924905E51006C072C /* FSCalendar.framework */,
 				8F0DAF4624905E3C006C072C /* Charts.framework */,
 				8F0D11DA248F4A1500BDDA0F /* TextFieldEffects.framework */,
@@ -565,6 +609,40 @@
 				8F4B5EC8249B3BF80067784B /* PointExchangeColorViewController.xib */,
 			);
 			path = PointExchangeColor;
+			sourceTree = "<group>";
+		};
+		8F79A0C4249CB11D0099AFBE /* SettingList */ = {
+			isa = PBXGroup;
+			children = (
+				8F79A0C2249CB0FD0099AFBE /* SettingListProtocol.swift */,
+				8F79A0B8249C82840099AFBE /* SettingListViewController.swift */,
+				8F79A0C0249CB0DC0099AFBE /* SettingListPresenter.swift */,
+				8F79A0B9249C82840099AFBE /* SettingListViewController.xib */,
+				8F1276C6249F19E600A2FFF7 /* TargetWeightSetting */,
+				8FC06EC624A07A09000CC937 /* DistanceSetting */,
+				8F79A0C5249CB13B0099AFBE /* SettingTableViewCell */,
+			);
+			path = SettingList;
+			sourceTree = "<group>";
+		};
+		8F79A0C5249CB13B0099AFBE /* SettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F79A0BC249C87910099AFBE /* SettingTableViewCell.swift */,
+				8F79A0BD249C87910099AFBE /* SettingTableViewCell.xib */,
+			);
+			path = SettingTableViewCell;
+			sourceTree = "<group>";
+		};
+		8FC06EC624A07A09000CC937 /* DistanceSetting */ = {
+			isa = PBXGroup;
+			children = (
+				8FC06EC924A07AA9000CC937 /* DistanceSettingProtocol.swift */,
+				8FC06EC224A07A04000CC937 /* DistanceSettingViewController.swift */,
+				8FC06EC724A07A98000CC937 /* DistanceSettingPresenter.swift */,
+				8FC06EC324A07A04000CC937 /* DistanceSettingViewController.xib */,
+			);
+			path = DistanceSetting;
 			sourceTree = "<group>";
 		};
 		8FC6AF3D24920EF500D3ACA9 /* BodyWeight */ = {
@@ -666,8 +744,12 @@
 				8F116FAB2497087E00B2BAD0 /* BodyWeightGraphViewController.xib in Resources */,
 				8F0D11D3248F2A7D00BDDA0F /* ActivityTableViewCell.xib in Resources */,
 				8F084D6F2498AD6200A2C58B /* PointCollectionViewCell.xib in Resources */,
+				8F79A0BB249C82840099AFBE /* SettingListViewController.xib in Resources */,
+				8FC06EC524A07A04000CC937 /* DistanceSettingViewController.xib in Resources */,
 				8F0D11E9248F714100BDDA0F /* ActivityDetailsViewController.xib in Resources */,
+				8F1276C5249F19AC00A2FFF7 /* TargetWeightSettingViewController.xib in Resources */,
 				8F235290247249EB0078C2A6 /* ChallengeViewController.xib in Resources */,
+				8F79A0BF249C87910099AFBE /* SettingTableViewCell.xib in Resources */,
 				8F0D11CF248F29C000BDDA0F /* ActivityListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,7 +830,10 @@
 				8FC6AF3A2491F7AC00D3ACA9 /* BodyWeightProtocols.swift in Sources */,
 				8F1CA725247FAFB50059B96C /* NoChallengeViewController.swift in Sources */,
 				8F0D11E2248F635000BDDA0F /* String.swift in Sources */,
+				8F79A0C3249CB0FD0099AFBE /* SettingListProtocol.swift in Sources */,
 				8F142A20247DE6C1009E58BE /* RealmAccessor.swift in Sources */,
+				8F1276C4249F19AC00A2FFF7 /* TargetWeightSettingViewController.swift in Sources */,
+				8FC06EC424A07A04000CC937 /* DistanceSettingViewController.swift in Sources */,
 				8F0D11E8248F714100BDDA0F /* ActivityDetailsViewController.swift in Sources */,
 				8F1CA722247F99420059B96C /* Date+dateFormatter.swift in Sources */,
 				8F4B5ED3249B52DE0067784B /* HomeProtocol.swift in Sources */,
@@ -777,6 +862,7 @@
 				8F0DAF4D2490602F006C072C /* GetRealmActivity.swift in Sources */,
 				8F116FAA2497087E00B2BAD0 /* BodyWeightGraphViewController.swift in Sources */,
 				8F107D11248733C80056D72E /* PopupViewController.swift in Sources */,
+				8F79A0C1249CB0DC0099AFBE /* SettingListPresenter.swift in Sources */,
 				8F1A92EC247C9D0E0079F468 /* UserInfoObject.swift in Sources */,
 				8F0D11E0248F50B900BDDA0F /* ActivityRecordProtocol.swift in Sources */,
 				8F0E0F2A2499BEC6008194BB /* PointProtocol.swift in Sources */,
@@ -786,6 +872,7 @@
 				8F0D11C8248F265C00BDDA0F /* ActivityViewController.swift in Sources */,
 				8F0F6BDB2472109C00F16941 /* ContentViewController.swift in Sources */,
 				8F23529324724DFC0078C2A6 /* ChallengeTableViewCell.swift in Sources */,
+				8F79A0BA249C82840099AFBE /* SettingListViewController.swift in Sources */,
 				8F0FCE012491B16700508543 /* BodyWeightRecordViewController.swift in Sources */,
 				8F0D11CE248F29C000BDDA0F /* ActivityListViewController.swift in Sources */,
 				8F116FB024970B5800B2BAD0 /* BodyWeightGraphPresenter.swift in Sources */,
@@ -797,14 +884,19 @@
 				8F1769E22474B10400DA02EC /* ChallengePresenter.swift in Sources */,
 				8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */,
 				8F0FCDF92491ABEE00508543 /* BodyWeightRecordPresenter.swift in Sources */,
+				8FC06ECA24A07AA9000CC937 /* DistanceSettingProtocol.swift in Sources */,
 				8F0E0F282499BEB9008194BB /* PointPresenter.swift in Sources */,
 				8F0F6BE124721CC800F16941 /* CalenderItem.swift in Sources */,
+				8FC06EC824A07A98000CC937 /* DistanceSettingPresenter.swift in Sources */,
 				8F116FAE24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift in Sources */,
 				8F3A65262473A9EA00DF5D6E /* ChallengeContentViewController.swift in Sources */,
+				8FC06EBF24A03486000CC937 /* TargetWeightSettingPresenter.swift in Sources */,
 				8F1185AB2485E59300554EB0 /* UserDefaultManager.swift in Sources */,
+				8FC06EC124A0349A000CC937 /* TargetWeightSettingProtocol.swift in Sources */,
 				8F0DDEFD24737ABB009D6031 /* BodyViewController.swift in Sources */,
 				8F14A50D2489ECC500D5E5C3 /* TrainingMethodViewController.swift in Sources */,
 				8F0F6BDD2472119D00F16941 /* UIView+constraints.swift in Sources */,
+				8F79A0BE249C87910099AFBE /* SettingTableViewCell.swift in Sources */,
 				8F106EE4249855DE00502E8E /* ColorManager.swift in Sources */,
 				8F1769E42474C84800DA02EC /* Chellenge.swift in Sources */,
 			);

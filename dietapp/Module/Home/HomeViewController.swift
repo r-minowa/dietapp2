@@ -86,8 +86,7 @@ extension HomeViewController: PagingViewControllerInfiniteDataSource {
         let calenderTabDate = DateFormatters.customDateFormatter.string(from: calendarItem.date)
         
         // 今週の土曜日
-        let dateNextSaturday = Date.today().next(.saturday)
-        let nextSaturday = DateFormatters.customDateFormatter.string(from: dateNextSaturday)
+        let nextSaturday = DateFormatters.customDateFormatter.string(from: UserDefaultManager.shared.nextSaturday)
         
         // 初回起動位日
         let firstStartingDay = DateFormatters.customDateFormatter.string(from: UserDefaultManager.shared.firstStartingDay)

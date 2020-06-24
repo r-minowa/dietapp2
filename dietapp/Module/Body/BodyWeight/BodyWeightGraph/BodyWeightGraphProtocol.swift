@@ -19,4 +19,6 @@ protocol BodyWeightGraphPresenterProtocol {
     func getNewestDayWeight() -> Double
     func getWeekWeight(_ date: Date) -> [Double]
     func getWeekWeightAve(_ date: Date) -> Double
+    func getWeightMax() -> Double
+    func getWeightMin() -> Double
 }

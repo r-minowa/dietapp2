@@ -41,6 +41,10 @@ class ChallengeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+    }
+    
     // MARK: - PrivateMethod
     
     func setChallenge(_ challenge: Training, _ level: Training.Level) {

@@ -6,13 +6,15 @@
 //  Copyright © 2020 ryuki.minowa. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import SwiftDate
 
 final class PopupPresenter {
     
     private(set) weak var view: PopupViewProtocol?
     private let realmAccessor: RealmAccessorProtocol
+    
+    var popupAlertController: UIAlertController!
     
     var selectedPosition: Training.Parts = .hip
     var selectedLevel: Training.Level = .low
@@ -34,6 +36,23 @@ final class PopupPresenter {
     }
     
     // MARK: - PrivateMethod
+    
+    /// UserTrainingに保存する
+       /// - Parameter day: 日付
+       func saveUserTrainingRealm(_ day: Date) {
+           do {
+               let id = try self.realmAccessor.getNewUserTrainingId()
+               try self.realmAccessor.saveUserTraining(id: id,
+                                                       difficulty: selectedLevelStr,
+                                                       bodyParts: selectedPositionStr,
+                                                       dayTraining: randomName,
+                                                       date: day,
+                                                       flag: progressFlag
+               )
+           } catch {
+               print("DEBUG_PRINT: NewID取得エラー")
+           }
+       }
     
     // ランダム抽出(3つ)
     func getRandom(cnt:Int)->Int{
@@ -141,21 +160,27 @@ extension PopupPresenter: PopupPresenterProtocol {
         
         self.selectedChallenges = self.challenge.trainings.filter{ $0.parts.contains(selectedPosition)}
              
-        var judgweek = Date()
-        var count = 0
+        let judgweek = Date()
+        var dayCount: Int = 0
         
-        for _ in 0..<10 {
-            if !judgweek.isInWeekend {
-                judgweek = Calendar.current.date(byAdding: .day, value: 1, to: judgweek)!
-                count += 1
-                
-            } else {
-                count += 1
-                break
-            }
+        switch judgweek.weekdayName(.default) {
+        case "日曜日":
+            dayCount = 7
+        case "月曜日":
+            dayCount = 6
+        case "火曜日":
+            dayCount = 5
+        case "水曜日":
+            dayCount = 4
+        case "木曜日":
+            dayCount = 3
+        case "金曜日":
+            dayCount = 2
+        default:
+            dayCount = 1
         }
         
-        for _ in 0..<count {
+        for _ in 0..<dayCount {
             let randomArray = randomSet(cInt: selectedChallenges.count)
             for i in 0..<NumOfChallenges {
                 randomName.append(selectedChallenges[randomArray[i]].name.rawValue)
@@ -167,6 +192,8 @@ extension PopupPresenter: PopupPresenterProtocol {
         }
         
         self.progressFlag.removeAll()
+        
+        self.view?.dismissPopUp()
     }
     
     /// 選択された部位をString型で保存
@@ -175,21 +202,42 @@ extension PopupPresenter: PopupPresenterProtocol {
         self.selectedPositionStr = part
     }
     
-    /// UserTrainingに保存する
-    /// - Parameter day: 日付
-    func saveUserTrainingRealm(_ day: Date) {
-        do {
-            let id = try self.realmAccessor.getNewUserTrainingId()
-            try self.realmAccessor.saveUserTraining(id: id,
-                                                    difficulty: selectedLevelStr,
-                                                    bodyParts: selectedPositionStr,
-                                                    dayTraining: randomName,
-                                                    date: day,
-                                                    flag: progressFlag
-            )
-        } catch {
-            print("DEBUG_PRINT: NewID取得エラー")
+    func selectDecisionButton(_ flag: Bool) {
+        if !flag {
+            UserDefaultManager.shared.isShowPopUp = true
+            self.convertChallengeRealmType()
+        } else if flag {
+            self.settingAlartOfTargetWeight()
         }
+    }
+    
+    func settingAlartOfTargetWeight() {
+        self.popupAlertController = UIAlertController(title: "注意",
+                                   message: "今日からのチャレンジが変更されます\nよろしいですか",
+                                   preferredStyle: .alert)
+        self.popupAlertController.addAction(UIAlertAction(title: "YES",
+                                                style: .default,
+                                                handler: {(action: UIAlertAction!) -> Void in
+                                                    self.convertChallengeRealmType()
+        }))
+        self.popupAlertController.addAction(UIAlertAction(title: "NO",
+                                                style: .default,
+                                                handler: nil
+        ))
+        
+        self.view?.displayPopupAlart(self.popupAlertController)
     }
 }
 
+/*
+ for _ in 0..<10 {
+ if !judgweek.isInWeekend {
+ judgweek = Calendar.current.date(byAdding: .day, value: 1, to: judgweek)!
+ count += 1
+ 
+ } else {
+ count += 1
+ break
+ }
+ }
+ */

@@ -47,6 +47,8 @@ class ChallengeContentViewController: UIViewController {
     // MARK: - IBOutlet
     
     @IBOutlet weak var currentSituationLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var secLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var timerView: MBCircularProgressBarView!
@@ -56,6 +58,8 @@ class ChallengeContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.timerView.showValueString = false
+        self.timerView.showUnitString = false
         self.timerView.progressLineWidth = 20
         self.timerView.emptyLineWidth = 20
         self.timerView.progressAngle = 100
@@ -81,6 +85,11 @@ class ChallengeContentViewController: UIViewController {
         self.timerView.progressStrokeColor = colorSet.thick
         self.timerView.emptyLineColor = colorSet.light
         self.timerView.emptyLineStrokeColor = colorSet.light
+        
+        self.timerLabel.backgroundColor = colorSet.background
+        self.timerLabel.font = UIFont(name: "DBLCDTempBlack", size: 100)
+        self.secLabel.backgroundColor = colorSet.background
+        self.secLabel.font = UIFont(name: "Defalt", size: 20)
     }
     
     // MARK: - IBAction
@@ -127,6 +136,7 @@ class ChallengeContentViewController: UIViewController {
     @objc func updateTimer(_ timer: Timer) {
         self.timer_sec += 0.025
         self.timerView.value = CGFloat(self.timer_sec)
+        self.timerLabel.text = String(format: "%02d", Int(self.timer_sec + 0.1))
     }
     
     @objc func resetTimer(_ timer: Timer) {

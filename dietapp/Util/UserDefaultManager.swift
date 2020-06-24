@@ -20,6 +20,9 @@ class UserDefaultManager {
         case point = "point"
         case unlockPoint = "unlockPoint"
         case color = "color"
+        case targetWeight = "targetWeight"
+        case isShowStepsAlart = "isShowStepsAlart"
+        case endToday = "endToday"
     }
     
     private var defaults: UserDefaults {
@@ -102,6 +105,37 @@ class UserDefaultManager {
         }
     }
     
+    // 目標体重
+    var targetWeight: Double {
+        set {
+            defaults.set(newValue, forKey: Key.targetWeight.rawValue)
+        }
+        get {
+            return defaults.double(forKey: Key.targetWeight.rawValue)
+        }
+    }
+    
+    // 目標歩数の達成フラグ
+    var isShowStepsAlart: Bool {
+        set {
+            defaults.set(newValue, forKey: Key.isShowStepsAlart.rawValue)
+        }
+        get {
+            return defaults.bool(forKey: Key.isShowStepsAlart.rawValue)
+        }
+    }
+    
+    // 今日の23:59
+    var endToday: Date {
+        set {
+            defaults.set(newValue, forKey: Key.endToday.rawValue)
+        }
+        get {
+            let  endToday = Date()
+            guard let endToday_ = self.load(key: Key.endToday.rawValue) else { return endToday - 10.days }
+            return endToday_
+        }
+    }
     
     
     // MARK: - PrivateMethod

@@ -14,6 +14,7 @@ protocol PointViewProtocol: AnyObject {
     
     func displayAlart(_ alart: UIAlertController)
     func trancePointExchangeColor()
+    func removeCellSubView(_ cell: UICollectionViewCell)
 }
 
 protocol PointPresenterProtocol {
@@ -23,7 +24,6 @@ protocol PointPresenterProtocol {
     func selectColor(_ index: Int)
     func getPointCollectionCellColor(_ index: Int) -> UIColor
     func getPointCollectionCellString(_ index: Int) -> String
-    func alartChangeColor(_ index: Int)
-    func alartUnlockColor(_ index: Int)
+    func alartUnlockColor(_ index: Int, _ cell: UICollectionViewCell)
     func getLockIconFrag(_ index: Int) -> Bool
 }

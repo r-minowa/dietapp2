@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="backButton" destination="sZQ-OK-UKw" id="nOS-wM-lq7"/>
                 <outlet property="currentSituationLabel" destination="tHI-Yv-w7o" id="imP-UK-cKX"/>
+                <outlet property="secLabel" destination="8n7-hU-zHu" id="6iV-Cj-yVh"/>
+                <outlet property="timerLabel" destination="wc1-H3-RBF" id="GcC-Xm-hTg"/>
                 <outlet property="timerView" destination="BYS-Y1-eWD" id="oK6-pe-1QA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,9 +37,38 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYS-Y1-eWD" customClass="MBCircularProgressBarView">
                     <rect key="frame" x="0.0" y="92" width="375" height="414"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="CHd-eL-D7f">
+                            <rect key="frame" x="89.666666666666686" y="157" width="196" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc1-H3-RBF">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="160" id="YAD-B2-gCD"/>
+                                        <constraint firstAttribute="height" constant="100" id="nb3-n1-NgN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n7-hU-zHu">
+                                    <rect key="frame" x="160" y="72" width="36" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="9rU-9Y-PP4"/>
+                                        <constraint firstAttribute="width" constant="36" id="zw1-mk-259"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="414" id="OrR-ty-dcf"/>
+                        <constraint firstItem="CHd-eL-D7f" firstAttribute="centerY" secondItem="BYS-Y1-eWD" secondAttribute="centerY" id="QUA-O2-4C5"/>
+                        <constraint firstItem="CHd-eL-D7f" firstAttribute="centerX" secondItem="BYS-Y1-eWD" secondAttribute="centerX" id="SJK-Jo-mCr"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value">
@@ -47,13 +78,12 @@
                             <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="YES"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="unitString" value="sec"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="unitFontSize">
-                            <real key="value" value="25"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="valueFontName" value="DBLCDTempBlack"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="valueFontSize">
-                            <real key="value" value="100"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>

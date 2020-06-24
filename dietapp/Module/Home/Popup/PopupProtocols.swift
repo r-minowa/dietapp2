@@ -6,10 +6,13 @@
 //  Copyright © 2020 ryuki.minowa. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PopupViewProtocol: AnyObject {
     var presenter: PopupPresenterProtocol? { get }
+    
+    func displayPopupAlart(_ alart: UIAlertController)
+    func dismissPopUp()
 }
 
 protocol PopupPresenterProtocol: AnyObject {
@@ -20,5 +23,6 @@ protocol PopupPresenterProtocol: AnyObject {
     func selectLevelSegment(_ segmentIndex: Int)
     func convertChallengeRealmType()
     func setSelectedPositionStr(_ part: String)
-    func saveUserTrainingRealm(_ day: Date)
+    func selectDecisionButton(_ flag: Bool)
+    func settingAlartOfTargetWeight()
 }
