@@ -41,6 +41,10 @@
 		8F0FCE012491B16700508543 /* BodyWeightRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */; };
 		8F0FCE022491B16700508543 /* BodyWeightRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */; };
 		8F0FCE042491B43400508543 /* GetRealmUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */; };
+		8F103BFD24A44D21002EB1A4 /* InputPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F103BFB24A44D21002EB1A4 /* InputPopupViewController.swift */; };
+		8F103BFE24A44D21002EB1A4 /* InputPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F103BFC24A44D21002EB1A4 /* InputPopupViewController.xib */; };
+		8F103C0124A451B3002EB1A4 /* InputPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F103C0024A451B3002EB1A4 /* InputPopupPresenter.swift */; };
+		8F103C0324A451C5002EB1A4 /* InputPopupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F103C0224A451C5002EB1A4 /* InputPopupProtocol.swift */; };
 		8F106EE4249855DE00502E8E /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F106EE3249855DE00502E8E /* ColorManager.swift */; };
 		8F107D11248733C80056D72E /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F107D0F248733C80056D72E /* PopupViewController.swift */; };
 		8F107D12248733C80056D72E /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F107D10248733C80056D72E /* PopupViewController.xib */; };
@@ -173,6 +177,10 @@
 		8F0FCDFF2491B16700508543 /* BodyWeightRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyWeightRecordViewController.swift; sourceTree = "<group>"; };
 		8F0FCE002491B16700508543 /* BodyWeightRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyWeightRecordViewController.xib; sourceTree = "<group>"; };
 		8F0FCE032491B43400508543 /* GetRealmUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmUserInfo.swift; sourceTree = "<group>"; };
+		8F103BFB24A44D21002EB1A4 /* InputPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopupViewController.swift; sourceTree = "<group>"; };
+		8F103BFC24A44D21002EB1A4 /* InputPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPopupViewController.xib; sourceTree = "<group>"; };
+		8F103C0024A451B3002EB1A4 /* InputPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopupPresenter.swift; sourceTree = "<group>"; };
+		8F103C0224A451C5002EB1A4 /* InputPopupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopupProtocol.swift; sourceTree = "<group>"; };
 		8F106EE3249855DE00502E8E /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		8F107D0F248733C80056D72E /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		8F107D10248733C80056D72E /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
@@ -416,6 +424,17 @@
 			path = BodyWeightRecord;
 			sourceTree = "<group>";
 		};
+		8F103BFF24A44D35002EB1A4 /* InputPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8F103C0224A451C5002EB1A4 /* InputPopupProtocol.swift */,
+				8F103BFB24A44D21002EB1A4 /* InputPopupViewController.swift */,
+				8F103C0024A451B3002EB1A4 /* InputPopupPresenter.swift */,
+				8F103BFC24A44D21002EB1A4 /* InputPopupViewController.xib */,
+			);
+			path = InputPopup;
+			sourceTree = "<group>";
+		};
 		8F107D1324873F4A0056D72E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +531,7 @@
 				8F0D11C2248F25A500BDDA0F /* Body */,
 				8F0D11C3248F25B200BDDA0F /* Point */,
 				8F0D11C5248F25DE00BDDA0F /* Setting */,
+				8F103BFF24A44D35002EB1A4 /* InputPopup */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -737,6 +757,7 @@
 				8F107D12248733C80056D72E /* PopupViewController.xib in Resources */,
 				8F1399A5246D193A00195D53 /* Assets.xcassets in Resources */,
 				8F1CA726247FAFB50059B96C /* NoChallengeViewController.xib in Resources */,
+				8F103BFE24A44D21002EB1A4 /* InputPopupViewController.xib in Resources */,
 				8F14A50E2489ECC500D5E5C3 /* TrainingMethodViewController.xib in Resources */,
 				8FB599EA2490C1080039F5E8 /* BodyWeightViewController.xib in Resources */,
 				8F4B5ECA249B3BF80067784B /* PointExchangeColorViewController.xib in Resources */,
@@ -865,11 +886,13 @@
 				8F79A0C1249CB0DC0099AFBE /* SettingListPresenter.swift in Sources */,
 				8F1A92EC247C9D0E0079F468 /* UserInfoObject.swift in Sources */,
 				8F0D11E0248F50B900BDDA0F /* ActivityRecordProtocol.swift in Sources */,
+				8F103C0324A451C5002EB1A4 /* InputPopupProtocol.swift in Sources */,
 				8F0E0F2A2499BEC6008194BB /* PointProtocol.swift in Sources */,
 				8F14A50A2489EAE400D5E5C3 /* CustomButton.swift in Sources */,
 				8F3D0666246E722F005E03C4 /* CalendarPagingCell.swift in Sources */,
 				8F23528F247249EB0078C2A6 /* ChallengeViewController.swift in Sources */,
 				8F0D11C8248F265C00BDDA0F /* ActivityViewController.swift in Sources */,
+				8F103C0124A451B3002EB1A4 /* InputPopupPresenter.swift in Sources */,
 				8F0F6BDB2472109C00F16941 /* ContentViewController.swift in Sources */,
 				8F23529324724DFC0078C2A6 /* ChallengeTableViewCell.swift in Sources */,
 				8F79A0BA249C82840099AFBE /* SettingListViewController.swift in Sources */,
@@ -884,6 +907,7 @@
 				8F1769E22474B10400DA02EC /* ChallengePresenter.swift in Sources */,
 				8F0D11C0248DF9FB00BDDA0F /* ChallengeContentProtocol.swift in Sources */,
 				8F0FCDF92491ABEE00508543 /* BodyWeightRecordPresenter.swift in Sources */,
+				8F103BFD24A44D21002EB1A4 /* InputPopupViewController.swift in Sources */,
 				8FC06ECA24A07AA9000CC937 /* DistanceSettingProtocol.swift in Sources */,
 				8F0E0F282499BEB9008194BB /* PointPresenter.swift in Sources */,
 				8F0F6BE124721CC800F16941 /* CalenderItem.swift in Sources */,

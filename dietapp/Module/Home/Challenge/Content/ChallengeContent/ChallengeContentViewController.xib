@@ -94,7 +94,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trP-XM-lC9" customClass="CustomButton" customModule="dietapp" customModuleProvider="target">
-                    <rect key="frame" x="294" y="55" width="73" height="37"/>
+                    <rect key="frame" x="321" y="62" width="46" height="30"/>
                     <state key="normal" title="やり方"/>
                     <connections>
                         <action selector="wayBuuton:" destination="-1" eventType="touchUpInside" id="JaF-AK-al3"/>

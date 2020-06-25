@@ -26,14 +26,12 @@ class DistanceSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.stepCountView.showUnitString = false
         self.stepCountView.showValueString = false
         self.stepCountView.progressLineWidth = 20
         self.stepCountView.emptyLineWidth = 20
         self.stepCountView.value = 0
-        
-        print("ViewDidLoad")
         
         if let targetStep = self.presenter?.getTargetSteps(){
             self.stepCountView.maxValue = CGFloat(targetStep)  // 毎日の目標歩数
@@ -65,7 +63,6 @@ class DistanceSettingViewController: UIViewController {
         self.stepsTextLabel.textColor = colorSet.bodyText
         self.stepsTextLabel.adjustsFontSizeToFitWidth = true
         if let text = self.presenter?.getStepsTextLabelString() {
-            print(text)
             self.stepsTextLabel.text = text
         }
     }

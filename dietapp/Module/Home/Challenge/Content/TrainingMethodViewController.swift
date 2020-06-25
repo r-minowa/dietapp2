@@ -27,6 +27,7 @@ class TrainingMethodViewController: UIViewController {
        
         self.explainPopView.layer.cornerRadius = 30
         self.explanLabel.text = self.explanation
+        self.explanLabel.adjustsFontSizeToFitWidth = true
         
         
     }

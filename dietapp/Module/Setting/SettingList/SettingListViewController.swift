@@ -59,6 +59,10 @@ extension SettingListViewController: SettingListViewProtocol {
         self.show(vc, sender: nil)
     }
     
+    func trancefromInputPopup(_ vc: InputPopupViewController) {
+        self.show(vc, sender: nil)
+    }
+    
     func trancefromSettingtoPopup(_ vc: PopupViewController) {
         self.show(vc, sender: nil)
     }

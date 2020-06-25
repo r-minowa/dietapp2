@@ -44,5 +44,4 @@ class PointExchangeColorViewController: UIViewController {
             }
         }
     }
-    
 }

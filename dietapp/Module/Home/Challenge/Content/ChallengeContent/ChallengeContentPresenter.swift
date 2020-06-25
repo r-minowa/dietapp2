@@ -27,10 +27,6 @@ final class ChallengeContentPresenter {
 extension ChallengeContentPresenter: ChallengeContentPresenterProtocol {
     
     func setBoolChallenge(_ id: Int, _ index: Int) {
-        do {
-            try? self.realmAccessor.saveBoolChallenge(id: id, index: index)
-        } catch {
-            print("DEBUG_PRINT: setBoolChallenge")
-        }
+            try! self.realmAccessor.saveBoolChallenge(id: id, index: index)
     }
 }

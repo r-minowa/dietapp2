@@ -32,6 +32,7 @@ class PointViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: - Point加算
         UserDefaultManager.shared.point += 100
         
         let pointImage = UIImage(named: "point")

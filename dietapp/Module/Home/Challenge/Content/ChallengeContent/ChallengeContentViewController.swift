@@ -28,7 +28,7 @@ class ChallengeContentViewController: UIViewController {
     // タイマーラベル用変数
     var timer_sec: Float = 0
     // インターバル時間
-    let intervalTime: Double = 10
+    let intervalTime: Double = 20
     
     // トレーニング時間
     var trainingTime: Double = 0
@@ -64,6 +64,8 @@ class ChallengeContentViewController: UIViewController {
         self.timerView.emptyLineWidth = 20
         self.timerView.progressAngle = 100
         self.timerView.progressRotationAngle = 50
+        
+        self.currentSituationLabel.text = ""
         
         // 取得したチャレンジのセット数と時間の取得
         detail = self.challenge?.details.filter{ $0.level == self.selectedLevel }.first
@@ -107,7 +109,7 @@ class ChallengeContentViewController: UIViewController {
         if backButton.titleLabel?.text == "スタート" {
             
             self.trainingTime_ = self.trainingTime
-            currentSituationLabel.text = "\(nowTrainingSet)セット目:トレーニングなう"
+            currentSituationLabel.text = "\(nowTrainingSet)セット目"
             
             // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
             if self.timer == nil {
@@ -161,7 +163,8 @@ class ChallengeContentViewController: UIViewController {
                                                           selector: #selector(resetTimer(_:)),
                                                           userInfo: nil,
                                                           repeats: true)
-                currentSituationLabel.text = "\(nowTrainingSet - 1)セット目:インターバル"
+//                currentSituationLabel.text = "\(nowTrainingSet - 1)セット目:インターバル"
+                currentSituationLabel.text = "インターバル"
             }
         } else if ( (self.nowTrainingSet - 1) * 2 - 1 == count ) {  // 各セットのインターバルが実行された後
             self.trainingTime_ = self.trainingTime
@@ -170,7 +173,7 @@ class ChallengeContentViewController: UIViewController {
                                                       selector: #selector(resetTimer(_:)),
                                                       userInfo: nil,
                                                       repeats: true)
-            currentSituationLabel.text = "\(nowTrainingSet)セット目:トレーニングなう"
+            currentSituationLabel.text = "\(nowTrainingSet)セット目"
         }
         
         self.timerView.maxValue = CGFloat(trainingTime_)
@@ -182,7 +185,6 @@ class ChallengeContentViewController: UIViewController {
             self.timer = nil
             currentSituationLabel.text = "お疲れ様でした！"
             UserDefaultManager.shared.point += 1
-            print("point = \(UserDefaultManager.shared.point)")
             self.presenter?.setBoolChallenge(id, index)
             alertPointGet(title: "Congraturation!!!", message: "おめでとう！1Pointゲット！")
         }
@@ -239,6 +241,7 @@ class ChallengeContentViewController: UIViewController {
 // MARK: - ChallengeContentViewProtocol
 
 extension ChallengeContentViewController: ChallengeContentViewProtocol {
+    
     
 }
 

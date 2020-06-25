@@ -15,14 +15,14 @@ class SingletonColorManager: NSObject {
 
 class ColorManager {
     enum ThemeType: String, CaseIterable {
-        case defaultColor = "default"
-        case red
-        case blue
-        case yellow
-        case green
-        case orange
-        case pink
-        case violet
+        case defaultColor = "デフォルト"
+        case red = "赤色"
+        case blue = "青色"
+        case yellow = "黄色"
+        case green = "緑色"
+        case orange = "オレンジ"
+        case pink = "ピンク"
+        case violet = "紫色"
     }
 
     struct ColorSet {

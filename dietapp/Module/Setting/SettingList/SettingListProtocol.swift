@@ -12,6 +12,7 @@ protocol SettingListViewProtocol: AnyObject {
     var presenter: SettingListPresenterProtocol? { get }
     
     func trancefromSettingtoTargetWeight(_ vc: TargetWeightSettingViewController)
+    func trancefromInputPopup(_ vc: InputPopupViewController)
     func trancefromSettingtoPopup(_ vc: PopupViewController)
     func trancefromSettingtoDistance(_ vc: DistanceSettingViewController)
 }

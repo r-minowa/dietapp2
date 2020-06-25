@@ -24,8 +24,14 @@ final class SettingListPresenter {
 extension SettingListPresenter: SettingListPresenterProtocol {
     func selectCell(_ index: Int) {
         if index == 0 {
-            let vc = TargetWeightSettingViewController()
-            self.view?.trancefromSettingtoTargetWeight(vc)
+//            let vc = TargetWeightSettingViewController()
+//            self.view?.trancefromSettingtoTargetWeight(vc)
+            
+            let vc = InputPopupViewController()
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.titleName = "目標体重"
+            self.view?.trancefromInputPopup(vc)
         } else if index == 1 {
             let vc = PopupViewController()
             vc.alartFlag = true

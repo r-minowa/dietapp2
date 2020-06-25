@@ -16,15 +16,15 @@ final class PopupViewController: UIViewController {
     var partsStr: [String] = []
     var alartFlag: Bool = false
     
+    // MARK: - IBOutlet
     
     @IBOutlet weak var decisionButton: CustomButton!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var partsLabel: UILabel!
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var partsView: UIView!
     @IBOutlet weak var targetView: UIView!
-    
-    
     @IBOutlet weak var partsPickerView: UIPickerView! {
         didSet {
             self.partsPickerView.dataSource = self
@@ -56,6 +56,10 @@ final class PopupViewController: UIViewController {
         self.partsView.clipsToBounds = true
         
         self.targetView.backgroundColor = .clear
+        
+        self.titleLabel.font = UIFont.boldSystemFont(ofSize: 50)
+        self.levelLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        self.partsLabel.font = UIFont.boldSystemFont(ofSize: 30)
         
         
         guard let partsStr_ = self.presenter?.getPartsStr() else { return }

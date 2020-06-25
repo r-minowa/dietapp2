@@ -40,7 +40,6 @@ class BodyWeightGraphViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,9 +100,16 @@ class BodyWeightGraphViewController: UIViewController {
     }
     
     @IBAction func inputButton(_ sender: Any) {
-        let vc = BodyWeightRecordViewController()
-        vc.calenderDate = self.calenderDate
-        vc.modalPresentationStyle = .fullScreen
+//        let vc = BodyWeightRecordViewController()
+//        vc.calenderDate = self.calenderDate
+//        vc.modalPresentationStyle = .fullScreen
+//        show(vc, sender: nil)
+        
+        let vc = InputPopupViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.titleName = "体重"
+        vc.date = self.calenderDate
         show(vc, sender: nil)
     }
     

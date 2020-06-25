@@ -103,9 +103,16 @@ class ActivityDetailsViewController: UIViewController {
     }
     
     @IBAction func inputActivityButton(_ sender: Any) {
-        let vc = ActivityRecordViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.name = name
+//        let vc = ActivityRecordViewController()
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.name = name
+//        show(vc, sender: nil)
+        
+        let vc = InputPopupViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.titleName = "回数"
+        vc.trainingName = name
         show(vc, sender: nil)
     }
     

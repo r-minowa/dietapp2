@@ -25,9 +25,7 @@ final class DistanceSettingPresenter {
     }
     
     // MARK: - PrivateMethod
-    
-    
-    // MARK: -フラグの変更
+
     /// 設定された目標歩数に達したかどうか
     /// - Parameter steps: 歩数
     func judgTargetStep(_ steps: NSNumber) {
@@ -66,27 +64,31 @@ final class DistanceSettingPresenter {
 
 extension DistanceSettingPresenter: DistanceSettingPresenterProtocol {
     
+    /// 目標歩数を取得する
     func getTargetSteps() -> Int {
         return self.targetStep
     }
     
+    /// 現在の歩数を取得する
     func getSteps(){
         let today = Date()
-                
+        
         if(CMPedometer.isStepCountingAvailable()){
             self.pedometer.queryPedometerData(from: today.dateAtStartOf(.day), to: today.dateAtEndOf(.day)) { (data, error) in
-                if(error == nil){
-                    if let unwarSteps = data?.numberOfSteps {
-                        self.judgTargetStep(unwarSteps)
+                
+                DispatchQueue.main.async(execute: { () -> Void in
+                    if(error == nil){
+                        if let unwarSteps = data?.numberOfSteps {
+                            self.judgTargetStep(unwarSteps)
+                        }
                     }
-                }
+                })
             }
         }
     }
     
+    /// stepsLabelに表記する文字列を取得する
     func getStepsTextLabelString() -> String {
-        
-        print(UserDefaultManager.shared.isShowStepsAlart)
         
         if UserDefaultManager.shared.isShowStepsAlart {
             return "今日の目標達成！\n明日も\(targetStep)歩目指して頑張ろう！"

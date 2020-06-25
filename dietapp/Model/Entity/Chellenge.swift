@@ -17,11 +17,14 @@ struct Training {
         case sideBridge = "サイドブリッジ"
         case squat = "スクワット"
         case twistCrunch = "ツイストクランチ"
+        case narrowPushUp = "ナロープッシュアップ"
         case spine = "背筋"
+        case pikePress = "パイクプレス"
         case highReversePlank = "ハイリバースプランク"
         case palmCurl = "パームカール"
         case hipAbduction = "ヒップアブダクション"
         case hipLift = "ヒップリフト"
+        case hinduPushuUp = "ヒンズープッシュアップ"
         case abs = "腹筋"
         case plank = "プランク"
         case legRaises = "レッグレイズ"
@@ -80,51 +83,51 @@ class Trainings {
         
         let abs = Training(
             name: .abs,
-            explanation: "腹筋",
+            explanation: "1.仰向けになり、ひざを立てる\n2.ゆっくり息を吐きながら上半身を持ち上げる\n\n○ポイント\n勢いや反動をつけずに、ゆっくりと腹筋を意識しましょう！",
             partsList:[.belly],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 5,
+                    countOfSets: 2,
+                    secOfSets: 20,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
-                    countOfSets: 2,
-                    secOfSets: 20,
-                    standardNum: 15
+                    countOfSets: 3,
+                    secOfSets: 40,
+                    standardNum: 20
                 ),
                 Training.Details(
                     level: .high,
                     countOfSets: 3,
-                    secOfSets: 20,
-                    standardNum: 20
+                    secOfSets: 60,
+                    standardNum: 30
                 )
             ]
         )
         
         let plank = Training(
             name: .plank,
-            explanation: "四つん這いになりましょう。\n↓\n肘から手首まで（前腕）を地面に着けましょう。\n↓\n膝を上げ、前腕と足で身体を支えましょう。\n↓\n上と横から見たときに、頭から足までがまっすぐになるように姿勢を保ちましょう。",
+            explanation: "1.床の上にうつ伏せになる\n2.腕を肩幅ほど開き、上半身を上げる(腕の角度90度)\n3.つま先と腕で体のバランスを取る\n4.前を向き、首筋から足まで真っ直ぐにする\n\n○ポイント\n一直線の姿勢を意識しましょう！",
             partsList:[.hip, .belly],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 20,
-                    standardNum: 1
-                ),
-                Training.Details(
-                    level: .mid,
                     countOfSets: 2,
                     secOfSets: 20,
                     standardNum: 1
                 ),
                 Training.Details(
-                    level: .high,
+                    level: .mid,
                     countOfSets: 3,
-                    secOfSets: 20,
+                    secOfSets: 30,
+                    standardNum: 1
+                ),
+                Training.Details(
+                    level: .high,
+                    countOfSets: 5,
+                    secOfSets: 30,
                     standardNum: 1
                 )
             ]
@@ -132,25 +135,25 @@ class Trainings {
         
         let highReversePlank = Training(
             name: .highReversePlank,
-            explanation: "ハイリバースプランク",
+            explanation: "1.仰向けになる\n2.手のひらを地面につけ、体を持ち上げる\n3.(2)の時、手のひらが肩の真下に来るようにする\n4.足から頭まで一直線にする\n5.この状態をキープする",
             partsList:[.back, .belly, .thigh],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 20,
+                    countOfSets: 2,
+                    secOfSets: 30,
                     standardNum: 1
                 ),
                 Training.Details(
                     level: .mid,
-                    countOfSets: 2,
-                    secOfSets: 20,
+                    countOfSets: 3,
+                    secOfSets: 50,
                     standardNum: 1
                 ),
                 Training.Details(
                     level: .high,
                     countOfSets: 3,
-                    secOfSets: 20,
+                    secOfSets: 100,
                     standardNum: 1
                 )
             ]
@@ -158,77 +161,77 @@ class Trainings {
         
         let squat = Training(
             name: .squat,
-            explanation: "スクワット",
+            explanation: "1.肩幅ほど足を広げて立つ\n2.背筋をピンと伸ばす\n3.足先を少し外側に向ける\n4.息を吸いつつゆっくり体を下げる\n5.床と太ももを平行にし、2秒間キープ\n6.息を吐きつつ姿勢をゆっくり元に戻す",
             partsList:[.hip, .thigh, .back, .waist],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 20,
+                    countOfSets: 2,
+                    secOfSets: 40,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
-                    countOfSets: 2,
-                    secOfSets: 20,
-                    standardNum: 10
+                    countOfSets: 3,
+                    secOfSets: 80,
+                    standardNum: 20
                 ),
                 Training.Details(
                     level: .high,
                     countOfSets: 3,
-                    secOfSets: 30,
-                    standardNum: 15
+                    secOfSets: 120,
+                    standardNum: 30
                 )
             ]
         )
         
         let crunch = Training(
             name: .crunch,
-            explanation: "クランチ",
+            explanation: "1.仰向けになる\n2.膝と股関節を90°に曲げる\n3.手を頭の後ろで組む\n4.おへそをのぞきこむように、息を吐きながら肩甲骨が床から浮く程度まで上げる\n5.頭が地面に着くギリギリまで下ろす\n6.(4)(5)を繰り返す",
             partsList:[.belly],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
+                    countOfSets: 2,
                     secOfSets: 20,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
                     countOfSets: 3,
-                    secOfSets: 20,
-                    standardNum: 10
+                    secOfSets: 30,
+                    standardNum: 15
                 ),
                 Training.Details(
                     level: .high,
                     countOfSets: 3,
-                    secOfSets: 40,
-                    standardNum: 20
+                    secOfSets: 60,
+                    standardNum: 30
                 )
             ]
         )
         
         let twistCrunch = Training(
             name: .twistCrunch,
-            explanation: "ツイストクランチ",
+            explanation: "※左右行います\n\n1.仰向けで寝る\n2.右足の膝を90度に立たせる\n3.左手は頭の後ろに固定させる\n4.右足を上げて、太ももが床と垂直になる姿勢にする\n5.(4)の時、膝を90度に固定させておく\n6.体を内側にひねりつつ上体を起こし、右の膝と左手がくっつくまで近づける\n7.(6)の状態で少しの間キープする\n8.反動を使わずゆっくり元の状態に戻す",
             partsList:[.belly, .waist],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 20,
+                    countOfSets: 2,
+                    secOfSets: 30,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
-                    countOfSets: 3,
-                    secOfSets: 20,
+                    countOfSets: 4,
+                    secOfSets: 30,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .high,
-                    countOfSets: 3,
-                    secOfSets: 40,
+                    countOfSets: 6,
+                    secOfSets: 60,
                     standardNum: 20
                 )
             ]
@@ -236,12 +239,12 @@ class Trainings {
         
         let pushUp = Training(
             name: .pushUp,
-            explanation: "腕立て",
+            explanation: "1.四つん這いの状態になる\n2.肩幅よりも少し広めに手をつく\n3.足を伸ばしつま先を立て、頭から足首まで真っ直ぐにする\n4.脇を締めて肘を曲げ、体を床に着くギリギリまでゆっくり下ろす\n5.床を押して肘を伸ばし、体を持ち上げる\n6.(4)(5)を繰り返す",
             partsList:[.breast, .arm],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
+                    countOfSets: 2,
                     secOfSets: 20,
                     standardNum: 10
                 ),
@@ -262,60 +265,60 @@ class Trainings {
         
         let legRaises = Training(
             name: .legRaises,
-            explanation: "レッグレイズ",
+            explanation: "1.仰向けになる\n2.両足を床から10センチほどの位置でキープする\n3.息を吐きながら足を上げる\n4.45度を超えない程度で5秒停止する\n5.息を吸いながら下げる",
             partsList:[.belly, .thigh],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 20,
+                    countOfSets: 3,
+                    secOfSets: 50,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
                     countOfSets: 3,
-                    secOfSets: 20,
-                    standardNum: 10
+                    secOfSets: 75,
+                    standardNum: 15
                 ),
                 Training.Details(
                     level: .high,
-                    countOfSets: 3,
-                    secOfSets: 60,
-                    standardNum: 30
+                    countOfSets: 5,
+                    secOfSets: 100,
+                    standardNum: 20
                 )
             ]
         )
         
         let hipLift = Training(
             name: .hipLift,
-            explanation: "ヒップリフト",
+            explanation: "1.仰向けになる\n2.膝を90度曲げて脚を立てる\n3.膝から頭まで一直線になるまでお尻をゆっくりと上げる\n4.2秒間キープする\n5.ゆっくり元に戻す",
             partsList:[.hip, .back],
             detailsList: [
                 Training.Details(
                     level: .low,
-                    countOfSets: 1,
-                    secOfSets: 20,
+                    countOfSets: 3,
+                    secOfSets: 40,
                     standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
                     countOfSets: 3,
-                    secOfSets: 20,
-                    standardNum: 10
+                    secOfSets: 60,
+                    standardNum: 15
                 ),
                 Training.Details(
                     level: .high,
-                    countOfSets: 3,
-                    secOfSets: 60,
-                    standardNum: 30
+                    countOfSets: 5,
+                    secOfSets: 100,
+                    standardNum: 25
                 )
             ]
         )
         
         let spine = Training(
             name: .spine,
-            explanation: "背筋",
-            partsList:[.back],
+            explanation: "1.うつ伏せになる\n2.両手の指先を耳に添え、肘は横に伸ばした状態を作る\n3.両足と胸をゆっくりと上に上げる\n4.(3)の時、上半身ばかり上げすぎないよう注意\n5.背筋が刺激されているのを感じたら1秒キープする\n6.その後ゆっくり元に戻す",
+            partsList:[.back, .waist],
             detailsList: [
                 Training.Details(
                     level: .low,
@@ -340,7 +343,7 @@ class Trainings {
         
         let  hipAbduction = Training(
             name: .hipAbduction,
-            explanation: "ヒップアブダクション 左右",
+            explanation: "※左右行います\n\n1.横向きで寝る\n2.床に付いている方の足の膝を、軽く曲げる\n3.手は床について、上半身のバランスを取る\n4.上側の足を伸ばして、ゆっくり上に上げる\n5.限界まで上げたら、ゆっくり元に戻す\n6.(4)(5)を繰り返す",
             partsList:[.hip, .thigh],
             detailsList: [
                 Training.Details(
@@ -366,33 +369,33 @@ class Trainings {
         
         let  alternateFrontLunge = Training(
             name: .alternateFrontLunge,
-            explanation: "オルタネイトフロントランジ　左右",
+            explanation: "\n1.腰幅に足を開き、つま先は正面を向ける\n2.お腹に力を入れ、胸を張る\n3.右足を前に出し、太ももと床が水平になるようにする\n4.右足を元の位置に戻す\n5.左足も同様に行う\n6.(3)(4)(5)を繰り返す",
             partsList:[.hip, .thigh],
             detailsList: [
                 Training.Details(
                     level: .low,
                     countOfSets: 2,
-                    secOfSets: 20,
-                    standardNum: 10
+                    secOfSets: 40,
+                    standardNum: 20
                 ),
                 Training.Details(
                     level: .mid,
-                    countOfSets: 6,
-                    secOfSets: 20,
-                    standardNum: 10
+                    countOfSets: 3,
+                    secOfSets: 60,
+                    standardNum: 30
                 ),
                 Training.Details(
                     level: .high,
-                    countOfSets: 6,
-                    secOfSets: 40,
-                    standardNum: 20
+                    countOfSets: 3,
+                    secOfSets: 100,
+                    standardNum: 50
                 )
             ]
         )
         
         let  sideBridge = Training(
             name: .sideBridge,
-            explanation: "サイドブリッジ　左右",
+            explanation: "※左右行います\n1.横向きになる\n2.肘を肩の真下に置き、90度に曲げる\n3.腰を浮かせ、頭から足先まで一直線にする\n4.その姿勢をキープする",
             partsList:[.waist],
             detailsList: [
                 Training.Details(
@@ -418,26 +421,104 @@ class Trainings {
         
         let  palmCurl = Training(
             name: .palmCurl,
-            explanation: "パームカール　左右",
+            explanation: "※左右行います\n\n(右腕の場合)\n1.左手のひらで右手首を掴み下へ押す\n2.左手に逆らうよう肘から上を持ち上げる\n3.持ち上げたら同じ軌道で下ろす\n4.(3)(4)を繰り返す\n\n○ポイント\n4秒で上げ、1秒静止し、4秒で下ろすように意識しましょう！",
+            partsList:[.arm],
+            detailsList: [
+                Training.Details(
+                    level: .low,
+                    countOfSets: 4,
+                    secOfSets: 50,
+                    standardNum: 5
+                ),
+                Training.Details(
+                    level: .mid,
+                    countOfSets: 6,
+                    secOfSets: 70,
+                    standardNum: 7
+                ),
+                Training.Details(
+                    level: .high,
+                    countOfSets: 6,
+                    secOfSets: 100,
+                    standardNum: 10
+                )
+            ]
+        )
+        
+        let  hinduPushuUp = Training(
+            name: .hinduPushuUp,
+            explanation: "1.肩幅からこぶし2つ分外に開き、両手を地面に付ける\n2.肩と同じ足幅にする\n3.お尻を高く持ち上げ、お尻から腕まで一直線にする\n4.地面スレスレまで上半身を下ろす\n5.円を描くように体を回し元の姿勢に戻る",
+            partsList:[.belly, .arm, .back, .breast],
+            detailsList: [
+                Training.Details(
+                    level: .low,
+                    countOfSets: 2,
+                    secOfSets: 20,
+                    standardNum: 10
+                ),
+                Training.Details(
+                    level: .mid,
+                    countOfSets: 3,
+                    secOfSets: 20,
+                    standardNum: 10
+                ),
+                Training.Details(
+                    level: .high,
+                    countOfSets: 4,
+                    secOfSets: 30,
+                    standardNum: 15
+                )
+            ]
+        )
+        
+        let  pikePress = Training(
+            name: .pikePress,
+            explanation: "1.四つん這いの姿勢になる\n2.膝を浮かせ、両手両足で体を支える\n3.足と手の幅を狭くする\n4.お尻をグッと突き上げる\n5.上半身を斜め前に床スレスレまで倒す\n6.ゆっくり元の姿勢に戻していく",
             partsList:[.arm],
             detailsList: [
                 Training.Details(
                     level: .low,
                     countOfSets: 2,
                     secOfSets: 30,
-                    standardNum: 1
+                    standardNum: 10
                 ),
                 Training.Details(
                     level: .mid,
-                    countOfSets: 6,
+                    countOfSets: 3,
                     secOfSets: 30,
-                    standardNum: 1
+                    standardNum: 10
                 ),
                 Training.Details(
                     level: .high,
-                    countOfSets: 6,
-                    secOfSets: 60,
-                    standardNum: 1
+                    countOfSets: 5,
+                    secOfSets: 45,
+                    standardNum: 15
+                )
+            ]
+        )
+        
+        let  narrowPushUp = Training(
+            name: .narrowPushUp,
+            explanation: "1.うつ伏せになる\n2.肩幅よりも手幅を狭くする\n3.足をまっすぐ伸ばし、つま先でバランスをとる\n4.床につかないギリギリまで体を倒す\n5.素早く体を持ち上げる",
+            partsList:[.breast],
+            detailsList: [
+                Training.Details(
+                    level: .low,
+                    countOfSets: 2,
+                    secOfSets: 20,
+                    standardNum: 10
+                ),
+                Training.Details(
+                    level: .mid,
+                    countOfSets: 3,
+                    secOfSets: 30,
+                    standardNum: 15
+                ),
+                Training.Details(
+                    level: .high,
+                    countOfSets: 5,
+                    secOfSets: 40,
+                    standardNum: 20
                 )
             ]
         )
@@ -456,9 +537,11 @@ class Trainings {
         trainings.append(alternateFrontLunge)
         trainings.append(sideBridge)
         trainings.append(palmCurl)
+        trainings.append(hinduPushuUp)
+        trainings.append(pikePress)
+        trainings.append(narrowPushUp)
     }
 }
-
 
 /*        // メモ mapに関して
        var partsStrs:[String] = []
