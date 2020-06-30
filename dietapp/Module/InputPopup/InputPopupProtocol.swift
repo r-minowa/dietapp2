@@ -13,6 +13,8 @@ protocol InputPopupViewProtocol: AnyObject {
     
     func displayInputPopupAlart(alart: UIAlertController)
     func dismissInputPopup()
+    func changeUnit(_ unit: String, _ title: String)
+    func changeAddButton(_ name: String)
 }
 
 protocol InputPopupPresenterProtocol {
@@ -20,4 +22,5 @@ protocol InputPopupPresenterProtocol {
     
     func setDate(trainingName: String, date: Date)
     func selectInputView(titleName: String, textFieldString: String)
+    func selectUnit(_ titleName: String)
 }

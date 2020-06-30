@@ -24,10 +24,14 @@ class ActivityDetailsViewController: UIViewController {
     
     @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var margin1View: UIView!
+    @IBOutlet weak var margin2View: UIView!
+    @IBOutlet weak var margin3View: UIView!
     
     @IBOutlet weak var trainingNameLabel: UILabel!
     @IBOutlet weak var aveLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var previousLabel: UILabel!
     @IBOutlet weak var previousDataLabel: UILabel!
     
     @IBOutlet weak var backButton: UIButton!
@@ -38,6 +42,8 @@ class ActivityDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.previousLabel.text = "前回:"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,15 +51,22 @@ class ActivityDetailsViewController: UIViewController {
         
         let colorSet = ColorManager.singletonColorManager.colorSet
         
+        // view設定
         self.view.backgroundColor = colorSet.background
         self.chartView.backgroundColor = colorSet.light
         self.chartView.layer.cornerRadius = 20
         self.lineChartView.backgroundColor = .clear
+        self.margin1View.backgroundColor = colorSet.light
+        self.margin1View.layer.cornerRadius = 1
+        self.margin2View.backgroundColor = colorSet.light
+        self.margin2View.layer.cornerRadius = 1
+        self.margin3View.backgroundColor = colorSet.light
+        self.margin3View.layer.cornerRadius = 1
         
+        // label設定
         self.trainingNameLabel.backgroundColor = .clear
         self.trainingNameLabel.adjustsFontSizeToFitWidth = true
         self.trainingNameLabel.text = name
-        
         self.previousDataLabel.adjustsFontSizeToFitWidth = true
         
         // Button設定
@@ -68,32 +81,7 @@ class ActivityDetailsViewController: UIViewController {
         self.lineChartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
         self.lineChartView.noDataTextColor = colorSet.titleText //Noデータ時の文字色
         
-        
-        
-        self.presenter?.getActivityDetails(name)
-        
-        if let max_ = self.presenter?.getMaxCount(), let min_ = self.presenter?.getMinCount() {
-            self.max = max_
-            self.min = min_
-        }
-        
-        if let count = self.presenter?.getCountArray(), let date = self.presenter?.getDate() {
-            if count != [] {
-                initDisplay(value: count, date: date)
-            }
-        }
-        
-        // ラベル設定
-        if let totalCount = self.presenter?.getTotalCount() {
-            self.totalLabel.text = String(totalCount)
-        }
-        if let aveCount = self.presenter?.getAveCount() {
-            self.aveLabel.text = String(aveCount)
-        }
-        if let previousData = self.presenter?.getPreviousData() {
-            self.previousDataLabel.text = String(previousData)
-        }
-        
+        self.setData()
     }
     
     // MARK: - IBAction
@@ -113,6 +101,10 @@ class ActivityDetailsViewController: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
         vc.titleName = "回数"
         vc.trainingName = name
+        vc.addTapped = { [weak self] in
+            self?.setData()
+            self?.setPreviousLabel()
+        }
         show(vc, sender: nil)
     }
     
@@ -158,10 +150,39 @@ class ActivityDetailsViewController: UIViewController {
         self.lineDataSet.colors = [colorSet.graphColor]  // グラフの色
         self.lineDataSet.circleColors = [colorSet.graphProtColor]  // プロットの色
     }
+    
+    func setData() {
+        self.presenter?.getActivityDetails(name)
+        
+        if let max_ = self.presenter?.getMaxCount(), let min_ = self.presenter?.getMinCount() {
+            self.max = max_
+            self.min = min_
+        }
+        
+        if let count = self.presenter?.getCountArray(), let date = self.presenter?.getDate() {
+            if count != [] {
+                initDisplay(value: count, date: date)
+            }
+        }
+        
+        // ラベル設定
+        if let totalCount = self.presenter?.getTotalCount() {
+            self.totalLabel.text = String(totalCount)
+        }
+        if let aveCount = self.presenter?.getAveCount() {
+            self.aveLabel.text = String(aveCount)
+        }
+        if let previousData = self.presenter?.getPreviousData() {
+            self.previousDataLabel.text = String(previousData)
+        }
+    }
+    
+    func setPreviousLabel() {
+           self.previousLabel.text = "今回:"
+       }
 }
 
 // MARK: - ActivityDetailsViewProtocol
 
 extension ActivityDetailsViewController: ActivityDetailsViewProtocol {
-    
 }

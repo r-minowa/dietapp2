@@ -10,6 +10,8 @@ import Foundation
 
 protocol ActivityDetailsViewProtocol: AnyObject {
     var presenter: ActivityDetailsPresenterProtocol? { get }
+    
+    func setPreviousLabel() 
 }
 
 protocol ActivityDetailsPresenterProtocol {

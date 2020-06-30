@@ -5,12 +5,14 @@ PODS:
   - Charts/Core (3.5.0)
   - FSCalendar (2.8.1)
   - MBCircularProgressBar (0.3.5)
+  - youtube-ios-player-helper (1.0.1)
 
 DEPENDENCIES:
   - CalculateCalendarLogic
   - Charts
   - FSCalendar
   - MBCircularProgressBar
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - Charts
     - FSCalendar
     - MBCircularProgressBar
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+  youtube-ios-player-helper: efc25e3d6a8164cb87700f4237e0e3ef6aa45c2f
 
-PODFILE CHECKSUM: 8ef9e9088d05bba57c4df7869d048e3fbccd48f9
+PODFILE CHECKSUM: 9b0e9c1522e1c1d93e6a09ee2dbbed41a13c8035
 
 COCOAPODS: 1.9.1

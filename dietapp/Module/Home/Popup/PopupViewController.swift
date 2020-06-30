@@ -57,9 +57,9 @@ final class PopupViewController: UIViewController {
         
         self.targetView.backgroundColor = .clear
         
-        self.titleLabel.font = UIFont.boldSystemFont(ofSize: 50)
-        self.levelLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        self.partsLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        self.titleLabel.font = UIFont.systemFont(ofSize: 40)
+        self.levelLabel.font = UIFont.systemFont(ofSize: 25)
+        self.partsLabel.font = UIFont.systemFont(ofSize: 25)
         
         
         guard let partsStr_ = self.presenter?.getPartsStr() else { return }

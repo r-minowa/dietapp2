@@ -215,15 +215,15 @@ extension PopupPresenter: PopupPresenterProtocol {
         self.popupAlertController = UIAlertController(title: "注意",
                                    message: "今日からのチャレンジが変更されます\nよろしいですか",
                                    preferredStyle: .alert)
-        self.popupAlertController.addAction(UIAlertAction(title: "YES",
-                                                style: .default,
+        self.popupAlertController.addAction(UIAlertAction(title: "キャンセル",
+                                                style: .cancel,
+                                                handler: nil
+        ))
+        self.popupAlertController.addAction(UIAlertAction(title: "はい",
+                                                          style: .destructive,
                                                 handler: {(action: UIAlertAction!) -> Void in
                                                     self.convertChallengeRealmType()
         }))
-        self.popupAlertController.addAction(UIAlertAction(title: "NO",
-                                                style: .default,
-                                                handler: nil
-        ))
         
         self.view?.displayPopupAlart(self.popupAlertController)
     }

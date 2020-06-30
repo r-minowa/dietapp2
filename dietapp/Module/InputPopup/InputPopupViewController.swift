@@ -15,6 +15,7 @@ class InputPopupViewController: UIViewController {
     var titleName: String = ""
     var trainingName: String = ""
     var date = Date()
+    var addTapped: (() -> Void)?
     
     // MARK: - IBOutlet
     
@@ -26,6 +27,8 @@ class InputPopupViewController: UIViewController {
             self.inputTextField.delegate = self
         }
     }
+    @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - LifeCycle
     
@@ -36,6 +39,7 @@ class InputPopupViewController: UIViewController {
         self.mainView.layer.cornerRadius = 15
         
         self.inputTextField.placeholder = titleName
+        self.inputTextField.keyboardType = .numberPad
         
         let pathAddButton = UIBezierPath(roundedRect: self.addButton.bounds, byRoundingCorners: [.bottomLeft], cornerRadii: CGSize(width: 15, height: 15))
         let maskAddButton = CAShapeLayer()
@@ -47,7 +51,9 @@ class InputPopupViewController: UIViewController {
         maskCancelButton.path = pathCancelButton.cgPath
         self.cancelButton.layer.mask = maskCancelButton
         
-        self.inputTextField.keyboardType = .numberPad
+        self.unitLabel.adjustsFontSizeToFitWidth = true
+        
+        self.presenter?.selectUnit(titleName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +63,9 @@ class InputPopupViewController: UIViewController {
         
         self.mainView.backgroundColor = colorSet.light
         self.addButton.backgroundColor = colorSet.mid
+        self.addButton.tintColor = colorSet.bodyText
         self.cancelButton.backgroundColor = colorSet.thick
+        self.cancelButton.tintColor = colorSet.bodyText
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -74,6 +82,7 @@ class InputPopupViewController: UIViewController {
             self.presenter?.selectInputView(titleName: self.titleName,
                                             textFieldString: unwarpTextFieldString)
         }
+        self.addTapped?()
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -99,5 +108,14 @@ extension InputPopupViewController: InputPopupViewProtocol {
     
     func dismissInputPopup() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func changeUnit(_ unit: String, _ title: String) {
+        self.unitLabel.text = unit
+        self.titleLabel.text = title
+    }
+    
+    func changeAddButton(_ name: String) {
+        self.addButton.setTitle(name, for: .normal)
     }
 }

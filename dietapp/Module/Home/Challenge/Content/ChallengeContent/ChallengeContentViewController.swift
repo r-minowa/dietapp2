@@ -36,6 +36,8 @@ class ChallengeContentViewController: UIViewController {
     //トレーニングのセット回数
     var trainingSet: Int = 0
     var nowTrainingSet: Int = 1
+    // トレーニングの標準回数
+    var trainingStanderdCount: Int = 0
     
     // ロジック用カウント
     var count: Int = 0
@@ -72,6 +74,7 @@ class ChallengeContentViewController: UIViewController {
         if let unwrapDetail = detail {
             self.trainingTime = Double(unwrapDetail.secOfSets)
             self.trainingSet = unwrapDetail.countOfSets
+            self.trainingStanderdCount = unwrapDetail.standardNum
         }
     }
     
@@ -97,11 +100,18 @@ class ChallengeContentViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func wayBuuton(_ sender: Any) {
-        let vc = TrainingMethodViewController()
+//        let vc = TrainingMethodViewController()
+//        vc.modalPresentationStyle = .overCurrentContext
+//        vc.modalTransitionStyle = .crossDissolve
+//        vc.explanation = self.challenge!.explanation
+//        show(vc, sender: nil)
+        
+        let vc = MovieTrainingMethodViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
-        vc.explanation = self.challenge!.explanation
+        vc.movieId = self.challenge!.explanation
         show(vc, sender: nil)
+        
     }
   
     @IBAction func backButtton(_ sender: Any) {
@@ -109,7 +119,7 @@ class ChallengeContentViewController: UIViewController {
         if backButton.titleLabel?.text == "スタート" {
             
             self.trainingTime_ = self.trainingTime
-            currentSituationLabel.text = "\(nowTrainingSet)セット目"
+            currentSituationLabel.text = "\(nowTrainingSet)セット目\n\n標準回数: \(self.trainingStanderdCount)回"
             
             // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
             if self.timer == nil {
@@ -127,7 +137,7 @@ class ChallengeContentViewController: UIViewController {
                 self.trainingTimer.invalidate()
             }
             
-            alertRetire(title: "警告", message: "本当にリタイアしますか？")
+            alertRetire(title: "確認", message: "本当にリタイアしますか？")
         }
     }
     
@@ -173,7 +183,7 @@ class ChallengeContentViewController: UIViewController {
                                                       selector: #selector(resetTimer(_:)),
                                                       userInfo: nil,
                                                       repeats: true)
-            currentSituationLabel.text = "\(nowTrainingSet)セット目"
+            currentSituationLabel.text = "\(nowTrainingSet)セット目\n\n標準回数: \(self.trainingStanderdCount)回"
         }
         
         self.timerView.maxValue = CGFloat(trainingTime_)
@@ -197,16 +207,9 @@ class ChallengeContentViewController: UIViewController {
         alertController = UIAlertController(title: title,
                                    message: message,
                                    preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "YES",
-                                                style: .default,
-                                                handler: {(action: UIAlertAction!) -> Void in
-                                                    self.timer = nil          // タイマー開始のself.timer == nil で判断するために、self.timer = nil としておく
-                                                    self.trainingTimer = nil
-                                                    self.dismiss(animated: true, completion: nil)
-                                                    
-        }))
-        alertController.addAction(UIAlertAction(title: "NO",
-                                                style: .default,
+        
+        alertController.addAction(UIAlertAction(title: "キャンセル",
+                                                style: .cancel,
                                                 handler: {(action: UIAlertAction!) -> Void in
                                                     self.timer = Timer.scheduledTimer(timeInterval: 0.025,
                                                                                       target: self,
@@ -219,6 +222,14 @@ class ChallengeContentViewController: UIViewController {
                                                                                               selector: #selector(self.resetTimer(_:)),
                                                                                               userInfo: nil,
                                                                                               repeats: true)
+        }))
+        alertController.addAction(UIAlertAction(title: "リタイア",
+                                                style: .destructive,
+                                                handler: {(action: UIAlertAction!) -> Void in
+                                                    self.timer = nil          // タイマー開始のself.timer == nil で判断するために、self.timer = nil としておく
+                                                    self.trainingTimer = nil
+                                                    self.dismiss(animated: true, completion: nil)
+                                                    
         }))
         present(alertController, animated: true)
     }

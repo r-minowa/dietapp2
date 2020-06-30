@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieTrainingMethodViewController" customModule="dietapp" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="NYV-HW-guR" id="jgV-7c-agh"/>
+                <outlet property="movieView" destination="toj-OZ-cR0" id="2ro-ub-WXq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-4y-Pd5">
+                    <rect key="frame" x="17" y="246" width="380" height="404"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhb-E2-g43">
+                            <rect key="frame" x="0.0" y="0.0" width="380" height="4"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="FKX-ub-4BO"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toj-OZ-cR0" customClass="YTPlayerView">
+                            <rect key="frame" x="0.0" y="64" width="380" height="240"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="380" id="EfG-Zq-2SH"/>
+                                <constraint firstAttribute="height" constant="240" id="aIQ-wb-WjY"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYV-HW-guR">
+                            <rect key="frame" x="150" y="364" width="80" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="LCF-UO-M5D"/>
+                                <constraint firstAttribute="width" constant="80" id="iKb-va-SWi"/>
+                            </constraints>
+                            <state key="normal" title="戻る"/>
+                            <connections>
+                                <action selector="backButton:" destination="-1" eventType="touchUpInside" id="pnS-9a-UEl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Rhb-E2-g43" firstAttribute="top" secondItem="ahN-4y-Pd5" secondAttribute="top" id="Jqk-a9-H07"/>
+                        <constraint firstItem="Rhb-E2-g43" firstAttribute="leading" secondItem="ahN-4y-Pd5" secondAttribute="leading" id="YnQ-i9-Nqp"/>
+                        <constraint firstAttribute="trailing" secondItem="Rhb-E2-g43" secondAttribute="trailing" id="vLl-e9-Fbe"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ahN-4y-Pd5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0jL-P7-9eZ"/>
+                <constraint firstItem="ahN-4y-Pd5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fBc-iK-D7z"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="135"/>
+        </view>
+    </objects>
+</document>

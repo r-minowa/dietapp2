@@ -77,20 +77,7 @@ class BodyWeightGraphViewController: UIViewController {
         self.lineChartView.noDataFont = UIFont.systemFont(ofSize: 30) //Noデータ時の表示フォント
         self.lineChartView.noDataTextColor = colorSet.bodyText //Noデータ時の文字色
         
-        self.dayLabel.text = "\(DateFormatters.bodyLabelFormatter.string(from: calenderDate)) の体重"
-        
-        if let weight = self.presenter?.getWeekWeight(calenderDate) {
-            if weight != [] {
-                self.initDisplay(value: weight)
-            }
-        }
-        
-        if let dayWeight = self.presenter?.getDayWeight(calenderDate),
-            let weekWeightAve = self.presenter?.getWeekWeightAve(self.calenderDate){
-            
-            self.dayWeightLabel.text = String(dayWeight)
-            self.weekWeightAveLabel.text = String(format: "%.1f", weekWeightAve)
-        }
+        self.setData()
     }
     
     // MARK: - IBAction
@@ -110,6 +97,9 @@ class BodyWeightGraphViewController: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
         vc.titleName = "体重"
         vc.date = self.calenderDate
+        vc.addTapped = { [weak self] in
+            self?.setData()
+        }
         show(vc, sender: nil)
     }
     
@@ -184,6 +174,24 @@ class BodyWeightGraphViewController: UIViewController {
         self.lineChartView.borderColor = .red
         
         self.lineChartView.data = LineChartData(dataSets: linedata)
+    }
+    
+    /// 表示
+    func setData() {
+        self.dayLabel.text = "\(DateFormatters.bodyLabelFormatter.string(from: calenderDate)) の体重"
+        
+        if let weight = self.presenter?.getWeekWeight(calenderDate) {
+            if weight != [] {
+                self.initDisplay(value: weight)
+            }
+        }
+        
+        if let dayWeight = self.presenter?.getDayWeight(calenderDate),
+            let weekWeightAve = self.presenter?.getWeekWeightAve(self.calenderDate){
+            
+            self.dayWeightLabel.text = String(dayWeight)
+            self.weekWeightAveLabel.text = String(format: "%.1f", weekWeightAve)
+        }
     }
 }
 

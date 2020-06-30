@@ -34,7 +34,7 @@ final class DistanceSettingPresenter {
         } else {
             let achieveTargetStep: NSNumber = NSNumber(value: self.targetStep)
             self.view?.setSteps(achieveTargetStep)
-            
+
             // 今日アラートを表示したかどうか
             if !UserDefaultManager.shared.isShowStepsAlart {
                 UserDefaultManager.shared.point += 3
@@ -43,6 +43,24 @@ final class DistanceSettingPresenter {
             }
         }
     }
+    
+//    /// 設定された目標歩数に達したかどうか(マックス確認用)
+//    /// - Parameter steps: 歩数
+//    func judgTargetStep(_ steps: NSNumber) {
+//        if self.targetStep < steps.intValue {
+//             self.view?.setSteps(steps)
+//        } else {
+//            let achieveTargetStep: NSNumber = NSNumber(value: self.targetStep)
+//            self.view?.setSteps(achieveTargetStep)
+//
+//            // 今日アラートを表示したかどうか
+//            if !UserDefaultManager.shared.isShowStepsAlart {
+//                UserDefaultManager.shared.point += 3
+//                UserDefaultManager.shared.isShowStepsAlart = true
+//                self.setStepAlart(title: "Congraturation!!!", message: "おめでとう！3Pointゲット！")
+//            }
+//        }
+//    }
     
     /// Stepアラート設定
     /// - Parameter title: タイトル

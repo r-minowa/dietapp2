@@ -15,6 +15,7 @@ class PointViewController: UIViewController {
 
     // MARK: - IBOutlet
 
+    @IBOutlet weak var needPointView: UIView!
     @IBOutlet weak var pointCollectionView: UICollectionView! {
         didSet {
             self.pointCollectionView.delegate = self
@@ -32,8 +33,9 @@ class PointViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: - Point加算
-        UserDefaultManager.shared.point += 100
+//        // MARK: - Point加算
+//        UserDefaultManager.shared.point += 100
+        
         
         let pointImage = UIImage(named: "point")
         self.pointImageView.image = pointImage
@@ -61,6 +63,13 @@ class PointViewController: UIViewController {
         super.viewWillAppear(animated)
 
         let colorSet = ColorManager.singletonColorManager.colorSet
+        
+        self.needPointView.backgroundColor = colorSet.mid
+        self.needPointView.layer.cornerRadius = 30
+        self.needPointLabel.backgroundColor = colorSet.background
+        self.needPointLabel.layer.cornerRadius = 26
+        self.needPointLabel.clipsToBounds = true
+        self.needPointLabel.adjustsFontSizeToFitWidth = true
         
         self.view.backgroundColor = colorSet.background
         self.pointCollectionView.backgroundColor = colorSet.background

@@ -164,7 +164,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qM3-VH-8ja">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="176" width="414" height="637"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V3L-1M-HSy">
                                     <size key="itemSize" width="50" height="50"/>
@@ -183,34 +183,45 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQV-S5-iCh">
-                                <rect key="frame" x="12" y="104" width="390" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEb-A7-7oK">
+                                <rect key="frame" x="60" y="112" width="294" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQV-S5-iCh">
+                                        <rect key="frame" x="4" y="4" width="286" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RvA-sr-wZB"/>
+                                    <constraint firstAttribute="bottom" secondItem="MQV-S5-iCh" secondAttribute="bottom" constant="4" id="2nG-cj-qhz"/>
+                                    <constraint firstItem="MQV-S5-iCh" firstAttribute="leading" secondItem="wEb-A7-7oK" secondAttribute="leading" constant="4" id="4LL-c6-Zkz"/>
+                                    <constraint firstItem="MQV-S5-iCh" firstAttribute="top" secondItem="wEb-A7-7oK" secondAttribute="top" constant="4" id="5Gb-jL-ycu"/>
+                                    <constraint firstAttribute="trailing" secondItem="MQV-S5-iCh" secondAttribute="trailing" constant="4" id="Zsd-Ab-hil"/>
+                                    <constraint firstAttribute="height" constant="60" id="ofP-at-tcB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="pdL-y0-TAs" firstAttribute="trailing" secondItem="wEb-A7-7oK" secondAttribute="trailing" constant="60" id="0Ax-f6-acK"/>
+                            <constraint firstItem="wEb-A7-7oK" firstAttribute="top" secondItem="0gy-dY-xaa" secondAttribute="bottom" constant="8" id="6xJ-tn-P6D"/>
                             <constraint firstItem="qM3-VH-8ja" firstAttribute="leading" secondItem="pdL-y0-TAs" secondAttribute="leading" id="7S7-2M-ZeG"/>
                             <constraint firstItem="qM3-VH-8ja" firstAttribute="bottom" secondItem="pdL-y0-TAs" secondAttribute="bottom" id="8lj-vn-9Kb"/>
-                            <constraint firstItem="qM3-VH-8ja" firstAttribute="top" secondItem="MQV-S5-iCh" secondAttribute="bottom" id="B1G-IU-aus"/>
+                            <constraint firstItem="qM3-VH-8ja" firstAttribute="top" secondItem="wEb-A7-7oK" secondAttribute="bottom" constant="4" id="A4g-Lh-EEZ"/>
                             <constraint firstItem="pdL-y0-TAs" firstAttribute="trailing" secondItem="0gy-dY-xaa" secondAttribute="trailing" constant="12" id="BhY-eW-cCh"/>
-                            <constraint firstItem="pdL-y0-TAs" firstAttribute="trailing" secondItem="MQV-S5-iCh" secondAttribute="trailing" constant="12" id="UaX-mx-7L8"/>
-                            <constraint firstItem="MQV-S5-iCh" firstAttribute="top" secondItem="0gy-dY-xaa" secondAttribute="bottom" id="Yvi-Uc-JIA"/>
+                            <constraint firstItem="wEb-A7-7oK" firstAttribute="leading" secondItem="pdL-y0-TAs" secondAttribute="leading" constant="60" id="XBv-Ze-oOz"/>
                             <constraint firstItem="0gy-dY-xaa" firstAttribute="top" secondItem="pdL-y0-TAs" secondAttribute="top" id="mYf-gO-Jxg"/>
                             <constraint firstItem="0gy-dY-xaa" firstAttribute="leading" secondItem="pdL-y0-TAs" secondAttribute="leading" constant="12" id="ngI-8Y-1Ar"/>
                             <constraint firstItem="qM3-VH-8ja" firstAttribute="trailing" secondItem="pdL-y0-TAs" secondAttribute="trailing" id="qQ5-aj-Cai"/>
-                            <constraint firstItem="MQV-S5-iCh" firstAttribute="leading" secondItem="pdL-y0-TAs" secondAttribute="leading" constant="12" id="vG9-O5-kG1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pdL-y0-TAs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Point" image="point" id="cNA-lI-S36"/>
                     <connections>
                         <outlet property="needPointLabel" destination="MQV-S5-iCh" id="XRi-qL-vYu"/>
+                        <outlet property="needPointView" destination="wEb-A7-7oK" id="Lyo-Sz-9k1"/>
                         <outlet property="nowPointLabel" destination="aOG-9p-Ym7" id="cpu-LM-Mge"/>
                         <outlet property="pointCollectionView" destination="qM3-VH-8ja" id="XbK-XH-M8O"/>
                         <outlet property="pointImageView" destination="gYo-nZ-QWF" id="jj1-e1-3UU"/>

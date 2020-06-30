@@ -152,4 +152,15 @@ extension InputPopupPresenter: InputPopupPresenterProtocol {
             self.recordSettingTargetWeight()
         }
     }
+    
+    func selectUnit(_ titleName: String) {
+        if titleName == "回数" {
+            self.view?.changeUnit("回", "回数を入力してください")
+        } else if titleName == "体重" {
+            self.view?.changeUnit("kg", "計測した体重を入力してください")
+        } else if titleName == "目標体重" {
+            self.view?.changeUnit("kg", "目標体重を入力してください")
+            self.view?.changeAddButton("変更")
+        }
+    }
 }

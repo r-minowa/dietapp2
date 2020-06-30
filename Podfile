@@ -11,5 +11,6 @@ pod 'MBCircularProgressBar'
 pod 'FSCalendar'
 pod 'CalculateCalendarLogic' 
 pod 'Charts'
+pod 'youtube-ios-player-helper'
 
 end

@@ -45,6 +45,8 @@
 		8F103BFE24A44D21002EB1A4 /* InputPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F103BFC24A44D21002EB1A4 /* InputPopupViewController.xib */; };
 		8F103C0124A451B3002EB1A4 /* InputPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F103C0024A451B3002EB1A4 /* InputPopupPresenter.swift */; };
 		8F103C0324A451C5002EB1A4 /* InputPopupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F103C0224A451C5002EB1A4 /* InputPopupProtocol.swift */; };
+		8F103C0624A4BD46002EB1A4 /* MovieTrainingMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F103C0424A4BD46002EB1A4 /* MovieTrainingMethodViewController.swift */; };
+		8F103C0724A4BD46002EB1A4 /* MovieTrainingMethodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F103C0524A4BD46002EB1A4 /* MovieTrainingMethodViewController.xib */; };
 		8F106EE4249855DE00502E8E /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F106EE3249855DE00502E8E /* ColorManager.swift */; };
 		8F107D11248733C80056D72E /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F107D0F248733C80056D72E /* PopupViewController.swift */; };
 		8F107D12248733C80056D72E /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F107D10248733C80056D72E /* PopupViewController.xib */; };
@@ -181,6 +183,8 @@
 		8F103BFC24A44D21002EB1A4 /* InputPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPopupViewController.xib; sourceTree = "<group>"; };
 		8F103C0024A451B3002EB1A4 /* InputPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopupPresenter.swift; sourceTree = "<group>"; };
 		8F103C0224A451C5002EB1A4 /* InputPopupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopupProtocol.swift; sourceTree = "<group>"; };
+		8F103C0424A4BD46002EB1A4 /* MovieTrainingMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrainingMethodViewController.swift; sourceTree = "<group>"; };
+		8F103C0524A4BD46002EB1A4 /* MovieTrainingMethodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTrainingMethodViewController.xib; sourceTree = "<group>"; };
 		8F106EE3249855DE00502E8E /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		8F107D0F248733C80056D72E /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		8F107D10248733C80056D72E /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 				8F0D11C1248DFDE600BDDA0F /* ChallengeContent */,
 				8F14A50B2489ECC500D5E5C3 /* TrainingMethodViewController.swift */,
 				8F14A50C2489ECC500D5E5C3 /* TrainingMethodViewController.xib */,
+				8F103C0424A4BD46002EB1A4 /* MovieTrainingMethodViewController.swift */,
+				8F103C0524A4BD46002EB1A4 /* MovieTrainingMethodViewController.xib */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 			files = (
 				8F0D11D9248F352A00BDDA0F /* ActivityRecordViewController.xib in Resources */,
 				8F0DDEF924736337009D6031 /* Home.storyboard in Resources */,
+				8F103C0724A4BD46002EB1A4 /* MovieTrainingMethodViewController.xib in Resources */,
 				8F1399A8246D193A00195D53 /* LaunchScreen.storyboard in Resources */,
 				8F0FCE022491B16700508543 /* BodyWeightRecordViewController.xib in Resources */,
 				8F3A65272473A9EA00DF5D6E /* ChallengeContentViewController.xib in Resources */,
@@ -910,6 +917,7 @@
 				8F103BFD24A44D21002EB1A4 /* InputPopupViewController.swift in Sources */,
 				8FC06ECA24A07AA9000CC937 /* DistanceSettingProtocol.swift in Sources */,
 				8F0E0F282499BEB9008194BB /* PointPresenter.swift in Sources */,
+				8F103C0624A4BD46002EB1A4 /* MovieTrainingMethodViewController.swift in Sources */,
 				8F0F6BE124721CC800F16941 /* CalenderItem.swift in Sources */,
 				8FC06EC824A07A98000CC937 /* DistanceSettingPresenter.swift in Sources */,
 				8F116FAE24970B4900B2BAD0 /* BodyWeightGraphProtocol.swift in Sources */,
